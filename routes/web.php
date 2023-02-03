@@ -33,6 +33,8 @@ Route::view('/', 'pages.index')->name('index');
 //Route::any('/search-shop', [FrontEndController::class, 'searchShop'])->name('searchShop');
 //Route::any('/product-shop', [FrontEndController::class, 'productShop'])->name('product.shop');
 Route::get(__('routes.category'), [FrontEndController::class, 'mainCategory'])->name('mainCategory');
+Route::get(__('routes.categoryID'), [FrontEndController::class, 'categoryPage'])->name('categoryPage');
+
 Route::get(__('routes.searchCategory'), [FrontEndController::class, 'searchCategory'])->name('searchCategory');
 Route::get(__('routes.about'), [FrontEndController::class, 'about'])->name('about');
 Route::get(__('routes.brands'), [FrontEndController::class, 'brands'])->name('brands');

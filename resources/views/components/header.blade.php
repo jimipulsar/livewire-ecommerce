@@ -219,7 +219,27 @@
                     <a href="{{url('/')}}"><img src="/uploads/logo/logo.png" alt="logo"/></a>
                 </div>
                 <div class="header-nav d-none d-lg-flex">
-
+                    <div class="main-categori-wrap d-none d-lg-block">
+                        <a class="categories-button-active" href="#">
+                            <span class="fi-rs-apps"></span> <span class="et"></span> Categorie
+                            <i class="fi-rs-angle-down"></i>
+                        </a>
+                        <div class="categories-dropdown-wrap categories-dropdown-active-large font-heading notranslate">
+                            <div class="d-flex categori-dropdown-inner">
+                                <ul>
+                                    @foreach (getCategories() as $p)
+                                        <li>
+                                            <a href="{{ route('mainCategory',['lang'=>app()->getLocale(),Str::slug(__($p))]) }}"><img
+                                                        src="/assets/imgs/theme/icons/category-6.svg"
+                                                        alt=""/>{{ucFirst(__($p))}}</a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                                <ul class="end">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
                         <nav>
                             <ul>

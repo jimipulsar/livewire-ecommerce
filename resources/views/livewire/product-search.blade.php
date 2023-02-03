@@ -50,26 +50,6 @@ max-width: 750px !important;box-shadow: 4px 9px 12px #00000024;padding:22px !imp
         </div>
     @endif
 
-    {{--            <table class="w-2/3 border border-collapse border-gray-800 shadow">--}}
-    {{--                @if(isset($this->search))--}}
-    {{--                <thead>--}}
-    {{--                <tr>--}}
-    {{--                    <th class="p-2 text-sm text-gray-500 bg-white border border-gray-300">Name</th>--}}
-    {{--                    <th class="p-2 text-sm text-gray-500 bg-white border border-gray-300">Created At</th>--}}
-    {{--                    <th class="p-2 text-sm text-gray-500 bg-white border border-gray-300">Action</th>--}}
-    {{--                </tr>--}}
-    {{--                </thead>--}}
-    {{--                <tbody>--}}
-    {{--                @foreach ($products as $product)--}}
-    {{--                    <tr>--}}
-    {{--                        <td class="p-2 text-sm bg-white border border-gray-300 text-gray">{{ $product->item_name }}</td>--}}
-    {{--                        <td class="p-2 text-sm text-center bg-white border border-gray-300 text-gray">{{ $product->created_at->toDateTimeString() }}</td>--}}
-    {{--                        <td class="p-2 text-sm text-center bg-white border border-gray-300 text-gray">-</td>--}}
-    {{--                    </tr>--}}
-    {{--                @endforeach--}}
-    {{--                @endif--}}
-    {{--                </tbody>--}}
-    {{--            </table>--}}
 </div>
 
 

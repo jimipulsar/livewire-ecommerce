@@ -135,24 +135,39 @@ class FrontEndController extends Controller
     {
         $pagination = 15;
         $segment = Request::segment(count(Request::segments()));
+        $categoryId = \request()['categoryId'];
+        $categoryName = \request()['categoryName'];
+//        dd($categoryName);
         $ucFirst = str_replace('', '', strtolower($segment));
-
-        $products = Product::query()->with('categories')
-            ->leftJoin('category_product', 'category_product.product_id', '=', 'products.id')
-            ->join('categories', 'categories.id', '=', 'category_product.category_id')
-            ->select('products.*', 'category_product.*', 'categories.*')
-            ->where([
-                ['category_slug', '=', $ucFirst],
-            ])
-            ->paginate($pagination);
+//
+//        $products = Product::query()->with('categories')
+//            ->leftJoin('category_product', 'category_product.product_id', '=', 'products.id')
+//            ->join('categories', 'categories.id', '=', 'category_product.category_id')
+//            ->select('products.*', 'category_product.*', 'categories.*')
+//            ->where([
+//                ['category_slug', '=', $ucFirst],
+//            ])
+//            ->paginate($pagination);
 
         return view('pages.categories', [
-
-            'ucFirst' => $ucFirst,
-            'products' => $products
-        ]);
+            'ucFirst' => $ucFirst
+        ])->with('i', (\request()->input('page', 1) - 1) * 20);
 
     }
+    public function categoryPage($categoryId, $categoryName)
+    {
+        $pagination = 15;
+        $segment = Request::segment(count(Request::segments()));
+        $categoryId = \request()['categoryId'];
+        $categoryName = \request()['categoryName'];
+//        dd($categoryName);
+        $ucFirst = str_replace('', '', strtolower($segment));
 
+
+        return view('pages.categories', [
+            'ucFirst' => $ucFirst
+        ])->with('i', (\request()->input('page', 1) - 1) * 20);
+
+    }
 
 }
