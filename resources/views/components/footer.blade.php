@@ -149,9 +149,11 @@
                 <div class="footer-link-widget col wow animate__animated animate__fadeInUp notranslate" data-wow-delay=".4s">
                     <h4 class="widget-title">Categorie</h4>
                     <ul class="footer-list mb-sm-5 mb-md-0 notranslate">
-                        @foreach (getCategories() as $p)
+                        @foreach (getCategories() as $cat)
                             <li>
-                                <a href="{{ route('mainCategory',['lang'=>app()->getLocale(),Str::slug(__($p))]) }}">{{ucFirst(__($p))}}</a>
+                                <a href="{{ route('categoryPage',['lang'=>app()->getLocale(),$cat->id,  $cat->category_slug]) }}"><img
+                                            src="/assets/imgs/theme/icons/category-6.svg"
+                                            alt=""/>{{ucFirst($cat->name)}}</a>
                             </li>
                         @endforeach
                     </ul>

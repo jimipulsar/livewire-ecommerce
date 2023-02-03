@@ -96,7 +96,7 @@ if (!function_exists('getCategories')) {
 
     function getCategories()
     {
-        return DB::table('categories')->where('parent_id', '=', null)->pluck('name');
+        return DB::table('categories')->where('parent_id', '=', null)->get();
 //        return DB::table('products')->orderBy('Prezzo', 'DESC')->get();
     }
 }

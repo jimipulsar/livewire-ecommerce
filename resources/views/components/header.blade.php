@@ -227,11 +227,11 @@
                         <div class="categories-dropdown-wrap categories-dropdown-active-large font-heading notranslate">
                             <div class="d-flex categori-dropdown-inner">
                                 <ul>
-                                    @foreach (getCategories() as $p)
+                                    @foreach (getCategories() as $cat)
                                         <li>
-                                            <a href="{{ route('mainCategory',['lang'=>app()->getLocale(),Str::slug(__($p))]) }}"><img
+                                            <a href="{{ route('categoryPage',['lang'=>app()->getLocale(),$cat->id,  $cat->category_slug]) }}"><img
                                                         src="/assets/imgs/theme/icons/category-6.svg"
-                                                        alt=""/>{{ucFirst(__($p))}}</a>
+                                                        alt=""/>{{ucFirst($cat->name)}}</a>
                                         </li>
                                     @endforeach
                                 </ul>
