@@ -1,0 +1,28 @@
+<?php
+return [
+    'contacts' => '/contatti',
+    'about' => '/azienda',
+    'brands' => '/marchi',
+    'news' => '/news',
+    'compare' => '/confronta',
+    'certifications' => '/certificazioni',
+    'product' => '/{product}',
+    'category' => '/categorie/{product?}',
+    'searchCategory' => '/shop/categorie/{product?}',
+    'categories' => '/categorie',
+    'products' => '/prodotti/{product?}/{id?}',
+    'addQuantity' => '/add-quantity/{product?}/{id?}',
+    'addCart' => '/add-to-cart/{product?}/{id?}',
+    'removeCart' => '/remove-qty/{product?}/{id?}',
+    'remove' => '/remove/{product?}/{id?}',
+    'terms' => '/termini-e-condizioni-di-vendita',
+    'addToCompare' => '/aggiungi-confronto/{product?}/{id?}',
+    'removeToCompare' => '/rimuovi-confronto-quantita/{product?}/{id?}',
+    'removeCompare' => '/rimuovi-prodotto-confronto/{product?}/{id?}',
+    'register' => '/registrati',
+    'cart' => '/carrello',
+    'shop' => '/shop',
+    'spare' => '/ricambi',
+    'single' => '/news/{single}',
+
+];

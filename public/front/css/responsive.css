@@ -1,0 +1,145 @@
+/* ==========================
+ Device width Less Than 991px 
+========================== */
+
+@media screen and (max-width: 991px) {
+    .link-container {
+        position: fixed;
+        top: 0;
+        left: -1000px;
+        padding: 17px;
+        bottom: 0;
+        overflow: auto;
+        width: 300px;
+        z-index: 1007;
+    }
+
+    .link-container > ul {
+        margin-top: 65px;
+    }
+
+    .link-container.show {
+        left: 0;
+    }
+
+    #sidebarToggle {
+        display: block;
+    }
+
+    .product-filter {
+        position: fixed;
+        top: 0;
+        right: -1000px;
+        left: -1000px;
+        bottom: 0;
+        overflow: auto;
+        z-index: 1009;
+        padding: 35px;
+    }
+
+    #filterToggle {
+        display: block;
+    }
+
+    .product-filter.show {
+        right: 0;
+        left: 0;
+    }
+
+    .filter-close {
+        display: block;
+    }
+
+    .sub-menu-container .sub-menu {
+        top: 0;
+        left: 0;
+    }
+
+    .sub-menu-container .sub-menu {
+        top: 0;
+        left: 10px;
+        box-shadow: none !important;
+        border-left: 2px dotted var(--first-color);
+        border-radius: 0px !important;
+    }
+
+    .sub-menu-container .sub-menu {
+        left: 10px !important;
+    }
+
+    .sub-menu li a {
+        padding: 10px;
+    }
+
+    .sub-menu {
+        width: 100%;
+    }
+
+    .sub-menu-container:hover > .sub-menu-root + .sub-menu,
+    .sub-menu li:hover > a + .sub-menu {
+        position: relative;
+    }
+}
+/* ==========================
+ Device width Less Than 768px 
+========================== */
+
+@media screen and (max-width: 768px) {
+    .animated-carousel .slider__inner h1 {
+        font-size: 39px !important;
+    }
+
+    .table-main td.action-td {
+        padding: 36px 20px 36px 0;
+    }
+
+    .sm-flex-row-reverse {
+        flex-direction: column-reverse;
+    }
+}
+/* ==========================
+ Device width Less Than 575px 
+========================== */
+
+@media screen and (max-width: 575px) {
+    .animated-carousel .slide__thumb img {
+        margin-top: 10px;
+    }
+}
+
+/* ==========================
+ Device width Less Than 425px 
+========================== */
+
+@media screen and (max-width: 425px) {
+    .logo-container {
+        width: 90px;
+    }
+}
+
+/* ==========================
+ Device width Less Than 375px 
+========================== */
+
+@media screen and (max-width: 327px) {
+}
+
+/* ==========================
+ Device width Less Than 768px and Greater Than 425px 
+========================== */
+
+@media (max-width: 768px) and (min-width: 425px) {
+    .logo-container {
+        width: 85px;
+    }
+}
+
+/* ==========================
+ Device width Less Than 1250px and Greater Than 769px 
+========================== */
+
+@media (max-width: 1250px) and (min-width: 769px) {
+    .animated-carousel .slider__inner h1 {
+        font-size: 59px !important;
+    }
+}

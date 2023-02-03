@@ -1,0 +1,27 @@
+<?php
+return [
+    'contacts' => '/contacts',
+    'about' => '/company',
+    'brands' => '/brands',
+    'news' => '/news',
+    'compare' => '/compare',
+    'certifications' => '/certificazioni',
+    'product' => '/{product}',
+    'category' => '/categories/{product?}',
+    'searchCategory' => '/shop/categorie/{product?}',
+    'categories' => '/categories',
+    'products' => '/products/{product?}/{id?}',
+    'addCart' => '/add-to-cart/{product?}/{id?}',
+    'removeCart' => '/remove-qty/{product?}/{id?}',
+    'remove' => '/remove/{product?}/{id?}',
+    'terms' => '/conditions-of-sale',
+    'addToCompare' => '/add-to-compare/{product?}/{id?}',
+    'removeToCompare' => '/remove-qty-compare/{product?}/{id?}',
+    'removeCompare' => '/remove-compare/{product?}/{id?}',
+    'register' => '/register',
+    'cart' => '/cart',
+    'shop' => '/shop',
+    'spare' => '/spare-parts',
+    'single' => '/news/{single}',
+
+];

@@ -1,0 +1,290 @@
+.biggest-font {
+    font-size: var(--biggest-font-size) !important;
+}
+
+.bigger-font {
+    font-size: var(--bigger-font-size) !important;
+}
+
+.big-font {
+    font-size: var(--big-font-size) !important;
+}
+
+.small-font {
+    font-size: var(--small-font-size) !important;
+}
+
+.smaller-font {
+    font-size: var(--smaller-font-size) !important;
+}
+
+.f-100 {
+    font-weight: 100;
+}
+
+.f-200 {
+    font-weight: 200;
+}
+
+.f-300 {
+    font-weight: 300;
+}
+
+.f-400 {
+    font-weight: 400;
+}
+
+.f-500 {
+    font-weight: 500;
+}
+
+.f-600 {
+    font-weight: 600;
+}
+
+.f-700 {
+    font-weight: 700;
+}
+
+.f-800 {
+    font-weight: 800;
+}
+
+.f-900 {
+    font-weight: 900;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.body-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    visibility: hidden;
+}
+
+.overlay-show {
+    visibility: visible;
+    background: #312d2d94;
+}
+
+.main-transition,
+button,
+p,
+div,
+header,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+label,
+body {
+    transition: var(--transition);
+    -moz-transition: var(--transition);
+    -o-transition: var(--transition);
+}
+
+.z-1 {
+    z-index: 1001;
+}
+
+.z-2 {
+    z-index: 1002;
+}
+
+.z-3 {
+    z-index: 1003;
+}
+
+.z-4 {
+    z-index: 1004;
+}
+
+.z-5 {
+    z-index: 1005;
+}
+
+.z-6 {
+    z-index: 1006;
+}
+
+.z-7 {
+    z-index: 1007;
+}
+
+.z-8 {
+    z-index: 1008;
+}
+
+.z-9 {
+    z-index: 1009;
+}
+
+.z-10 {
+    z-index: 1010;
+}
+
+.z-11 {
+    z-index: 1011;
+}
+
+.mr-1 {
+    margin-right: 0.25rem;
+}
+
+.mr-2 {
+    margin-right: 0.5rem;
+}
+
+.mr-3 {
+    margin-right: 1rem;
+}
+
+.mr-4 {
+    margin-right: 1.5rem;
+}
+
+.ml-1 {
+    margin-left: 0.25rem;
+}
+
+.ml-2 {
+    margin-left: 0.5rem;
+}
+
+.ml-3 {
+    margin-left: 1rem;
+}
+
+.ml-4 {
+    margin-left: 1.5rem;
+}
+
+.text__primary {
+    color: var(--first-color);
+}
+
+.btn__primary {
+    background: var(--first-color);
+    color: var(--first-color-opposite);
+}
+
+.btn__primary:hover {
+    background: var(--first-color-alt);
+    color: var(--first-color-opposite);
+}
+
+.btn__secondary {
+    background: var(--second-color);
+    color: var(--second-color-opposite);
+}
+
+.btn__secondary:hover {
+    background: var(--second-color-alt);
+    color: var(--second-color-opposite);
+}
+
+.title-color {
+    color: var(--title-color);
+}
+
+.text-color {
+    color: var(--text-color);
+}
+
+.text-color-light {
+    color: var(--text-color-light);
+}
+
+.bg-body {
+    background-color: var(--body-color);
+}
+
+.bg-container {
+    background-color: var(--container-color);
+}
+
+.tooltip-inner,
+.bg__primary {
+    background-color: var(--first-color);
+}
+
+.tooltip-inner {
+    color: var(--first-color-opposite);
+    font-weight: 400;
+    font-family: "Poppins";
+}
+
+.stars i {
+    margin-right: 5px;
+}
+
+.stars i:last-child {
+    margin-right: 0;
+}
+
+.mr--6 {
+    margin-right: -6px;
+}
+
+.hover-primary-color:hover {
+    color: var(--first-color);
+}
+
+.nice-select .option.selected {
+    font-weight: 600 !important;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.form-control:focus,
+.nice-select:focus {
+    border: none;
+    outline: none;
+    box-shadow: 0 0 5px 2px var(--first-color-shadow);
+    -webkit-box-shadow: 0 0 5px 2px var(--first-color-shadow);
+}
+
+.form-control,
+.nice-select {
+    box-shadow: 0 0 17px 1px #bbbbbb70;
+    -webkit-box-shadow: 0 0 17px 1px #bbbbbb70;
+    border: none;
+}
+
+.form-control {
+    padding: 10px;
+    font-weight: 500;
+    color: black;
+}
+
+.pwd-toggle {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+}
+
+.f-pwd {
+    padding-right: 50px !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.btn-dark {
+    background: var(--second-color);
+}
+
+.btn-dark:focus {
+    background: var(--second-color-alt);
+}
