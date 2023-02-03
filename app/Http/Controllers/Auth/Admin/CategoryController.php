@@ -73,7 +73,7 @@ class CategoryController extends Controller
      */
     public function show($lang, $slug)
     {
-        $category = Category::where('slug', $slug)->first();
+        $category = Category::where('category_slug', $slug)->first();
         return view('auth.admin.categories.show', app()->getLocale())->with(array('category' => $category));
 
     }
@@ -105,7 +105,7 @@ class CategoryController extends Controller
         $category = Category::find($id);
         $category->update([
             'name' => $request->input('name'),
-            'slug' => Str::slug($request->input('name')),
+            'category_slug' => Str::slug($request->input('name')),
             'parent_id' => $request->input('parent_id'),
         ]);
         $category->save();

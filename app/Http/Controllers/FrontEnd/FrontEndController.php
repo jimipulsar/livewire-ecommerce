@@ -57,7 +57,7 @@ class FrontEndController extends Controller
 
     public function show($lang, $id)
     {
-
+        $pagination = 15;
         $product = Product::where('id', $id)->first();
         $categories = Category::with('parentCategory')
             ->whereHas('parentCategory')
@@ -65,13 +65,37 @@ class FrontEndController extends Controller
         $mainCategory = Category::with('parentCategory')
             ->where('parent_id', '=', null)
             ->get();
+        $segment = Request::segment(count(Request::segments()));
+        $ucFirst = str_replace('', '', strtolower($segment));
         $products = DB::table('products')->inRandomOrder()->paginate(\request()->get('per_page', 25));
         $attributes = Attribute::all();
+        $correlatedFirst = Product::query()
 
-        $correlated = Product::where(function ($q) use ($product) {
-            return $q->where('Categoria', '=', $product->Categoria);
-        })
-            ->where('id', '!=', $product->id)->take(3)->orderBy('created_at', 'DESC')->get();
+            ->leftJoin('category_product', 'category_product.product_id', '=', 'products.id')
+
+            ->leftJoin('categories', 'categories.id', '=', 'category_product.category_id')
+
+            ->select('products.*', 'categories.*', 'category_product.*')
+            ->where([
+                ['category_product.product_id', '=', $id],
+                ])
+            ->first()->toArray();
+        $correlated = Product::query()
+
+            ->leftJoin('category_product', 'category_product.product_id', '=', 'products.id')
+
+            ->leftJoin('categories', 'categories.id', '=', 'category_product.category_id')
+
+            ->select('products.*', 'categories.*', 'category_product.*')
+            ->where([
+                ['category_product.category_id', '=', $correlatedFirst['category_id']],
+            ])
+            ->get()->take(3);
+//        dd($correlated);
+//        $correlated = Product::where(function ($q) use ($product) {
+//            return $q->where('Categoria', '=', $product->Categoria);
+//        })
+//            ->where('id', '!=', $product->id)->take(3)->orderBy('created_at', 'DESC')->get();
         if (auth()->guard('customer')->check()) {
             $customerFavourites = Wishlist::where('customer_id', auth()->guard('customer')->user()->id)
                 ->where('product_id', $product->id)
@@ -113,7 +137,7 @@ class FrontEndController extends Controller
 
     public function mainCategory()
     {
-        $pagination = 36;
+        $pagination = 15;
         $segment = Request::segment(count(Request::segments()));
         $ucFirst = str_replace('', '', strtolower($segment));
 

@@ -23,7 +23,7 @@ class CategoriesTableSeeder extends Seeder
             $slug = Str::slug($name);
             $category = Category::create([
                 'name'        => $name,
-                'slug' => $slug ,
+                'category_slug' => $slug ,
             ]);
 
             for ($j = 1; $j <= 2; $j++) {
@@ -31,7 +31,7 @@ class CategoriesTableSeeder extends Seeder
                 $slug1 = Str::slug($name1);
                 $childCategory = $category->childCategories()->create([
                     'name'        =>   $name1 ,
-                    'slug' =>   $slug1,
+                    'category_slug' =>   $slug1,
                 ]);
 
                 for ($k = 1; $k <= 2; $k++) {
@@ -39,7 +39,7 @@ class CategoriesTableSeeder extends Seeder
                     $slug2 = Str::slug($name2);
                     $childCategory->childCategories()->create([
                         'name'        =>  $name2,
-                        'slug' =>     $slug2,
+                        'category_slug' =>     $slug2,
                     ]);
                 }
             }

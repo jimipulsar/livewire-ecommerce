@@ -18,7 +18,7 @@ class ProductFilters
             $categorySlug = \request()->category;
 
             $query->whereHas('category', function ($query) use ($categorySlug) {
-                $query->where('slug', $categorySlug);
+                $query->where('category_slug', $categorySlug);
             });
         }
 

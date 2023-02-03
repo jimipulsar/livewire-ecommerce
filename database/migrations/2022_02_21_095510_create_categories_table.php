@@ -19,7 +19,7 @@ class CreateCategoriesTable extends Migration
             $table->integer('parent_id')->unsigned()->nullable();
 //            $table->biginteger('category_id')->unsigned()->default('1');
 //            $table->foreign('category_id')->references('id')->on('categories');
-            $table->string('slug')->default('slug')->unique();
+            $table->string('category_slug')->default('slug')->unique();
             $table->timestamps();
         });
     }

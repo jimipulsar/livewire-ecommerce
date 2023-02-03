@@ -23,7 +23,7 @@ class ProductsTableSeeder extends Seeder
     {
         $faker = Faker::create();
         $this->users = User::all();
-        for ($i = 1; $i <= 100; $i++) {
+        for ($i = 1; $i <= 50; $i++) {
             $title = $faker->sentence(1);
             $slug = Str::slug($title);
             $categories = Category::whereHas('childCategories')->pluck('id');
