@@ -70,28 +70,22 @@ class FrontEndController extends Controller
         $products = DB::table('products')->inRandomOrder()->paginate(\request()->get('per_page', 25));
         $attributes = Attribute::all();
         $correlatedFirst = Product::query()
-
             ->leftJoin('category_product', 'category_product.product_id', '=', 'products.id')
-
             ->leftJoin('categories', 'categories.id', '=', 'category_product.category_id')
-
             ->select('products.*', 'categories.*', 'category_product.*')
             ->where([
                 ['category_product.product_id', '=', $id],
-                ])
+            ])
             ->first()->toArray();
         $correlated = Product::query()
-
             ->leftJoin('category_product', 'category_product.product_id', '=', 'products.id')
-
             ->leftJoin('categories', 'categories.id', '=', 'category_product.category_id')
-
             ->select('products.*', 'categories.*', 'category_product.*')
             ->where([
                 ['category_product.category_id', '=', $correlatedFirst['category_id']],
             ])
             ->get()->take(3);
-//        dd($correlated);
+//        dd($correlatedFirst);
 //        $correlated = Product::where(function ($q) use ($product) {
 //            return $q->where('Categoria', '=', $product->Categoria);
 //        })
@@ -107,7 +101,8 @@ class FrontEndController extends Controller
                 'categories' => $categories,
                 'attributes' => $attributes,
                 'mainCategory' => $mainCategory,
-                'correlated' => $correlated
+                'correlated' => $correlated,
+                'correlatedFirst' => $correlatedFirst
             ]);
 
         } else {
@@ -117,7 +112,8 @@ class FrontEndController extends Controller
                 'categories' => $categories,
                 'attributes' => $attributes,
                 'mainCategory' => $mainCategory,
-                'correlated' => $correlated
+                'correlated' => $correlated,
+                'correlatedFirst' => $correlatedFirst
             ]);
         }
     }
@@ -144,9 +140,9 @@ class FrontEndController extends Controller
         $products = Product::query()->with('categories')
             ->leftJoin('category_product', 'category_product.product_id', '=', 'products.id')
             ->join('categories', 'categories.id', '=', 'category_product.category_id')
-            ->select('products.*','category_product.*', 'categories.*')
+            ->select('products.*', 'category_product.*', 'categories.*')
             ->where([
-                ['categories.slug', '=', $ucFirst],
+                ['category_slug', '=', $ucFirst],
             ])
             ->paginate($pagination);
 

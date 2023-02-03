@@ -7,7 +7,7 @@
         <div class="container">
             <div class="archive-header" style="background-image: url('/uploads/about/category.jpg') !important;">
                 <div class="row align-items-center">
-                    <div class="col-xl-3">
+                    <div class="col-md-6 col-lg-6 col-sm-12">
                         <h2 class="mb-15" id="shopTitle">Categorie</h2>
                         <div class="breadcrumb" id="shopTitle">
                             <a href="{{route('index', app()->getLocale())}}" rel="nofollow"><i

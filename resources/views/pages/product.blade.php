@@ -12,14 +12,9 @@
                 <div class="breadcrumb">
                     <a href="{{route('index', app()->getLocale())}}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
                     <span></span> <a href="{{route('shop.index', app()->getLocale())}}">Categorie</a>
-                    @if($product->Categoria)
-                        <span></span> <a
-                                href="{{ route('mainCategory',['lang'=>app()->getLocale(),Str::slug(__($product->Categoria)) ]) }}">{{$product->Categoria}}</a>
-                    @endif
-                    @if($product->SottoCategoria)
-                        <span></span> <a
-                                href="{{ route('mainCategory',['lang'=>app()->getLocale(),Str::slug(__($product->SottoCategoria)) ]) }}">{{$product->SottoCategoria}}</a>
-                    @endif
+                    <span></span> <a
+                            href="{{ route('mainCategory',['lang'=>app()->getLocale(),$correlatedFirst['category_slug']]) }}">{{$correlatedFirst['name']}}</a>
+
                 </div>
             </div>
         </div>
@@ -329,26 +324,28 @@
                                                    href="{{route('addToCompare', ['lang'=>app()->getLocale(), $product->id,$product->slug])}}"><i
                                                             class="fi-rs-shuffle"></i></a>
                                             </div>
+                                            <div class="font-xs">
+                                                <ul class="mr-50 float-start">
+                                                    <li class="mb-5">Categoria: <span
+                                                                class="text-brand"> {{$correlatedFirst['name']}}@if($product->SottoCategoria != null)
+                                                                / {{__(ucfirst(str_replace('-',' ',$product->SottoCategoria)))}}
+                                                            @endif</span>
+                                                    </li>
+                                                </ul>
+                                                <ul class="float-start">
+                                                    <li class="mb-5">SKU: <a href="#">{!! $product->item_code!!}</a></li>
+                                                    {{--                                            <li class="mb-5">Tags: <a href="#" rel="tag">Snack</a>, <a href="#"--}}
+                                                    {{--                                                                                                       rel="tag">Organic</a>,--}}
+                                                    {{--                                                <a href="#" rel="tag">Brown</a></li>--}}
+
+
+                                                </ul>
+
+
+                                            </div>
                                     </div>
 
-                                    <div class="font-xs">
-                                        <ul class="mr-50 float-start">
-                                            <li class="mb-5">Categoria: <span
-                                                        class="text-brand"> {{__(ucfirst(str_replace('-',' ',$product->Categoria)))}}@if($product->SottoCategoria != null)
-                                                        / {{__(ucfirst(str_replace('-',' ',$product->SottoCategoria)))}}@endif</span>
-                                            </li>
-                                        </ul>
-                                        <ul class="float-start">
-                                            <li class="mb-5">SKU: <a href="#">{!! $product->item_code!!}</a></li>
-                                            {{--                                            <li class="mb-5">Tags: <a href="#" rel="tag">Snack</a>, <a href="#"--}}
-                                            {{--                                                                                                       rel="tag">Organic</a>,--}}
-                                            {{--                                                <a href="#" rel="tag">Brown</a></li>--}}
 
-
-                                        </ul>
-
-
-                                    </div>
 
                                 </div>
                             </div>
