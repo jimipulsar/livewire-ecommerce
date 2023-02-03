@@ -75,9 +75,11 @@
                             <h5 class="section-title style-1 mb-30">Categorie</h5>
 
                             <ul>
-                                @foreach (getCategories() as $p)
+                                @foreach (getCategories() as $cat)
                                     <li>
-                                        <a href="{{ route('mainCategory',['lang'=>app()->getLocale(),Str::slug(__($p))]) }}"><img src="/assets/imgs/theme/icons/category-6.svg" alt=""/>{{__(ucfirst(str_replace('-',' ',$p)))}}</a>
+                                        <a href="{{ route('categoryPage',['lang'=>app()->getLocale(),$cat->id,  $cat->category_slug]) }}"><img
+                                                    src="/assets/imgs/theme/icons/category-6.svg"
+                                                    alt=""/>{{ucFirst($cat->name)}}</a>
                                     </li>
                                 @endforeach
                             </ul>

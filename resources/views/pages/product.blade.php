@@ -326,10 +326,9 @@
                                             </div>
                                             <div class="font-xs">
                                                 <ul class="mr-50 float-start">
+
                                                     <li class="mb-5">Categoria: <span
-                                                                class="text-brand"> {{$correlatedFirst['name']}}@if($product->SottoCategoria != null)
-                                                                / {{__(ucfirst(str_replace('-',' ',$product->SottoCategoria)))}}
-                                                            @endif</span>
+                                                                class="text-brand">        <a href="{{ route('categoryPage',['lang'=>app()->getLocale(),$correlatedFirst['category_id'],  $correlatedFirst['category_slug']]) }}">{{ucFirst($correlatedFirst['name'])}}</a></span>
                                                     </li>
                                                 </ul>
                                                 <ul class="float-start">
