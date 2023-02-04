@@ -26,9 +26,9 @@ class SignUpMail extends Mailable
     {
 
         return $this
-            ->from('no-reply@italianisrl.com')
+            ->from('no-reply@admin@livewire-ecommerce.com')
 //            ->to('pietro@mwspace.com')
-            ->to('acquisti@italianisrl.com')
+            ->to('acquisti@admin@livewire-ecommerce.com')
             ->subject("Nuova registrazione da ". config('app.name'))
             ->markdown('emails.signup')->with('data', $this->data);
     }

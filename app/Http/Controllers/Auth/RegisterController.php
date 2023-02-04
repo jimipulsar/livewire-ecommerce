@@ -73,13 +73,13 @@ class RegisterController extends Controller
         if ($response = $this->registered($request, $user)) {
             return $response;
         }
-        Mail::to('shop@italianisrl.com')
+        Mail::to('shop@admin@livewire-ecommerce.com')
             ->send(new SignUpMail($user));
 
         $userAdmin = User::find(2);
 
         $details = [
-            'greeting' => 'Hai ricevuto una nuova registrazione dal sito web italianisrl.com',
+            'greeting' => 'Hai ricevuto una nuova registrazione dal sito web admin@livewire-ecommerce.com',
             'body' => 'Clicca sul pulsante qui di seguito per visualizzare gli utenti registrati',
             'thanks' => 'Grazie!',
             'subject' => 'Nuova registrazione al sito web',

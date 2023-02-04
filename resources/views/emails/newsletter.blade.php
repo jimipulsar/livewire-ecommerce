@@ -13,7 +13,7 @@
     {{-- Footer --}}
     @slot('footer')
         @component('mail::footer')
-            © {{ date('Y') }} {{ config('app.name') }}.  P.IVA: 01660000546  | Tutti i diritti riservati
+            © {{ date('Y') }} {{ config('app.name') }}.    | Tutti i diritti riservati
         @endcomponent
     @endslot
 @endcomponent

@@ -18,7 +18,7 @@
         <tbody>
         @foreach($order->items as $item)
             <tr style="padding:10px">
-                <td scope="row" style="padding:10px">{{ $item->short_description }}</td>
+                <td scope="row" style="padding:10px">{{ $item->item_name }}</td>
                 <td style="padding:10px">{{ $item->pivot->quantity }}</td>
                 <td style="padding:10px">€ {{ price($item->pivot->price)}}</td>
             </tr>
@@ -41,7 +41,7 @@
     {{-- Footer --}}
     @slot('footer')
         @component('mail::footer')
-            © {{ date('Y') }} {{ config('app.name') }}.  P.IVA: 01660000546  | Tutti i diritti riservati
+            © {{ date('Y') }} {{ config('app.name') }}.  | Tutti i diritti riservati
         @endcomponent
     @endslot
 @endcomponent

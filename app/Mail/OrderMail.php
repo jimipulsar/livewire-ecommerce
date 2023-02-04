@@ -33,7 +33,7 @@ class OrderMail extends Mailable
     {
 
         return $this
-            ->from('no-reply@italianisrl.com')
+            ->from('no-reply@livewire-ecommerce.com')
             ->subject('Hai completato un ordine')
             ->markdown('emails.orderPaid')->with('order', $order);
     }

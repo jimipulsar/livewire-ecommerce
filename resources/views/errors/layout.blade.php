@@ -445,7 +445,7 @@
                 <a href="https://instagram.com/italianisrl?utm_source=ig_profile_share&igshid=1xf7l5uw7k217"
                    target="_blank"><img src="/assets/imgs/theme/icons/icon-instagram-white.svg" alt=""/></a>
             </div>
-            <div class="site-copyright">© {{ date('Y') }} Livewire Ecommerce <br> P.IVA: 01660000546 <br>Designed by <a
+            <div class="site-copyright">© {{ date('Y') }} Livewire Ecommerce <br>  <br>Designed by <a
                         href="https://mwspace.com" target="_blank"><strong class="text-brand">MwSpace
                         LLC</strong></a> <br> All rights reserved
             </div>
@@ -583,7 +583,7 @@
                                      alt=""/><strong>Telefono:</strong><span><a href="tel:+390755172122"> (+39) 075 517 21 22</a> </span>
                             </li>
                             <li><img src="/assets/imgs/theme/icons/icon-email-2.svg"
-                                     alt=""/><strong>Email:</strong><span> info@italianisrl.com</span></li>
+                                     alt=""/><strong>Email:</strong><span> info@admin@livewire-ecommerce.com</span></li>
                             {{--                            <li><img src="/assets/imgs/theme/icons/icon-clock.svg" alt=""/><strong>Hours:</strong><span>10:00 - 18:00, Mon - Sat</span>--}}
                             {{--                            </li>--}}
                         </ul>
@@ -632,7 +632,7 @@
                 <div class="footer-bottom"></div>
             </div>
             <div class="col-xl-4 col-lg-6 col-md-6">
-                <p class="font-sm mb-0">© {{ date('Y') }} Livewire Ecommerce - P.IVA: 01660000546 <br>Designed by <a
+                <p class="font-sm mb-0">© {{ date('Y') }} Livewire Ecommerce -  <br>Designed by <a
                             href="https://mwspace.com" target="_blank"><strong class="text-brand">MwSpace
                             LLC</strong></a> - All rights reserved</p>
             </div>

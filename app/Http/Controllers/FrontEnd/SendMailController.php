@@ -34,8 +34,8 @@ class SendMailController extends Controller
             'message' => 'required|max:900',
             'g-recaptcha-response' => 'required'
         ]);
-        Mail::to('magazzino@italianisrl.com')
-            ->cc('acquisti@italianisrl.com')
+        Mail::to('magazzino@livewire-ecommerce.com')
+            ->cc('acquisti@livewire-ecommerce.com')
             ->send(new SendMail($this->request));
         return back()->with('success', 'Grazie per averci contattato. Riceverai a breve una risposta.');
     }
@@ -49,8 +49,8 @@ class SendMailController extends Controller
             'message' => 'required|max:900',
             'g-recaptcha-response' => 'required'
         ]);
-        Mail::to('magazzino@italianisrl.com')
-            ->cc('acquisti@italianisrl.com')
+        Mail::to('magazzino@livewire-ecommerce.com')
+            ->cc('acquisti@livewire-ecommerce.com')
             ->send(new SendMailProduct($this->request));
         return back()->with('success', 'Grazie per averci contattato. Riceverai a breve una risposta.');
     }

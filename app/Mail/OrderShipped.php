@@ -32,7 +32,7 @@ class OrderShipped extends Mailable
     public function build(Request $order)
     {
         return $this
-            ->from('no-reply@italianisrl.com')
+            ->from('no-reply@admin@livewire-ecommerce.com')
             ->subject('Spedizione avvenuta N. ORDINE #' .$this->order->order_number )
             ->markdown('emails.orderShipped')->with('order', $this->order);
     }

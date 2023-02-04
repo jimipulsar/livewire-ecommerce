@@ -2287,7 +2287,7 @@
                                 @if(session('cart'))
                                     @foreach(session('cart') as $id => $details)
                                         <tr>
-                                            @if(file_exists(public_path('storage/images/' .$p->img_01)))
+                                            @if(file_exists(public_path('storage/images/' .$details['img_01'])))
                                                 <td class="image product-thumbnail"><img
                                                         src="{{'/storage/images/' . $details['img_01'] }}"
                                                         alt="{{ route('shop.show',['lang'=>app()->getLocale(),$id,$details['slug']]) }}">

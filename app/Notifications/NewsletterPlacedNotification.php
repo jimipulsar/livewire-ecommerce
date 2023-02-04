@@ -46,7 +46,7 @@ class NewsletterPlacedNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->from('no-reply@italianisrl.com')
+            ->from('no-reply@admin@livewire-ecommerce.com')
             ->greeting($this->details['greeting'])
             ->subject($this->details['subject'])
             ->line($this->details['body'])

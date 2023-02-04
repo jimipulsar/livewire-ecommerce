@@ -137,11 +137,7 @@ class CheckOutController extends Controller
         if (request('wire_transfer') == 'wire_transfer') {
 
             try {
-                if (!$zipcode = PostalCode::get($order->shipping_zipcode)) {
-                    return redirect()->route('address', app()->getLocale())->withErrors(['zipcode' => [__('Controlla i tuoi dati. Il codice postale presente non è valido')]]);
-                }
 
-                \request()->session()->put('shipping.zipcode', $zipcode[0]);
                 $order->payment_method = 'wire transfer';
                 $order->status = 'pending';
                 $order->save();
@@ -153,10 +149,10 @@ class CheckOutController extends Controller
 
                 $order->generateSubOrders();
 
-                $user = User::find(2);
+                $user = User::find(1);
 //                dd($user);
                 $details = [
-                    'greeting' => 'Hai ricevuto un nuovo ordine dal sito web italianisrl.com',
+                    'greeting' => 'Hai ricevuto un nuovo ordine dal livewire ecommerce web app',
                     'body' => 'Clicca sul pulsante qui di seguito per visualizzare gli ordini ricevuti',
                     'thanks' => 'Grazie!',
                     'subject' => 'Nuovo Ordine Ricevuto',
@@ -174,11 +170,8 @@ class CheckOutController extends Controller
 
                 Mail::to($order->email)->send(new OrderMail($order));
 
-                $this->createShipping();
-
                 \request()->session()->forget('cart');
                 \request()->session()->forget('coupon');
-                \request()->session()->forget('shipping.zipcode');
                 return redirect()->route('orders.index', app()->getLocale())->with('success', 'Ordine effettuato con pagamento Bonifico. Riceverà a breve una e-mail.');
 
             } catch (\Throwable $e) {
@@ -192,11 +185,6 @@ class CheckOutController extends Controller
 
             try {
 
-                if (!$zipcode = PostalCode::get($order->shipping_zipcode)) {
-                    return redirect()->route('address', app()->getLocale())->withErrors(['zipcode' => [__('Controlla i tuoi dati. Il codice postale presente non è valido')]]);
-                }
-
-                \request()->session()->put('shipping.zipcode', $zipcode[0]);
 
                 $order->payment_method = 'card';
                 $order->status = 'processing';
@@ -209,7 +197,7 @@ class CheckOutController extends Controller
                 }
                 $order->generateSubOrders();
 
-                $user = User::find(2);
+                $user = User::find(1);
 
                 // inserisco transazione per avvenuto pagamento
                 $newTransaction = new Transaction;
@@ -224,7 +212,7 @@ class CheckOutController extends Controller
                 $newTransaction->save();
 
                 $details = [
-                    'greeting' => 'Hai ricevuto un nuovo ordine dal sito web italianisrl.com',
+                    'greeting' => 'Hai ricevuto un nuovo ordine dal livewire ecommerce web app',
                     'body' => 'Clicca sul pulsante qui di seguito per visualizzare gli ordini ricevuti',
                     'thanks' => 'Grazie!',
                     'subject' => 'Nuovo Ordine Ricevuto',
@@ -244,8 +232,6 @@ class CheckOutController extends Controller
                 $newNotice->order_id = $order->id;
                 $newNotice->save();
 
-                $this->createShipping();
-
                 Stripe::charges()->create([
 
                     'currency' => 'EUR',
@@ -256,7 +242,6 @@ class CheckOutController extends Controller
                 ]);
                 \request()->session()->forget('cart');
                 \request()->session()->forget('coupon');
-                \request()->session()->forget('shipping.zipcode');
                 return redirect()->route('orders.index', app()->getLocale())->with('success', 'Pagamento effettuato con successo! Grazie per l\'acquisto. Riceverà a breve una e-mail.');
 
             } catch (\Throwable $e) {

@@ -6,7 +6,7 @@
         @endcomponent
     @endslot
     {{-- Body --}}
-    <h2>Hai ricevuto una nuova richiesta dal form di contatto del sito web italianisrl.com </h2>
+    <h2>Hai ricevuto una nuova richiesta dal form di contatto del sito web admin@livewire-ecommerce.com </h2>
     <strong>Nome e Cognome</strong>
     <p>{{$data->name}}</p>
     <strong>Email</strong>
@@ -26,7 +26,7 @@
     {{-- Footer --}}
     @slot('footer')
         @component('mail::footer')
-            © {{ date('Y') }} {{ config('app.name') }} - P.IVA: 01660000546 | Tutti i diritti riservati
+            © {{ date('Y') }} {{ config('app.name') }} -  | Tutti i diritti riservati
         @endcomponent
     @endslot
 @endcomponent

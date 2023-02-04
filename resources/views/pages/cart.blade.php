@@ -44,7 +44,7 @@
                         @if(session('cart'))
                             @foreach(session('cart') as $id => $details)
                                 <tr class="pt-30">
-                                    @if(file_exists(public_path('storage/images/' .$p->img_01)))
+                                    @if(file_exists(public_path('storage/images/' .$details['img_01'])))
                                         <td class="image product-thumbnail pt-40"><img
                                                 src="{{'/storage/images/' . $details['img_01'] }}"
                                                 alt="{{\Str::of('/storage/images/' . $details['img_01'])->basename('.jpg')}}">
@@ -52,7 +52,7 @@
                                     @else
                                         <td class="image product-thumbnail pt-40"><img
                                                 src="{{'/uploads/default/default.jpg' }}"
-                                                alt="{{\Str::of('/uploads/default/default.jpg'])->basename('.jpg')}}">
+                                                alt="{{\Str::of('/uploads/default/default.jpg')->basename('.jpg')}}">
                                         </td>
                                     @endif
                                     <td class="product-des product-name">
