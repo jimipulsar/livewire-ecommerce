@@ -216,7 +216,7 @@
         <div class="container">
             <div class="header-wrap header-space-between position-relative">
                 <div class="logo logo-width-1 d-block d-lg-none">
-                    <a href="{{url('/')}}"><img src="/uploads/logo/logo.png" alt="logo"/></a>
+                    <a href="{{url('/')}}"><img src="/uploads/logo/logo.png" alt="logo" style="height: 71px;width: 100%;object-fit: contain;"/></a>
                 </div>
                 <div class="header-nav d-none d-lg-flex">
                     <div class="main-categori-wrap d-none d-lg-block">
@@ -391,26 +391,26 @@
             </div>
             <div class="mobile-header-info-wrap">
                 <div class="single-mobile-header-info">
-                    <a href="{{route('contacts', app()->getLocale())}}"><i class="fi-rs-marker"></i> <span>Via Dino Campana, 2 <br> Taverne Di Corciano <br> 06073 - Perugia (IT)</span>
+                    <a href="{{route('contacts', app()->getLocale())}}"><i class="fi-rs-marker"></i> <span>Suzy Queue<br> 4455 Landing Lange, APT 4 <br> Louisville, KY 40018-1234</span>
                     </a>
                 </div>
                 <div class="single-mobile-header-info">
                     <a href=""><i class="fi-rs-user"></i>Log In / Sign Up </a>
                 </div>
                 <div class="single-mobile-header-info">
-                    <a href="tel:+390755172122"><i class="fi-rs-headphones"></i> (+39) 075 517 21 22</a>
+                    <a href="tel:(33) 1612 234 34 "><i class="fi-rs-headphones"></i> (33) 1612 234 34 </a>
                 </div>
             </div>
             <div class="mobile-social-icon mb-10">
                 <h6 class="mb-15">Seguici su</h6>
-                <a href="https://www.facebook.com/Livewiresrl-604161316264290/" target="_blank"><img
+                <a href="#" target="_blank"><img
                         src="/assets/imgs/theme/icons/icon-facebook-white.svg" alt=""/></a>
-                <a href="https://instagram.com/italianisrl?utm_source=ig_profile_share&igshid=1xf7l5uw7k217"
+                <a href="#"
                    target="_blank"><img src="/assets/imgs/theme/icons/icon-instagram-white.svg" alt=""/></a>
             </div>
-            <div class="site-copyright">© {{ date('Y') }} Livewire Ecommerce <br> P.IVA: 01660000546 <br>Designed by <a
-                    href="https://mwspace.com" target="_blank"><strong class="text-brand">MwSpace
-                        LLC</strong></a> <br> All rights reserved
+            <div class="site-copyright">  <p class="font-sm mb-0">© {{ date('Y') }} - Livewire E-commerce <br>Designed by <a
+                            href="https://github.com/jimipulsar" target="_blank"><strong class="text-brand">Pie
+                            Dev</strong></a></p>
             </div>
         </div>
     </div>

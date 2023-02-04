@@ -2,7 +2,7 @@
     ("use strict");
     // Page loading
     $(window).on("load", function () {
-        $("#preloader-active").delay(150).fadeOut("slow");
+        $("#preloader-active").delay(150).fadeOut("fast");
         $("body").delay(150).css({
             overflow: "visible"
         });
