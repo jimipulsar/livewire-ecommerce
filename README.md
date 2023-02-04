@@ -1,4 +1,4 @@
-<p align="center"><a href="#" target="_blank"><img src="public/uploads/logo/laravel-livewire.jpg" width="400"><br><img src="public/uploads/logo/stripe.webp" width="400"></a></p>
+<p align="center"><a href="#" target="_blank"><img src="public/uploads/logo/laravel-livewire.jpg" width="860"><br><img src="public/uploads/logo/stripe.webp" width="860"></a></p>
 
 ## E-commerce Laravel Full-Stack - Ecommerce + Stripe payment integration
 
