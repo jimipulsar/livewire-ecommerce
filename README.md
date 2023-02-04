@@ -31,7 +31,7 @@ And much more features.
 
 ## ADMIN LOGIN PANEL
 
-    http://localhost:8000/en/TyRLsvMqw
+    ADMIN PANEL URL: http://localhost:8000/en/TyRLsvMqw
 
     username: admin@livewire-ecommerce.com
     password: 123456
