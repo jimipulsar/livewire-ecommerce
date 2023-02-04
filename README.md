@@ -29,6 +29,10 @@ And much more features.
     php artisan storage:link
     php artisan key:generate && php artisan serve
 
+### POPULATE DATABASE WITH FAKE DATA [LIVEWIRE E-COMMERCE PLATFORM]
+
+    php artisan migrate:fresh --seed
+
 ## ADMIN LOGIN PANEL
 
     ADMIN PANEL URL: http://localhost:8000/en/TyRLsvMqw
