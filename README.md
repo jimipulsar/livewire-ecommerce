@@ -22,6 +22,7 @@ Categories, tags and price filtering for easier search for products.
     
 And much more features.
 
+
 ### START (LARAVEL WEB SITE) LOCAL DEV [LIVEWIRE E-COMMERCE PLATFORM]
 
     composer install && composer dump-autoload
