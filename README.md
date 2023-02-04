@@ -33,3 +33,6 @@ And much more features.
 
     http://localhost:8000/en/TyRLsvMqw
 
+    username: admin@livewire-ecommerce.com
+    password: 123456
+
