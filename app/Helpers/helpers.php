@@ -81,7 +81,20 @@ if (!function_exists('lowHigh')) {
 
     }
 }
+if (!function_exists('productDetails')) {
 
+    function productDetails($id)
+    {
+        return Product::query()
+            ->leftJoin('category_product', 'category_product.product_id', '=', 'products.id')
+            ->leftJoin('categories', 'categories.id', '=', 'category_product.category_id')
+            ->select('products.*', 'categories.*', 'category_product.*')
+            ->where([
+                ['category_product.product_id', '=', $id],
+            ])
+            ->first()->toArray();
+    }
+}
 if (!function_exists('highLow')) {
 
     function highLow()

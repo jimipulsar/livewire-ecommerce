@@ -120,8 +120,7 @@
                                     {{--                                            @endforeach--}}
                                     {{--                                        </a><br>--}}
                                     {{--                                    @endif--}}
-
-                                    <a>Codice articolo: {{__($p->item_code)}}</a>
+                                    Codice articolo: <a>{{__($p->item_code)}}
                                 </div>
                                 <h2>
                                     <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $p->id,$p->slug]) }}">{{__($p->item_name)}}</a>

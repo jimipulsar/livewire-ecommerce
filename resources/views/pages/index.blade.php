@@ -10,11 +10,11 @@
                          style="background-image: url('/uploads/slider/slider1.jpg')">
                         <div class="slider-content">
                             <h2 class="display-2 mb-40">
-                                Settore dell'arte bianca<br/>
-                                da generazioni
+                                White art sector<br/>
+                                for generations
                             </h2>
-                            <p class="mb-65">Offerte imperdibili pensate per te</p>
-                            <a href="{{route('shop.index', app()->getLocale())}}" class="btn btn-lg">Acquista ora<i
+                            <p class="mb-65">Unmissable offers designed for you</p>
+                            <a href="{{route('shop.index', app()->getLocale())}}" class="btn btn-lg">Purchase now<i
                                         class="fi-rs-arrow-small-right"></i></a>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
                                 Attrezzature
                             </h2>
                             <p class="mb-65">Attrezzature per pasticceria e panificazione </p>
-                            <a href="{{route('shop.index', app()->getLocale())}}" class="btn btn-lg">Acquista ora<i
+                            <a href="{{route('shop.index', app()->getLocale())}}" class="btn btn-lg">Purchase now<i
                                         class="fi-rs-arrow-small-right"></i></a>
 
                         </div>
@@ -39,7 +39,7 @@
                             </h2>
                             <p class="mb-65">Tante soluzioni per Panifici, Pasticcerie, le Pizzerie, Gelaterie e
                                 Ristoranti</p>
-                            <a href="{{route('shop.index', app()->getLocale())}}" class="btn btn-lg">Acquista ora<i
+                            <a href="{{route('shop.index', app()->getLocale())}}" class="btn btn-lg">Purchase now<i
                                         class="fi-rs-arrow-small-right"></i></a>
                         </div>
                     </div>
@@ -120,8 +120,9 @@
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                            <a href="{{ route('mainCategory',['lang'=>app()->getLocale(),Str::slug(__())]) }}">Categoria: {{ucFirst(__())}}</a><br>
+                                          <a href="{{ route('categoryPage',['lang'=>app()->getLocale(),productDetails($p->id)['category_id'],  productDetails($p->id)['category_slug']]) }}"> Categoria: <span style="color: #BF8346;">{{ucFirst(productDetails($p->id)['name'])}}</span></a>
 
+                                            <br>
                                             <a>Codice articolo: {{__($p->item_code)}}</a>
                                         </div>
                                         <h2>
@@ -155,8 +156,8 @@
                                     </div>
                                 </div>
                             </div>
-                    @endforeach
-                    <!--end product card-->
+                        @endforeach
+                        <!--end product card-->
                     </div>
                     <!--End product-grid-4-->
                 </div>

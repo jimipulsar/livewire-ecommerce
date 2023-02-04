@@ -13,7 +13,7 @@
                     <a href="{{route('index', app()->getLocale())}}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
                     <span></span> <a href="{{route('shop.index', app()->getLocale())}}">Categorie</a>
                     <span></span> <a
-                            href="{{ route('mainCategory',['lang'=>app()->getLocale(),$correlatedFirst['category_slug']]) }}">{{$correlatedFirst['name']}}</a>
+                            href="{{ route('mainCategory',['lang'=>app()->getLocale(),$productDetails['category_slug']]) }}">{{$productDetails['name']}}</a>
 
                 </div>
             </div>
@@ -328,11 +328,13 @@
                                                 <ul class="mr-50 float-start">
 
                                                     <li class="mb-5">Categoria: <span
-                                                                class="text-brand">        <a href="{{ route('categoryPage',['lang'=>app()->getLocale(),$correlatedFirst['category_id'],  $correlatedFirst['category_slug']]) }}">{{ucFirst($correlatedFirst['name'])}}</a></span>
+                                                                class="text-brand">        <a
+                                                                    href="{{ route('categoryPage',['lang'=>app()->getLocale(),$productDetails['category_id'],  $productDetails['category_slug']]) }}">{{ucFirst($productDetails['name'])}}</a></span>
                                                     </li>
                                                 </ul>
                                                 <ul class="float-start">
-                                                    <li class="mb-5">SKU: <a href="#">{!! $product->item_code!!}</a></li>
+                                                    <li class="mb-5">SKU: <a href="#">{!! $product->item_code!!}</a>
+                                                    </li>
                                                     {{--                                            <li class="mb-5">Tags: <a href="#" rel="tag">Snack</a>, <a href="#"--}}
                                                     {{--                                                                                                       rel="tag">Organic</a>,--}}
                                                     {{--                                                <a href="#" rel="tag">Brown</a></li>--}}
@@ -343,7 +345,6 @@
 
                                             </div>
                                     </div>
-
 
 
                                 </div>

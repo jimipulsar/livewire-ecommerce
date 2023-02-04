@@ -264,7 +264,7 @@
                 </div>
                 <div class="hotline d-none d-lg-flex">
                     <img src="/assets/imgs/theme/icons/icon-headphone.svg" alt="hotline"/>
-                    <p>(39) 075 517 21 22 <span style="margin-top:5px">24/7 Assistenza clienti</span></p>
+                    <p>(33) 1612 234 34 <span style="margin-top:5px">24/7 Customer support</span></p>
                 </div>
                 <div class="header-action-icon-2 d-block d-lg-none">
                     <div class="burger-icon burger-icon-white">

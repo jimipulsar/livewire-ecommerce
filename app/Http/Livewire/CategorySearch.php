@@ -54,6 +54,7 @@ class CategorySearch extends Component
         $max_price = Product::max('price');
 
         if ($categoryId && $categoryName) {
+
             $products = Product::query()->with('categories')
                 ->leftJoin('category_product', 'category_product.product_id', '=', 'products.id')
                 ->leftJoin('categories', 'categories.id', '=', 'category_product.category_id')
