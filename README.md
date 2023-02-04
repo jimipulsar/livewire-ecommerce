@@ -1,4 +1,4 @@
-<p align="center"><a href="#" target="_blank"><img src="public/uploads/logo/screen.webp" width="400"></a></p>
+<p align="center"><a href="#" target="_blank"><img src="public/uploads/logo/laravel-livewire.jpg" width="400"></a></p>
 
 ## E-commerce Laravel Full-Stack
 
