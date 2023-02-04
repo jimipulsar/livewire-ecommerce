@@ -32,3 +32,4 @@ And much more features.
 ## ADMIN LOGIN PANEL
 
     http://localhost:8000/en/TyRLsvMqw
+
