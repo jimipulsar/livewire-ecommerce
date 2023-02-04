@@ -1,12 +1,14 @@
 <p align="center"><a href="#" target="_blank"><img src="public/uploads/logo/laravel-livewire.jpg" width="400"></a></p>
 
-## E-commerce Laravel Full-Stack
+## E-commerce Laravel Full-Stack - Ecommerce + Stripe payment integration
 
 ## FEATURES
 
 Fully functional E-commerce website front-end and back-end.
 
 Using laravel 8 as an admin panel for the site.
+
+You can simulate purchase product with Stripe PAYMENT integration
     
 Javascript, Jquery, Tailwind CSS, Bootstrap and css for the front-end.
     
