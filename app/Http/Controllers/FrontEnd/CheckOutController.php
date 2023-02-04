@@ -57,7 +57,6 @@ class CheckOutController extends Controller
 
             session()->put('cart', $cart);
 
-
             return view('pages.checkout', [
                 'total' => getNumbers()->get('total'),
                 'customer' => $customer,
