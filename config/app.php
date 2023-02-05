@@ -28,7 +28,7 @@ return [
 
     'env' => env('APP_ENV', 'production'),
     'warehouse' => [
-        'zip' => '06083' // Corciano (PG)
+        'zip' => '20019' // Milano (PG)
     ],
     'api_key' => '7923d2bea41171d9a65e2d429a8ead6bb25058a5cdb91fece9219b8c24cfea58',
     /*

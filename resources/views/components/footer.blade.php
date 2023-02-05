@@ -119,8 +119,8 @@
                             <li><img src="/assets/imgs/theme/icons/icon-location.svg"
                                      alt=""/><strong>Indirizzo: </strong>
                                 <span> Suzy Queue
-
-<br> 4455 Landing Lange, APT 4 <br> Louisville, KY 40018-1234 </span></li>
+                                    <br> 4455 Landing Lange, APT 4
+                                    <br> Louisville, KY 40018-1234 </span></li>
                             <li><img src="/assets/imgs/theme/icons/icon-contact.svg"
                                      alt=""/><strong>Telefono:</strong><span><a href="tel:0152 254 212 22"> 0152 254 212 22</a> </span>
                             </li>
