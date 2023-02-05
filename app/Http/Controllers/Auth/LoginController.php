@@ -89,9 +89,7 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
-        $remember_me = $request->has('remember_me') ? true : false;
-
-        if (auth()->guard('customer')->attempt(['email' => $request->input('email'), 'password' => $request->input('password'),$remember_me])) {
+        if (auth()->guard('customer')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
             $wishSession = session()->get('wishlist');
 
             if (isset($wishSession)) {
