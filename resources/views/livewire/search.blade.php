@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <h5 class="section-title style-1 mb-30 mt-10" style="margin-top:70px !important">Categorie</h5>
-                <ul class="list-group" id="categories" >
+                <ul class="list-group" id="categories">
                     @foreach($uniqueCategories as $parentCategory)
                         @if($parentCategory->parent_id == null)
                             <li class="{{ in_array($parentCategory->id, $filters) ? 'bg-main' : '' }}"
@@ -44,36 +44,37 @@
                                 <i class="fi-rs-angle-small-right"></i>
                             </li>
                         @endif
-                            @if($parentCategory->childCategories->count())
-                                <div class="list-second-level" data-id="{{ $parentCategory->id }}" style="display:none" wire:ignore.self>
-                                    @foreach($parentCategory->childCategories as $category)
-                                        <li class="{{ in_array($category->id, $filters) ? 'bg-main' : '' }} justify-content-start"
-                                            style="margin-left:20px !important"
-                                            data-id="{{ $category->id }}" >
+                        @if($parentCategory->childCategories->count())
+                            <div class="list-second-level" data-id="{{ $parentCategory->id }}" style="display:none"
+                                 wire:ignore.self>
+                                @foreach($parentCategory->childCategories as $category)
+                                    <li class="{{ in_array($category->id, $filters) ? 'bg-main' : '' }} justify-content-start"
+                                        style="margin-left:20px !important"
+                                        data-id="{{ $category->id }}">
 
-                                            <a wire:click="$emit('filterByCategory', {{ $category->id }})"
-                                               wire:ref="search-box"
-                                               class="flex items-center rounded-full  hover:bg-amber-600 hover:text-white {{ in_array($category->id, $filters) ? 'text-white' : '' }}">
-                                                <img src="/assets/imgs/theme/icons/category-2.svg"
-                                                     alt=""/> {{ ucfirst($category->name) }}
-                                            </a>
-                                        </li>
-{{--                                        @if($category->childCategories->count())--}}
-{{--                                            @foreach($category->childCategories as $childCategory)--}}
-{{--                                                <li class="{{ in_array($childCategory->id, $filters) ? 'bg-main' : '' }}"--}}
-{{--                                                    data-id="{{ $childCategory->id }}"><a--}}
-{{--                                                            wire:click.debounce.200ms="$emit('filterByCategory', {{ $childCategory->id }})"--}}
-{{--                                                            wire:ref="search-box"--}}
-{{--                                                            class="flex items-center rounded-full  text-[{{$childCategory->name}}] hover:bg-amber-600 hover:text-white {{ in_array($childCategory->id, $filters) ? 'text-white' : '' }}"--}}
-{{--                                                            data-id="{{ $childCategory->id }}">--}}
-{{--                                                        <img src="/assets/imgs/theme/icons/category-3.svg"--}}
-{{--                                                             alt=""/> {{ ucfirst($childCategory->name) }}--}}
-{{--                                                    </a></li>--}}
-{{--                                            @endforeach--}}
-{{--                                        @endif--}}
-                                    @endforeach
-                                </div>
-                            @endif
+                                        <a wire:click="$emit('filterByCategory', {{ $category->id }})"
+                                           wire:ref="search-box"
+                                           class="flex items-center rounded-full  hover:bg-amber-600 hover:text-white {{ in_array($category->id, $filters) ? 'text-white' : '' }}">
+                                            <img src="/assets/imgs/theme/icons/category-2.svg"
+                                                 alt=""/> {{ ucfirst($category->name) }}
+                                        </a>
+                                    </li>
+                                    {{--                                        @if($category->childCategories->count())--}}
+                                    {{--                                            @foreach($category->childCategories as $childCategory)--}}
+                                    {{--                                                <li class="{{ in_array($childCategory->id, $filters) ? 'bg-main' : '' }}"--}}
+                                    {{--                                                    data-id="{{ $childCategory->id }}"><a--}}
+                                    {{--                                                            wire:click.debounce.200ms="$emit('filterByCategory', {{ $childCategory->id }})"--}}
+                                    {{--                                                            wire:ref="search-box"--}}
+                                    {{--                                                            class="flex items-center rounded-full  text-[{{$childCategory->name}}] hover:bg-amber-600 hover:text-white {{ in_array($childCategory->id, $filters) ? 'text-white' : '' }}"--}}
+                                    {{--                                                            data-id="{{ $childCategory->id }}">--}}
+                                    {{--                                                        <img src="/assets/imgs/theme/icons/category-3.svg"--}}
+                                    {{--                                                             alt=""/> {{ ucfirst($childCategory->name) }}--}}
+                                    {{--                                                    </a></li>--}}
+                                    {{--                                            @endforeach--}}
+                                    {{--                                        @endif--}}
+                                @endforeach
+                            </div>
+                        @endif
                     @endforeach
                 </ul>
             </div>
@@ -198,16 +199,11 @@
                             </div>
                             <div class="product-content-wrap">
                                 <div class="product-category">
-                                    {{--                                    @if($categories = $p->categories)--}}
+                                    Categoria: <a href="{{ route('categoryPage',['lang'=>app()->getLocale(),productDetails($p->id)['category_id'],  productDetails($p->id)['category_slug']]) }}">
 
-                                    {{--                                        <a>Categoria: @foreach($categories as $category)--}}
-                                    {{--                                                @if($category->parent_id == null){{ ucfirst($category->name) }}--}}
-                                    {{--                                                / @endif  @if($category->parent_id != null){{ ucfirst($category->name)  }}@endif--}}
-                                    {{--                                            @endforeach--}}
-                                    {{--                                        </a><br>--}}
-                                    {{--                                    @endif--}}
-
-                                    <a>Codice articolo: {{__($p->item_code)}}</a>
+                                        <span style="color: #BF8346;">{{ucFirst(productDetails($p->id)['name'])}}</span>
+                                    </a><br>
+                                    Codice articolo: {{__($p->item_code)}}
                                 </div>
                                 <h2>
                                     <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $p->id,$p->slug]) }}">{{__($p->item_name)}}</a>
@@ -241,8 +237,8 @@
                             </div>
                         </div>
                     </div>
-            @endforeach
-            <!--end product card-->
+                @endforeach
+                <!--end product card-->
             </div>
             <!--product grid-->
             <div class="pagination-area mt-20 mb-20">

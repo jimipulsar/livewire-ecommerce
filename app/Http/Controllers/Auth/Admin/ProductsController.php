@@ -87,8 +87,6 @@ class ProductsController extends Controller
         $product->item_code = \request()->input('item_code');
         $product->short_description = \request()->input('short_description');
         $product->long_description = \request()->input('long_description');
-        $product->Categoria = $mainCategory->name ?? null;
-        $product->SottoCategoria = $subCategory->name ?? null;
         $product->link = \request()->input('link');
         $product->link_2 = \request()->input('link_2');
         $product->stock_qty = \request()->input('stock_qty');
@@ -211,8 +209,6 @@ class ProductsController extends Controller
             'item_code' => \request()->input('item_code'),
             'short_description' => \request()->input('short_description'),
             'long_description' => \request()->input('long_description'),
-            'Categoria' => $mainCategory->name ?? null,
-            'SottoCategoria' => $subCategory->name ?? null,
             'link' => \request()->input('link'),
             'link_2' => \request()->input('link_2'),
             'slug' => Str::slug(\request()->input('item_name')),

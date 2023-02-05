@@ -21,7 +21,6 @@ if (!function_exists('getProducts')) {
     {
         $paginate = 15;
         return Product::orderBy('updated_at', 'DESC')->paginate($paginate);
-//        return Product::distinct()->get('item_name', 'Categoria', 'item_code', 'Descrizione', 'img_01', 'img_02', 'stock_qty', 'quantity ', 'Prezzo');
 
     }
 }

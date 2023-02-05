@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
 
                 'address' => 'Station Street',
 
-                'password' => bcrypt('123456'),
+                'password' => bcrypt('123pie456'),
 
             ],
 

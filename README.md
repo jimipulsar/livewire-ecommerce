@@ -41,5 +41,5 @@ And much more features.
     ADMIN PANEL URL: http://localhost:8000/en/TyRLsvMqw
 
     username: jimipulsar@github.com
-    password: 123456
+    password: 123pie456
 
