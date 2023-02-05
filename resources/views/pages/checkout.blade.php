@@ -21,7 +21,7 @@
 @endsection
 @section('content')
     <div id="pageloader">
-        <img src="/uploads/gif/loader3.gif" alt="Caricamento..." style="background-size:cover;width:150px;"/>
+        <img src="/uploads/gif/darkloader.gif" alt="Caricamento..." style="background-size:cover;width:150px;"/>
     </div>
     <!-- ========== MAIN CONTENT ========== -->
 

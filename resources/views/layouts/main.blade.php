@@ -41,16 +41,17 @@
     @yield('content')
 </main>
 <x-footer></x-footer>
+@yield('preloader')
 <!-- Preloader Start -->
-<div id="preloader-active">
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="preloader-inner position-relative">
-            <div class="text-center">
-                <img src="/uploads/logo/loader.gif" alt="Livewire"/>
-            </div>
-        </div>
-    </div>
-</div>
+{{--<div id="preloader-active">--}}
+{{--    <div class="preloader d-flex align-items-center justify-content-center">--}}
+{{--        <div class="preloader-inner position-relative">--}}
+{{--            <div class="text-center">--}}
+{{--                <img src="/uploads/logo/loader.gif" alt="Livewire"/>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 @yield('extraJs')
 <!-- Vendor JS-->

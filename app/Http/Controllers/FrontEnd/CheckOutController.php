@@ -156,11 +156,11 @@ class CheckOutController extends Controller
                     'thanks' => 'Grazie!',
                     'subject' => 'Nuovo Ordine Ricevuto',
                     'actionText' => 'AREA RISERVATA',
-                    'actionURL' => url(env('APP_URL') . '/' . app()->getLocale() . env('APP_ADMIN_URL') ),
+                    'actionURL' => url(env('APP_URL') . '/' . app()->getLocale()  . env('APP_ADMIN_URL') ),
                     'order_id' => $order->order_number,
                     'name' => $order->shipping_name
                 ];
-
+//dd($details);
                 Notification::send($user, new OrderPlacedNotification($details));
 
                 $newNotice = \App\Models\Notification::orderBy('created_at', 'DESC')->latest()->first();

@@ -54,8 +54,9 @@
 @lang(
     "Se hai problemi a fare clic sul pulsante \":actionText\" copia e incolla l'URL sottostante \n".
     'sul tuo browser:',
-    [
+ [
         'actionText' => $actionText,
+        'actionUrl' => $actionUrl
     ]
 ) <span class="break-all">[{{ $displayableActionUrl }}]({{ $actionUrl }})</span>
 @endslot
