@@ -124,8 +124,6 @@ class FrontEndController extends Controller
     {
         $pagination = 15;
         $segment = Request::segment(count(Request::segments()));
-        $categoryId = \request()['categoryId'];
-        $categoryName = \request()['categoryName'];
 //        dd($categoryName);
         $ucFirst = str_replace('', '', strtolower($segment));
 //
@@ -147,14 +145,16 @@ class FrontEndController extends Controller
     {
         $pagination = 15;
         $segment = Request::segment(count(Request::segments()));
-        $categoryId = \request()['categoryId'];
-        $categoryName = \request()['categoryName'];
-//        dd($categoryName);
-        $ucFirst = str_replace('', '', strtolower($segment));
+//        $categoryId = \request()['categoryId'];
+//        $categoryName = \request()['categoryName'];
 
+        $ucFirst = str_replace('', '', strtolower($segment));
+        $categoryName = str_replace('-', ' ', ucFirst($segment));
+//        dd($categoryName);
 
         return view('pages.categories', [
-            'ucFirst' => $ucFirst
+            'ucFirst' => $ucFirst,
+            'categoryName' => $categoryName
         ])->with('i', (\request()->input('page', 1) - 1) * 20);
 
     }

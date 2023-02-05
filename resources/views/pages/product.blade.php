@@ -1,10 +1,15 @@
 @extends('layouts.main')
 @section('title', $product->item_name . ' | ' .__('product.seo.title'))
 @section('description', __('product.seo.description'))
-{{--@section('extra-css')--}}
-{{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"--}}
-{{--          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">--}}
-{{--@endsection--}}
+@section('extraCss')
+    <style>
+        .action-btn, .hover-up {
+            font-size: 20px !important;
+            margin: 10px !important;
+        }
+    </style>
+
+@endsection
 @section('content')
     <main class="main">
         <div class="page-header breadcrumb-wrap">
@@ -13,8 +18,7 @@
                     <a href="{{route('index', app()->getLocale())}}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
                     <span></span> <a href="{{route('shop.index', app()->getLocale())}}">Categorie</a>
                     <span></span> <a
-                            href="{{ route('mainCategory',['lang'=>app()->getLocale(),$productDetails['category_slug']]) }}">{{$productDetails['name']}}</a>
-
+                            href="{{ route('categoryPage',['lang'=>app()->getLocale(),productDetails($product->id)['category_id'],  productDetails($product->id)['category_slug']]) }}"> {{ucFirst(productDetails($product->id)['name'])}}</a>
                 </div>
             </div>
         </div>
@@ -372,13 +376,13 @@
                                     <div class="">
                                         <p>{!! __($product->short_description)!!}</p>
                                         <p>{!! __($product->long_description)!!}</p>
-                                        {{--                                            <ul class="product-more-infor mt-30">--}}
-                                        {{--                                                <li><span>Type Of Packing</span> Bottle</li>--}}
-                                        {{--                                                <li><span>Color</span> Green, Pink, Powder Blue, Purple</li>--}}
-                                        {{--                                                <li><span>Quantity Per Case</span> 100ml</li>--}}
-                                        {{--                                                <li><span>Ethyl Alcohol</span> 70%</li>--}}
-                                        {{--                                                <li><span>Piece In One</span> Carton</li>--}}
-                                        {{--                                            </ul>--}}
+                                                                                    <ul class="product-more-infor mt-30">
+                                                                                        <li><span>Type Of Packing</span> Bottle</li>
+                                                                                        <li><span>Color</span> Green, Pink, Powder Blue, Purple</li>
+                                                                                        <li><span>Quantity Per Case</span> 100ml</li>
+                                                                                        <li><span>Ethyl Alcohol</span> 70%</li>
+                                                                                        <li><span>Piece In One</span> Carton</li>
+                                                                                    </ul>
                                         <hr class="wp-block-separator is-style-dots"/>
                                         <h4 class="mt-30">Spedizione e Consegna</h4>
                                         <br class="wp-block-separator is-style-wide"/>
