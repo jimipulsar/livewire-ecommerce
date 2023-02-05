@@ -409,7 +409,7 @@
                    target="_blank"><img src="/assets/imgs/theme/icons/icon-instagram-white.svg" alt=""/></a>
             </div>
             <div class="site-copyright">  <p class="font-sm mb-0">© {{ date('Y') }} - Livewire E-commerce <br>Designed by <a
-                            href="https://admin@livewire-ecommerce.com" target="_blank"><strong class="text-brand">Pie
+                            href="https://jimipulsar@github.com" target="_blank"><strong class="text-brand">Pie
                             Dev</strong></a></p>
             </div>
         </div>

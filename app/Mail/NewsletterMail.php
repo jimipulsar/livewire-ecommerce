@@ -35,8 +35,8 @@ class NewsletterMail extends Mailable
     {
 
         return $this
-            ->from('no-reply@admin@livewire-ecommerce.com')
-            ->subject('Iscrizione alla newsletter del sito web admin@livewire-ecommerce.com' )
+            ->from('no-reply@github.com')
+            ->subject('Iscrizione alla newsletter del sito web jimipulsar@github.com' )
             ->markdown('emails.newsletter')->with('newsletter', $this->newsletter);
     }
 }

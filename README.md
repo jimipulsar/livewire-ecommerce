@@ -40,6 +40,6 @@ And much more features.
 
     ADMIN PANEL URL: http://localhost:8000/en/TyRLsvMqw
 
-    username: admin@livewire-ecommerce.com
+    username: jimipulsar@github.com
     password: 123456
 

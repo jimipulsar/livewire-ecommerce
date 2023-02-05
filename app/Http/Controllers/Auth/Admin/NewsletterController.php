@@ -57,7 +57,7 @@ class NewsletterController extends Controller
         $user = User::find(2);
 
         $details = [
-            'greeting' => 'Hai ricevuto una nuova iscrizione alla newsletter dal sito web admin@livewire-ecommerce.com',
+            'greeting' => 'Hai ricevuto una nuova iscrizione alla newsletter dal sito web jimipulsar@github.com',
             'body' => 'Clicca sul pulsante qui di seguito per visualizzare gli iscritti',
             'thanks' => 'Grazie!',
             'subject' => 'Nuova iscrizione Newsletter',

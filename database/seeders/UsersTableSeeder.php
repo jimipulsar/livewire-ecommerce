@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
 
                 'name' => 'Admin',
 
-                'email' => 'admin@livewire-ecommerce.com',
+                'email' => 'jimipulsar@github.com',
 
                 'address' => 'Station Street',
 

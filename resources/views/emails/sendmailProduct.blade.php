@@ -6,7 +6,7 @@
         @endcomponent
     @endslot
     {{-- Body --}}
-    <h2>Hai ricevuto una nuova richiesta dal form di contatto del sito web admin@livewire-ecommerce.com </h2>
+    <h2>Hai ricevuto una nuova richiesta dal form di contatto del sito web jimipulsar@github.com </h2>
     <strong>Nome e Cognome</strong>
     <p>{{$data->name}}</p>
     <strong>Email</strong>

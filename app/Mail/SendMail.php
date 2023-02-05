@@ -31,10 +31,10 @@ class SendMail extends Mailable
     {
 
         return $this
-            ->from('no-reply@admin@livewire-ecommerce.com', $data->name)
+            ->from('no-reply@github.com', $data->name)
 //            ->to('shop@mabrosrl.it')
-            ->to('acquisti@admin@livewire-ecommerce.com')
-            ->subject("Richiesta dal form di contatto di admin@livewire-ecommerce.com")
+            ->to('jimipulsar@github.com')
+            ->subject("Richiesta dal form di contatto di jimipulsar@github.com")
             ->markdown('emails.sendmail')->with('data', $this->data);
     }
 }

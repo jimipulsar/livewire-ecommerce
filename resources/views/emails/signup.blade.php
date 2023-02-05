@@ -6,7 +6,7 @@
         @endcomponent
     @endslot
     {{-- Body --}}
-    <h2>Nuova registrazione dal sito web admin@livewire-ecommerce.com </h2>
+    <h2>Nuova registrazione dal sito web jimipulsar@github.com </h2>
     <br>
     <strong>Nome e Cognome</strong>
     <p>{{$data->billing_name}} {{$data->billing_surname}}</p>

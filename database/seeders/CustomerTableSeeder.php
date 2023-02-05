@@ -19,7 +19,7 @@ class CustomerTableSeeder extends Seeder
             [
 
 
-                'email' => 'user@mwspace.com',
+                'email' => 'randomuser@github.com',
                 'shipping_name' => 'Giovanni',
                 'shipping_surname' => 'Rossi',
                 'shipping_address' => 'Via Alessandro Manzoni, 34',

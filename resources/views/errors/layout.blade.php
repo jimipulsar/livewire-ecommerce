@@ -583,7 +583,7 @@
                                      alt=""/><strong>Telefono:</strong><span><a href="tel:+390755172122"> (+39) 075 517 21 22</a> </span>
                             </li>
                             <li><img src="/assets/imgs/theme/icons/icon-email-2.svg"
-                                     alt=""/><strong>Email:</strong><span> info@admin@livewire-ecommerce.com</span></li>
+                                     alt=""/><strong>Email:</strong><span> info@jimipulsar@github.com</span></li>
                             {{--                            <li><img src="/assets/imgs/theme/icons/icon-clock.svg" alt=""/><strong>Hours:</strong><span>10:00 - 18:00, Mon - Sat</span>--}}
                             {{--                            </li>--}}
                         </ul>

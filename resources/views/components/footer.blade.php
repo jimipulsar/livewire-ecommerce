@@ -177,7 +177,7 @@
             </div>
             <div class="col-xl-4 col-lg-6 col-md-6">
                 <p class="font-sm mb-0">© {{ date('Y') }} - Livewire E-commerce <br>Designed by <a
-                            href="https://admin@livewire-ecommerce.com" target="_blank"><strong class="text-brand">Pie
+                            href="https://jimipulsar@github.com" target="_blank"><strong class="text-brand">Pie
                             Dev</strong></a></p>
             </div>
             <div class="col-xl-4 col-lg-6 text-center d-none d-xl-block">
