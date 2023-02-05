@@ -22,7 +22,12 @@
                         <div class="breadcrumb" id="shopTitle">
                             <a href="{{route('index', app()->getLocale())}}" rel="nofollow"><i
                                         class="fi-rs-home mr-5"></i>Home</a>
-                            <span></span> <a href="{{route('mainCategory', app()->getLocale())}}" rel="nofollow">Categorie </a>@if(isset($categoryName))<span></span> {{$categoryName }}@endif
+                            <span></span>
+                            <a href="{{route('mainCategory', app()->getLocale())}}"
+                               rel="nofollow">Categorie </a>
+                            @if(isset($categoryName))
+                                <span></span> {{$categoryName }}
+                            @endif
                         </div>
                     </div>
                 </div>

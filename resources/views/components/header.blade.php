@@ -68,12 +68,12 @@
             </div>
         </div>
     </div>
-    <div class="header-middle header-middle-ptb-1 d-none d-lg-block">
+    <div class="header-middle py-3 d-none d-lg-block">
         <div class="container">
             <div class="header-wrap">
                 <div class="logo logo-width-1">
                     <a href="{{route('index',['lang' => app()->getLocale()])}}"><img
-                            src="/uploads/logo/logo.png" alt="logo"/></a>
+                            src="/uploads/logo/logo.png" alt="logo" style="height: 140px;width: 100%;object-fit: contain;"/></a>
                 </div>
                 <div class="header-right">
                     <livewire:product-search>

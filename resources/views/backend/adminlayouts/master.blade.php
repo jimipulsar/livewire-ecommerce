@@ -7,14 +7,12 @@
     <meta name="referrer" content="always">
     <link rel="canonical" href="">
     <title> Admin Dashboard | {{ config('app.name') }}</title>
-
-
     <meta name="description" content="">
     <!-- NO INDEX -->
     <meta name="robots" content="noindex, nofollow">
     <!-- END NO INDEX -->
-    <link rel="shortcut icon" href="/uploads/logo/mwspace.png" type="image/x-icon"/>
-    <link rel="icon" href="/uploads/logo/mwspace.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>

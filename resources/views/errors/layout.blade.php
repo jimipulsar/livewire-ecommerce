@@ -446,7 +446,7 @@
                    target="_blank"><img src="/assets/imgs/theme/icons/icon-instagram-white.svg" alt=""/></a>
             </div>
             <div class="site-copyright">© {{ date('Y') }} Livewire Ecommerce <br>  <br>Designed by <a
-                        href="https://mwspace.com" target="_blank"><strong class="text-brand">MwSpace
+                        href="https://github.com/jimipulsar" target="_blank"><strong class="text-brand">Pie Dev
                         LLC</strong></a> <br> All rights reserved
             </div>
         </div>
@@ -633,7 +633,7 @@
             </div>
             <div class="col-xl-4 col-lg-6 col-md-6">
                 <p class="font-sm mb-0">© {{ date('Y') }} Livewire Ecommerce -  <br>Designed by <a
-                            href="https://mwspace.com" target="_blank"><strong class="text-brand">MwSpace
+                            href="https://github.com/jimipulsar" target="_blank"><strong class="text-brand">Pie Dev
                             LLC</strong></a> - All rights reserved</p>
             </div>
             <div class="col-xl-4 col-lg-6 text-center d-none d-xl-block">

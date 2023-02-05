@@ -10,8 +10,8 @@
     <title>Admin Dashboard | {{ config('app.name', 'Mabro') }}</title>
     <script src="{{ asset('js/app.js') }}"></script>
     <meta name="robots" content="noindex, nofollow">
-    <link rel="shortcut icon" href="/assets/images/mwspace.png" type="image/x-icon"/>
-    <link rel="icon" href="/assets/images/mwspace.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Scripts -->
     <link rel="stylesheet" href="/assets/css/customX.css">

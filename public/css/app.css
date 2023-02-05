@@ -1316,6 +1316,8 @@ video {
   padding-right: 1rem;
 }.pb-20 {
   padding-bottom: 5rem;
+}.pb-10 {
+  padding-bottom: 2.5rem;
 }.pl-10 {
   padding-left: 2.5rem;
 }.pt-3 {
@@ -1324,10 +1326,10 @@ video {
   padding-top: 0.125rem;
 }.pt-0 {
   padding-top: 0px;
+}.pt-10 {
+  padding-top: 2.5rem;
 }.pt-40 {
   padding-top: 10rem;
-}.pb-10 {
-  padding-bottom: 2.5rem;
 }.pt-4 {
   padding-top: 1rem;
 }.pl-3 {
@@ -1344,8 +1346,6 @@ video {
   padding-top: 0.5rem;
 }.pb-3 {
   padding-bottom: 0.75rem;
-}.pt-10 {
-  padding-top: 2.5rem;
 }.pb-5 {
   padding-bottom: 1.25rem;
 }.pb-6 {

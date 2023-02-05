@@ -120,7 +120,10 @@
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                          <a href="{{ route('categoryPage',['lang'=>app()->getLocale(),productDetails($p->id)['category_id'],  productDetails($p->id)['category_slug']]) }}"> Categoria: <span style="color: #BF8346;">{{ucFirst(productDetails($p->id)['name'])}}</span></a>
+                                            <a href="{{ route('categoryPage',['lang'=>app()->getLocale(),productDetails($p->id)['category_id'],  productDetails($p->id)['category_slug']]) }}">
+                                                Categoria:
+                                                <span style="color: #BF8346;">{{ucFirst(productDetails($p->id)['name'])}}</span>
+                                            </a>
                                             <br>
                                             <a>Codice articolo: {{__($p->item_code)}}</a>
                                         </div>

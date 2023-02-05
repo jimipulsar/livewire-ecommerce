@@ -59,10 +59,10 @@
                                 <div class="login_footer form-group mb-50">
                                     <div class="chek-form">
                                         <div class="custome-checkbox">
-                                            <input class="form-check-input" type="checkbox" name="checkbox"
-                                                   id="exampleCheckbox1" value=""/>
+                                            <input class="form-check-input" type="checkbox" name="remember"
+                                                   id="remember" />
                                             <label class="form-check-label"
-                                                   for="exampleCheckbox1"><span>Ricordami</span></label>
+                                                   for="remember_me"><span>Ricordami</span></label>
                                         </div>
                                     </div>
                                     <a class="text-muted"

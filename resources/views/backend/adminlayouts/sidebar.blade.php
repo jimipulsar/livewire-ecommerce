@@ -7,7 +7,7 @@
     <div class="flex items-center justify-center mt-8" style="margin-left:-18px">
 
         <div class="d-inline-block">
-            <img src="/uploads/logo/mwspace.png" style="height:50px; display:inline-block" alt="MwSpace LLC">
+            <img src="/favicon.ico" style="height:50px; display:inline-block" alt="Pie Dev">
             <span
                     class="text-white mx-2 font-semibold font-size-6">Benvenuto, {{auth()->guard('admin')->user()->name}}</span>
         </div>
