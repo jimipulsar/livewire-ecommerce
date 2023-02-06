@@ -79,7 +79,7 @@ class RegisterController extends Controller
         $userAdmin = User::find(1);
 
         $details = [
-            'greeting' => 'Hai ricevuto una nuova registrazione dal sito web jimipulsar@github.com',
+            'greeting' => 'Hai ricevuto una nuova registrazione da Livewire Ecommerce Platform',
             'body' => 'Clicca sul pulsante qui di seguito per visualizzare gli utenti registrati',
             'thanks' => 'Grazie!',
             'subject' => 'Nuova registrazione al sito web',
