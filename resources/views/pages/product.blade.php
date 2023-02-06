@@ -2,12 +2,12 @@
 @section('title', $product->item_name . ' | ' .__('product.seo.title'))
 @section('description', __('product.seo.description'))
 @section('extraCss')
-    <style>
-        .action-btn, .hover-up {
-            font-size: 20px !important;
-            margin: 10px !important;
-        }
-    </style>
+{{--    <style>--}}
+{{--        .action-btn, .hover-up {--}}
+{{--            font-size: 20px !important;--}}
+{{--            margin: 10px !important;--}}
+{{--        }--}}
+{{--    </style>--}}
 
 @endsection
 @section('content')
@@ -117,9 +117,11 @@
                                             </div>
                                         </div>
                                     @endif
+                                    @if(isset($product->short_description))
                                     <div class="short-desc mb-30">
                                         <p class="font-lg">{!! $product->short_description!!}</p>
                                     </div>
+                                    @endif
                                     <div class="attr-detail attr-size mb-10">
                                         @if($product->shippable == true)
                                             @if($product->stock_qty > 0)
@@ -151,6 +153,7 @@
                                         </ul>
 
                                     </div>
+                                    @if(isset($product->link))
                                     <div class="attr-detail attr-size mb-20">
                                         <ul class="float-start py-3">
                                             @if($product->link != null)
@@ -170,6 +173,7 @@
                                             @endif
                                         </ul>
                                     </div>
+                                    @endif
                                     @if($product->attachment != null)
                                         <div class="attr-detail attr-size mb-30">
                                             <div class="brochure-box">
@@ -184,7 +188,7 @@
                                         </div>
                                     @endif
                                     <div class="detail-extralink mb-20">
-                                        @if($product->shippable == 0)
+                                        @if($product->stock_qty <= 0 )
 
                                             <div class="product-extra-link2">
                                                 <button type="button" class="btn btn-primary" data-toggle="modal"
@@ -246,40 +250,6 @@
                                                                                           class="form-control"
                                                                                           style="height:auto !important"></textarea>
                                                                             </div>
-                                                                            <div class="col-lg-12"
-                                                                                 style="margin-top:20px;margin-left:12px;margin-bottom:20px">
-
-                                                                                @if(app()->getLocale() === 'it')
-                                                                                    <label class="form-check-label"
-                                                                                           for="exampleCheck1"
-                                                                                           style="text-align:left !important;">
-                                                                                        <input type="checkbox"
-                                                                                               class="form-check-input"
-                                                                                               id="exampleCheck1"
-                                                                                               required> {{__('contacts.policy.field1')}}
-                                                                                        <a
-                                                                                                href="https://www.iubenda.com/privacy-policy/46585307"
-                                                                                                style="border: none !important;
-                                                                                            padding: 0 !important;width:auto !important;line-height:0 !important;margin:0 !important;height: 0 !important;margin-top: 11px !important;"
-                                                                                                target="popup"
-                                                                                                onclick="MyWindow=window.open('https://www.iubenda.com/privacy-policy/46585307','MyWindow','width=800,height=600'); return false;"><strong
-                                                                                                    style="text-decoration:underline">{{__('contacts.policy.field2')}}</strong></a> {{__('contacts.policy.field3')}}
-                                                                                    </label>
-                                                                                @endif
-                                                                                @if(app()->getLocale() === 'en')
-                                                                                    <label class="form-check-label"
-                                                                                           for="exampleCheck1"
-                                                                                           style="text-align:left !important;">{{__('contacts.policy.field1')}}
-                                                                                        <a
-                                                                                                href="https://www.iubenda.com/privacy-policy/65808002"
-                                                                                                style="border: none !important;
-                                                                                            padding: 0 !important;width:auto !important;line-height:0 !important;height: 0 !important;margin:0 !important;margin-top: 11px !important;"
-                                                                                                target="popup"
-                                                                                                onclick="MyWindow=window.open('https://www.iubenda.com/privacy-policy/65808002','MyWindow','width=800,height=600'); return false;"><strong
-                                                                                                    style="text-decoration:underline">{{__('contacts.policy.field2')}}</strong></a> {{__('contacts.policy.field3')}}
-                                                                                    </label>
-                                                                                @endif
-                                                                            </div>
                                                                             <div class="form-group pt-4 mb-4">
                                                                                 <div class="g-recaptcha"
                                                                                      data-sitekey="{{env('INVISIBLE_RECAPTCHA_SITEKEY')}}">
@@ -328,7 +298,7 @@
                                                    href="{{route('addToCompare', ['lang'=>app()->getLocale(), $product->id,$product->slug])}}"><i
                                                             class="fi-rs-shuffle"></i></a>
                                             </div>
-                                            <div class="font-xs">
+                                            <div class="font-xs mt-2">
                                                 <ul class="mr-50 float-start">
 
                                                     <li class="mb-5">Categoria: <span
