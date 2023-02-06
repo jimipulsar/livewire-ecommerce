@@ -18,7 +18,7 @@ LOG Monitoring Access on Admin & Customers.
     
 Intelligent searching mechanism for products.
     
-Awesome Cart package that uses session.
+Awesome Cart package that uses session with Coupon Discount application.
     
 An artisan command to seed the database with all neccessary dummy data.
     
@@ -27,6 +27,7 @@ Different user roles and privileges.
 Categories, tags and price filtering for easier search for products.
     
 And much more features.
+
 <p align="center"><img src="public/uploads/logo/stripe.webp" width="860"><br></p>
 
 ### START (LARAVEL WEB SITE) LOCAL DEV [LIVEWIRE E-COMMERCE PLATFORM]
