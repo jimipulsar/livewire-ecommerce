@@ -31,7 +31,7 @@ return [
         '6' => 'Twenty years of experience',
         '7' => 'If on the one hand there are more and more possible solutions, on the other, a person who has to "spend" or "invest" in a tool from a few Euros or in the more expensive CNC machine, will face problems of choice of no small importance. Our twenty years of experience in the sector is at our provision to simplify the choice of the most suitable product for your production needs.',
         '8' => 'Customer satisfaction',
-        '9' => 'MABRO s.r.l.is born from the passion for mechanics and our strength is the continuous satisfaction of our customers, with who we have established contacts based on seriousness, respect and mutual esteem.',
+        '9' => 'Livewire Ecommerce is born from the passion for mechanics and our strength is the continuous satisfaction of our customers, with who we have established contacts based on seriousness, respect and mutual esteem.',
     ],
 
 ];

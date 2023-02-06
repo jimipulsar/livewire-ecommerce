@@ -31,7 +31,7 @@ return [
         '6' => 'Esperienza ventennale',
         '7' => 'Se da un lato sempre più sono le soluzioni possibili , dall\'altro, colui che deve "spendere" od "investire" nell\' utensile da pochi Euro o nel più costoso macchinario CNC, si troverà ad affrontare problemi di scelta di non lieve entità. La nostra ventennale esperienza nel settore è a vs. disposizione per semplificare la scelta del prodotto più adatto alle vs. esigenze produttive.',
         '8' => 'Soddisfazione del cliente',
-        '9' => 'MABRO s.r.l. nasce dalla passione per la meccanica ed il nostro punto di forza è la continua soddisfazione dei nostri clienti, con cui abbiamo stabilito contatti basati sulla serietà, sul rispetto e la stima reciproca.',
+        '9' => 'Livewire Ecommerce  nasce dalla passione per la meccanica ed il nostro punto di forza è la continua soddisfazione dei nostri clienti, con cui abbiamo stabilito contatti basati sulla serietà, sul rispetto e la stima reciproca.',
     ],
 
 ];
