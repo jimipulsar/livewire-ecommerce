@@ -149,7 +149,7 @@ class CheckOutController extends Controller
                 $order->generateSubOrders();
 
                 $user = User::find(1);
-//                dd($user);
+
                 $details = [
                     'greeting' => 'Hai ricevuto un nuovo ordine dal livewire ecommerce web app',
                     'body' => 'Clicca sul pulsante qui di seguito per visualizzare gli ordini ricevuti',
@@ -160,7 +160,6 @@ class CheckOutController extends Controller
                     'order_id' => $order->order_number,
                     'name' => $order->shipping_name
                 ];
-//dd($details);
                 Notification::send($user, new OrderPlacedNotification($details));
 
                 $newNotice = \App\Models\Notification::orderBy('created_at', 'DESC')->latest()->first();
@@ -178,13 +177,9 @@ class CheckOutController extends Controller
                 return back()->withErrors('Errore! ' . $e->getMessage());
             }
 
-
         } else {
 
-
             try {
-
-
                 $order->payment_method = 'card';
                 $order->status = 'processing';
                 $order->is_paid = '1';
@@ -249,75 +244,6 @@ class CheckOutController extends Controller
         }
     }
 
-    public function createShipping()
-    {
-        $customerID = auth()->guard('customer')->user();
-
-        $order = Order::where('customer_id', $customerID->id)->latest()->first();
-        $orderItem = OrderItem::where('order_id', $order->id)->latest()->first();
-        $zip = \request()->session()->get('shipping.zipcode');
-
-        $carriers = Carrier::quote(getParcel()->get('parcels')[0]['weight']);
-        $carriers->from(array(
-            'country' => 'IT',
-            'zip' => config('app.warehouse.zip')
-        ));
-        $carriers->to(array(
-            'country' => 'IT',
-            'zip' => $zip->zipcode
-        ));
-        $carrier = $carriers->first();
-        $shipment = Shipment::create(array(
-            "service" => $carrier->name ?? null,
-            "carrier" => $carrier->carrier_name ?? null,
-            "service_id" => $carrier->id ?? null,
-            "contentvalue" => $order->grand_total,
-            "content" => $orderItem->product['item_name'],
-            "contentValue_currency" => "EUR",
-            "from" => [
-                "name" => "Grifo Ferramenta",
-                "surname" => "Grifo Ferramenta",
-                "company" => "Grifo Ferramenta S.r.l.",
-                "street1" => " Via delle Industrie, 30/32 20019 Bastia Umbra PG",
-                "street2" => "PRESSO Grifo Ferramenta S.r.l. ",
-                "zip_code" => "20019",
-                "city" => "Perugia",
-                "state" => 'Perugia',
-                "country" => "IT",
-                "phone" => "+390758003492",
-                "email" => "commerciale@italianisrl.com",
-            ],
-            "to" => [
-                "name" => $order->shipping_name,
-                "surname" => $order->shipping_surname,
-                "company" => $order->shipping_company,
-                "street1" => $order->shipping_address,
-                "street2" => $order->shipping_company ?? null,
-                "zip_code" => $order->shipping_zipcode,
-                "city" => $order->shipping_city,
-                "state" => $order->shipping_city,
-                "country" => $order->shipping_country,
-                "phone" => $order->shipping_phone,
-                "email" => $order->email,
-            ],
-            "packages" => getParcel()->get('parcels')
-        ));
-
-        $shipmentID = Shipment::find($shipment->id);
-
-        $newShipping = new \App\Models\Shipment();
-        $newShipping->order_id = $order->id;
-        $newShipping->customer_id = $order->customer_id;
-        $newShipping->packlink_name = $carrier->carrier_name;
-        $newShipping->packlink_order_id = $shipmentID->id;
-        $newShipping->packlink_content = $shipmentID->content;
-        $newShipping->packlink_city = $shipmentID->to['city'];
-        $newShipping->packlink_country = $shipmentID->to['country'];
-        $newShipping->packlink_date = $shipmentID->collection_date;
-        $newShipping->status = $shipmentID->state;
-
-        $newShipping->save();
-    }
 }
 
 

@@ -131,47 +131,6 @@ class AdminController extends Controller
 
     }
 
-    public function shipments()
-    {
-
-        if (auth()->guard('admin')->check()) {
-            $orders = DB::table('orders')->distinct()->get('shipping_zipcode');
-
-            foreach ($orders as $order) {
-                $zipcode = PostalCode::get($order->shipping_zipcode);
-
-                if (!$zipcode) {
-                    return back()->withErrors(['zipcode' => [__('Il codice postale non è valido')]]);
-                }
-            }
-
-            $carriers = Carrier::quote(5);
-
-            $carriers->from(array(
-                'country' => 'IT',
-                'zip' => config('app.warehouse.zip')
-            ));
-
-            $carriers->to(array(
-                'country' => 'IT',
-                'zip' => '06121',
-            ));
-
-            $shipments = Shipment::all();
-//           $shipments = DB::table('shipments')->paginate(5);
-
-//            dd($shipments[0]->delivery['city']);
-            $data = $this->pagination($shipments);
-
-            return view('auth.admin.shipments.index')
-                ->with('couriers', $carriers->all())
-                ->with('data', $data);
-
-        } else {
-            return redirect()->route('index', app()->getLocale());
-        }
-
-    }
 
     public function pagination($items, $perPage = 5, $page = null, $options = [], $pageName = 'page')
     {
@@ -191,7 +150,7 @@ class AdminController extends Controller
             $customers = Customer::all();
             $products = DB::table('products')->count();
             $orders = Order::orderBy('created_at', 'DESC')->paginate(8);
-//dd(json_decode($notifications[0]->data, true)->billing_name);
+
             return view('auth.admin.dashboard', [
                 'customers' => $customers,
                 'products' => $products,
@@ -213,7 +172,7 @@ class AdminController extends Controller
             $products = DB::table('products')->count();
 
             $o = trim(\request()->input('o'));
-//            dd($o);
+
             $query = \request()->all();
             $orders = Order::query()->where('order_number', 'LIKE', '%' . $o . '%')
                 ->orWhere('billing_name', 'LIKE', '%' . $o . '%')

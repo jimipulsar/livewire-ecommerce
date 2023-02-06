@@ -33,7 +33,6 @@ class NewsController extends Controller
                 $images->link = str_replace(' ', '-', strtolower($images->name));
                 $images->url = str_replace("{$this->workingDir}/", '', $_file);
                 $images->path = json_decode(file_get_contents(public_path('uploads/news/' . $images->name . "/" . app()->getLocale() . "/seo.json")));
-//                dd($images->path->title);
                 $images->cover = '/' . $pathProduct . '/_cover.jpg';
 
                 $galleries[] = $images;
@@ -84,7 +83,6 @@ class NewsController extends Controller
             if (pathinfo($_file, PATHINFO_EXTENSION) == 'jpg') {
                 $images = new \stdClass();
                 $pathProduct = str_replace('-', ' ', $_file);
-//                dd($pathProduct);
 
                 $images->post = str_replace(' ', '-', basename($_file, '.jpg'));
                 $images->title = str_replace("{$this->workingDir}/", '', $_file);
@@ -92,7 +90,6 @@ class NewsController extends Controller
                 $images->link = str_replace(' ', '-', strtolower($images->name));
                 $images->url = str_replace("{$this->workingDir}/", '', $_file);
                 $images->path = json_decode(file_get_contents(public_path('uploads/news/' . $images->name . "/" . app()->getLocale() . "/seo.json")));
-//                dd($images->path->title);
                 $images->cover = '/' . $pathProduct . '/_cover.jpg';
 
                 $latest[] = $images;

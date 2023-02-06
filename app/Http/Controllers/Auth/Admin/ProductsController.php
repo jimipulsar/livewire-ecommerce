@@ -264,9 +264,6 @@ class ProductsController extends Controller
     {
         $product = Product::findOrFail($id);
 
-//        if (file_exists(public_path('uploads/products/images/' . $product->img_01)))
-//            unlink(public_path('uploads/products/images/' . $product->img_01));
-//        File::delete('uploads/products/images/' . $product->img_01);
         if (!$product) {
             abort(404);
         }

@@ -54,7 +54,6 @@ class OrdersController extends Controller
             }
             $products = $order->items;
             $subOrderInfo = SubOrder::where('id', $id)->first();
-//            dd($subOrderInfo->grand_total);
             $tax = config('cart.tax') / 100;
 
             $newTax = $subOrderInfo->grand_total * $tax;

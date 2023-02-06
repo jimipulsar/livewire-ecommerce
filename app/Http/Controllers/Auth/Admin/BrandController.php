@@ -98,7 +98,6 @@ class BrandController extends Controller
     public function show($lang, $slug)
     {
         $brand = Brand::where('slug', $slug)->first();
-//        dd($brand);
 
         return view('pages.product', [
             'brand' => $brand,
@@ -118,7 +117,6 @@ class BrandController extends Controller
             ->get();
         $productBrand = Product::with('brands')
             ->get();
-//        dd($productBrand);
         return view('auth.admin.brands.edit', [
             'brand' => $brand,
             'productBrand' => $productBrand,
@@ -141,11 +139,6 @@ class BrandController extends Controller
             'cover' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048'
 
         ]);
-
-//        'name' => 'required',
-//        'image' => 'image|size:2048|dimensions:min_width=200,min_height=200,max_width=600,max_height=600',
-//        'file' => 'required|file',
-//        'video' => 'mimes:m4v,avi,flv,mp4,mov',
 
         $brand->user_id = auth()->guard('admin')->id();
 
@@ -183,9 +176,6 @@ class BrandController extends Controller
     {
         $brand = Brand::findOrFail($id);
 
-//        if (file_exists(public_path('uploads/products/images/' . $brand->img_01)))
-//            unlink(public_path('uploads/products/images/' . $brand->img_01));
-//        File::delete('uploads/products/images/' . $brand->img_01);
         if (!$brand) {
             abort(404);
         }

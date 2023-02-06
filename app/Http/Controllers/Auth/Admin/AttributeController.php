@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Tag;
+use App\Models\Attribute;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -16,7 +16,7 @@ class AttributeController extends Controller
 
     public function index($lang)
     {
-        $attributes = Tag::orderBy('updated_at', 'DESC')->paginate(10);
+        $attributes = Attribute::orderBy('updated_at', 'DESC')->paginate(10);
 
         return view('auth.admin.attributes.index')->with([
             'attributes' => $attributes
@@ -31,7 +31,7 @@ class AttributeController extends Controller
     public function create()
     {
 
-        $attributes = Tag::all();
+        $attributes = Attribute::all();
         return view('auth.admin.attributes.create', ['attributes' => $attributes]);
 
     }
@@ -48,7 +48,7 @@ class AttributeController extends Controller
 //            'name' => 'required|unique:attributes',
 //        ]);
 
-        $attribute = new Tag;
+        $attribute = new Attribute;
         $attribute->name = $request->input('name');
         $attribute->color = $request->input('color');
         $slug = Str::slug($attribute->name);
@@ -64,12 +64,12 @@ class AttributeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\Tag $attributes
+     * @param \App\Models\Attribute $attributes
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show($lang, $id)
     {
-        $attribute = Tag::where('id', $id)->first();
+        $attribute = Attribute::where('id', $id)->first();
         return view('auth.admin.attributes.show', app()->getLocale(), ['attribute' => $attribute]);
 
     }
@@ -77,14 +77,14 @@ class AttributeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Tag $attributes
+     * @param \App\Models\Attribute $attributes
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit($lang, $id)
     {
-        $attribute = Tag::find($id);
+        $attribute = Attribute::find($id);
 
-        $attributes = Tag::all();
+        $attributes = Attribute::all();
 
         return view('auth.admin.attributes.edit', [
             'attributes' => $attributes,
@@ -97,12 +97,12 @@ class AttributeController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Tag $attributes
+     * @param \App\Models\Attribute $attributes
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update($lang, Request $request, $id)
     {
-        $attribute = Tag::find($id);
+        $attribute = Attribute::find($id);
         $attribute->update([
             'name' => $request->input('name'),
             'color' => $request->input('color'),
@@ -116,10 +116,10 @@ class AttributeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Tag $attributes
+     * @param \App\Models\Attribute $attributes
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($lang, Tag $attribute)
+    public function destroy($lang, Attribute $attribute)
     {
         if ($attribute->delete()) {
             return redirect()->back()->with(['success' => 'Attributo rimosso con successo.']);

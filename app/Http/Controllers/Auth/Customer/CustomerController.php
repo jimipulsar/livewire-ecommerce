@@ -82,8 +82,7 @@ class CustomerController extends Controller
     public function destroy($lang, $id)
     {
         $customer = Customer::find(Auth::guard('customer')->user()->id);
-//        dd($customer);
-//        Auth::logout();
+
         $customer->delete();
 
             return redirect()->route('index',)

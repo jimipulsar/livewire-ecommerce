@@ -122,19 +122,8 @@ class FrontEndController extends Controller
 
     public function mainCategory()
     {
-        $pagination = 15;
         $segment = Request::segment(count(Request::segments()));
-//        dd($categoryName);
         $ucFirst = str_replace('', '', strtolower($segment));
-//
-//        $products = Product::query()->with('categories')
-//            ->leftJoin('category_product', 'category_product.product_id', '=', 'products.id')
-//            ->join('categories', 'categories.id', '=', 'category_product.category_id')
-//            ->select('products.*', 'category_product.*', 'categories.*')
-//            ->where([
-//                ['category_slug', '=', $ucFirst],
-//            ])
-//            ->paginate($pagination);
 
         return view('pages.categories', [
             'ucFirst' => $ucFirst
@@ -143,14 +132,10 @@ class FrontEndController extends Controller
     }
     public function categoryPage($categoryId, $categoryName)
     {
-        $pagination = 15;
         $segment = Request::segment(count(Request::segments()));
-//        $categoryId = \request()['categoryId'];
-//        $categoryName = \request()['categoryName'];
 
         $ucFirst = str_replace('', '', strtolower($segment));
         $categoryName = str_replace('-', ' ', ucFirst($segment));
-//        dd($categoryName);
 
         return view('pages.categories', [
             'ucFirst' => $ucFirst,

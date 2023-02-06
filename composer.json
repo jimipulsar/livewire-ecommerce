@@ -19,7 +19,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "laravelcollective/html": "^6.2",
-        "livewire/livewire": "^2.10",
+        "livewire/livewire": "*",
         "maatwebsite/excel": "^3.1",
         "renatomarinho/laravel-page-speed": "^2.1",
         "stripe/stripe-php": "^7.100",

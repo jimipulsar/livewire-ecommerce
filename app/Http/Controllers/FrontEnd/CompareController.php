@@ -11,7 +11,6 @@ class CompareController extends Controller
 
     public function compare($lang)
     {
-//        dd(session()->get('compare'));
         return view('pages.compare', [
             'products' => getProducts(),
         ]);
