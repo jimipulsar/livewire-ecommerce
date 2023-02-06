@@ -56,7 +56,6 @@ class AdminProduct extends Component
         $this->applyCategoryFilter($items);
 
         $items = $items->orderBy($this->sortByColumn(), $this->sortDirection())
-            ->where('published', '=', '1')
             ->whereBetween('price', [$this->min, $this->max])
             ->paginate($this->perPage);
 
@@ -160,19 +159,4 @@ class AdminProduct extends Component
         return $this->sortDirection === 'asc' ? 'desc' : 'asc';
     }
 
-
-    public function loadMore20()
-    {
-        $this->perPage = 20;
-    }
-
-    public function loadMore50()
-    {
-        $this->perPage = 50;
-    }
-
-    public function loadMore100()
-    {
-        $this->perPage = 100;
-    }
 }

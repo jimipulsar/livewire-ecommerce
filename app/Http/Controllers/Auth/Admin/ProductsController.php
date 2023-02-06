@@ -47,6 +47,7 @@ class ProductsController extends Controller
     public function create($lang)
     {
         $product = Product::all();
+
         $subCategories = Category::with('parentCategory')
             ->whereHas('parentCategory')
             ->get();
@@ -54,7 +55,7 @@ class ProductsController extends Controller
             ->where('parent_id', '=', null)
             ->get();
         $product->shippable = \request()->input('shippable');
-
+//        dd(\request()->input('shippable') );
         return view('auth.admin.products.create', [
             'product' => $product,
             'subCategories' => $subCategories,
@@ -92,6 +93,7 @@ class ProductsController extends Controller
         $product->stock_qty = \request()->input('stock_qty');
         $product->price = str_replace(',', '.', \request()->input('price'));
         $product->shippable = \request()->input('shippable');
+        $product->published = \request()->input('published');
 //        $product->color = \request()->input('color', []);
         if (\request()->hasFile('img_01')) {
             $image = \request()->file('img_01');
@@ -215,6 +217,8 @@ class ProductsController extends Controller
             'stock_qty' => \request()->input('stock_qty'),
             'price' => str_replace(',', '.', \request()->input('price')),
             'shippable' => \request()->input('shippable'),
+            'published' => \request()->input('published'),
+
 //            'color' => \request()->input('color', [])
 
         ]);
