@@ -54,7 +54,7 @@ class NewsletterController extends Controller
         $newsletterId->save();
 
         Mail::to($newsletterId->emailSubscription)->send(new NewsletterMail($newsletterId));
-        $user = User::find(2);
+        $user = User::find(1);
 
         $details = [
             'greeting' => 'Hai ricevuto una nuova iscrizione alla newsletter dal sito web jimipulsar@github.com',

@@ -76,7 +76,7 @@ class RegisterController extends Controller
         Mail::to('jimipulsar@github.com')
             ->send(new SignUpMail($user));
 
-        $userAdmin = User::find(2);
+        $userAdmin = User::find(1);
 
         $details = [
             'greeting' => 'Hai ricevuto una nuova registrazione dal sito web jimipulsar@github.com',
