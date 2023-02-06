@@ -13,7 +13,7 @@ return [
         '1' => 'Machine tools equipment',
         '2' => 'Livewire Ecommerce offers a wide range of equipment for machine tools. Vices,spindles, adapters, pliers, magnetic tables and lifters, tailstocks, systems for thermal shrinking of tools, micro-point markers, presetting, rotary tables',
         '3' => 'Bronzes from mechanical working',
-        '4' => 'MABRO srl sells bronzes from mechanical processing such as bronze B10, B14, bronze-aluminum of any shape and size. We also realize bronze castings on your models and supply electrolytic copper for EDM and brass.',
+        '4' => 'Livewire Ecommerce sells bronzes from mechanical processing such as bronze B10, B14, bronze-aluminum of any shape and size. We also realize bronze castings on your models and supply electrolytic copper for EDM and brass.',
         '5' => 'Marking technology',
         '6' => 'The incisions are made by the deformation of the material by the marker roller. After the roller is pressed against the piece, it rotates until the text to be marked is completed',
     ],
