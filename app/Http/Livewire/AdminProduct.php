@@ -114,7 +114,8 @@ class AdminProduct extends Component
     private function applySearchFilter($items)
     {
         if ($this->searchTerm) {
-            return $items->whereRaw("item_name LIKE \"%$this->searchTerm%\"");
+            return $items->whereRaw("item_name LIKE \"%$this->searchTerm%\"")
+            ->orWhereRaw("item_code LIKE \"%$this->searchTerm%\"");
 
         }
 
