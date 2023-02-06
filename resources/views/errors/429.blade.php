@@ -1,5 +1,12 @@
-@extends('errors::minimal')
 
-@section('title', __('Too Many Requests'))
+@extends('errors::illustrated-layout')
+
 @section('code', '429')
-@section('message', __('Too Many Requests'))
+@section('title', __('Too Many Requests'))
+
+@section('image')
+<div style="background-image: url({{ asset('/svg/403.svg') }});" class="absolute pin bg-cover bg-no-repeat md:bg-left lg:bg-center">
+</div>
+@endsection
+
+@section('message', __('Siamo spiacenti, stai facendo troppe richieste ai nostri server.'))

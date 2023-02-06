@@ -17,7 +17,7 @@ class AdminProduct extends Component
     ];
 
     public $category;
-    public $search;
+    public $searchTerm;
     public $filters = [];
     public $perPage = 20;
     public $sort = 'created_at|desc';
@@ -36,7 +36,7 @@ class AdminProduct extends Component
     }
 
     /*
-     * Reset pagination when doing a search
+     * Reset pagination when doing a searchTerm
      */
     public function updatingSearch()
     {
@@ -47,22 +47,22 @@ class AdminProduct extends Component
     {
         $min_price = Product::min('price');
         $max_price = Product::max('price');
-        $products = Product::with('categories')->withCount('categories');
+        $items = Product::with('categories')->withCount('categories');
 
         $uniqueCategories = $this->getCategories();
 
-        $this->applySearchFilter($products->orderBy($this->sortColumnName, $this->sortDirection));
+        $this->applySearchFilter($items->orderBy($this->sortColumnName, $this->sortDirection));
 
-        $this->applyCategoryFilter($products);
+        $this->applyCategoryFilter($items);
 
-        $products = $products->orderBy($this->sortByColumn(), $this->sortDirection())
+        $items = $items->orderBy($this->sortByColumn(), $this->sortDirection())
             ->where('published', '=', '1')
             ->whereBetween('price', [$this->min, $this->max])
             ->paginate($this->perPage);
 
         return view('livewire.admin-product', [
 //            'products' => Product::orderBy('created_at')->get(),
-            'products' => $products,
+            'items' => $items,
             'uniqueCategories' => $uniqueCategories,
             'min_price' => $min_price,
             'max_price' => $max_price
@@ -111,23 +111,22 @@ class AdminProduct extends Component
         return $sort[1] ?? 'asc';
     }
 
-    private function applySearchFilter($products)
+    private function applySearchFilter($items)
     {
-        if ($this->search) {
-            return $products->whereRaw("item_name LIKE \"%$this->search%\"")
-                ->orWhereRaw("item_code LIKE \"%$this->search%\"");
+        if ($this->searchTerm) {
+            return $items->whereRaw("item_name LIKE \"%$this->searchTerm%\"");
 
         }
 
         return null;
     }
 
-    private function applyCategoryFilter($products)
+    private function applyCategoryFilter($items)
     {
         if ($this->filters) {
 
             foreach ($this->filters as $filter) {
-                $products->whereHas('categories', function ($query) use ($filter) {
+                $items->whereHas('categories', function ($query) use ($filter) {
                     $query->where('categories.id', $filter);
                 });
             }
