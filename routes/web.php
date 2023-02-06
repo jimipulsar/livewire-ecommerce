@@ -29,12 +29,8 @@ use Livewire\Controllers\HttpConnectionHandler;
 */
 
 Route::view('/', 'pages.index')->name('index');
-//Route::any('/search',[FrontEndController::class, 'search'])->name('search');
-//Route::any('/search-shop', [FrontEndController::class, 'searchShop'])->name('searchShop');
-//Route::any('/product-shop', [FrontEndController::class, 'productShop'])->name('product.shop');
 Route::get(__('routes.category'), [FrontEndController::class, 'mainCategory'])->name('mainCategory');
 Route::get(__('routes.categoryID'), [FrontEndController::class, 'categoryPage'])->name('categoryPage');
-
 Route::get(__('routes.searchCategory'), [FrontEndController::class, 'searchCategory'])->name('searchCategory');
 Route::get(__('routes.about'), [FrontEndController::class, 'about'])->name('about');
 Route::get(__('routes.brands'), [FrontEndController::class, 'brands'])->name('brands');
@@ -46,7 +42,6 @@ Route::get(__('routes.products'), [FrontEndController::class, 'show'])->name('sh
 Route::get(__('routes.shop'), [FrontEndController::class, 'shop'])->name('shop.index');
 Route::view(__('routes.spare'), 'pages.spare-parts')->name('spare');
 
-//Route::view(__('/filter'), 'pages.filter')->name('filter');
 Route::post('livewire/message/{name}', [HttpConnectionHandler::class, '__invoke']);
 
 Auth::routes();
@@ -71,17 +66,12 @@ Route::get(__('routes.compare'), [CompareController::class, 'compare'])->name('c
 Route::get(env('APP_ADMIN_URL'),[AdminController::class, 'getLogin'])->name('adminLogin');
 Route::post(env('APP_ADMIN_URL'), [AdminController::class, 'postLogin'])->name('adminLoginPost');
 
-Route::view(__('routes.terms'), 'pages.conditions')->name('conditions');
-
 Route::post('send/product-request', [SendMailController::class, 'sendProduct'])->name('sendProduct');
 
 Route::post('send/contact/form', [SendMailController::class, 'sendmail'])->name('sent');
 Route::get('send/status/{status}', [SendMailController::class, 'sendSuccess'])->name('success');
 
 Route::post('/newsletter', [NewsletterController::class, 'store'])->name('newRegistration');
-//Route::any('/unsubscribe/{id?}', [NewsletterController::class, 'unsubscribe'])->name('subscribers.delete');
-
-//Route::get('/home', [LoginController::class, 'showLoginForm'])->name('home');
 
 Route::group(['middleware' => 'customer'], function () {
     Route::get('/home', [LoginController::class, 'showLoginForm'])->name('home');
