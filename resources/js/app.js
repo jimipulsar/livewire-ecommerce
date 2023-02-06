@@ -4,10 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-
 require('./bootstrap');
 import Alpine from 'alpinejs';
-
 window.Alpine = Alpine;
 
 Alpine.start();

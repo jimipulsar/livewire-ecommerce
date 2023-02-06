@@ -147,8 +147,8 @@
                                             <tr>
                                                 <td>
                                                     <div class="item-desc-1">
-                                                        <span>{{ $item->product->name}}</span>
-                                                        <small>SKU: {{ $item->product->ItemCode}}</small>
+                                                        <span>{{ $item->product->item_name}}</span>
+                                                        <small>SKU: {{ $item->product->item_code}}</small>
                                                     </div>
                                                 </td>
                                                 <td class="text-center">€ {{ price($item->price) }}</td>

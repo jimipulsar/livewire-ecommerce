@@ -21,6 +21,7 @@
         "laravelcollective/html": "^6.2",
         "livewire/livewire": "*",
         "maatwebsite/excel": "^3.1",
+        "rappasoft/laravel-livewire-tables": "^2.10",
         "renatomarinho/laravel-page-speed": "^2.1",
         "stripe/stripe-php": "^7.100",
         "tinymce/tinymce": "^6.0"

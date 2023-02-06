@@ -25,6 +25,7 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/assets/vendor/animate.css/animate.min.css">
     <x-head.tinymce-config/>
+    @livewireStyles
 </head>
 <body>
 <script src="{{ asset('js/app.js') }}"></script>
@@ -127,5 +128,10 @@
     });
 </script>
 @yield('javascript')
+<livewire:scripts/>
+<script>
+    window.livewire_app_url = '{{route('index', app()->getLocale())}}';
+</script>
+<script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v0.x.x/dist/livewire-sortable.js"></script>
 </body>
 </html>
