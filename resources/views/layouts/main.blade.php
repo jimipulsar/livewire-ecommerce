@@ -73,19 +73,6 @@
 <script src="/assets/js/switchCheckout.js"></script>
 <script src="//unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
 <script src="//unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-{{--@if ($errors->any())--}}
-{{--    @foreach ($errors->all() as $error)--}}
-{{--        <script type="text/javascript">--}}
-{{--            swal("oOops!", "{{$error}}", "error");--}}
-{{--        </script>--}}
-{{--    @endforeach--}}
-{{--@endif--}}
-
-{{--@if ($message = Session::get('success'))--}}
-{{--    <script type="text/javascript">--}}
-{{--        swal("Messaggio inviato con successo", "{{$message}}", "success")--}}
-{{--    </script>--}}
-{{--@endif--}}
 <livewire:scripts/>
 <script>
     window.livewire_app_url = '{{route('index', app()->getLocale())}}';
