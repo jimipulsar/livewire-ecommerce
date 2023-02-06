@@ -123,7 +123,7 @@
         $(window).load(function () {
             setTimeout(function () {
                 $('#hideMeBack').fadeOut()
-            }, 6000);
+            }, 10000);
         });
     });
 </script>

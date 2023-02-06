@@ -143,7 +143,7 @@
                             <td class="px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500">
 
                                     <span
-                                            class="text-gray-900 font-medium">{{ price($order->grand_total)}} </span>
+                                            class="text-gray-900 font-medium">€ {{ price($order->grand_total)}} </span>
                             </td>
                             @if($order->status == 'completed')
                                 <td class="px-6 py-4 text-center whitespace-nowrap text-sm text-gray-500">

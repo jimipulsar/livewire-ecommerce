@@ -125,14 +125,22 @@ class ProductsController extends Controller
             $file->move($pathFile, $fileName);
             $product->attachment = $fileName;
         }
-        $product->save();
-        $product->categories()->sync(\request()->input('categories', []));
-        $product->attributes()->sync(\request()->input('attributes', []));
 
-        return redirect()->route('products.index', app()->getLocale()
-        )->with([
-            'product' => $product
-        ])->with('success', 'Prodotto creato con successo!');
+        try {
+            $product->save();
+            $product->categories()->sync(\request()->input('categories', []));
+            $product->attributes()->sync(\request()->input('attributes', []));
+
+            return redirect()->route('products.index', app()->getLocale()
+            )->with([
+                'product' => $product
+            ])->with('success', 'Prodotto creato con successo!');
+        } catch (\Throwable $e) {
+
+            return back()->withErrors('Errore! ' . $e->getMessage());
+        }
+
+
     }
 
     /**
@@ -250,12 +258,19 @@ class ProductsController extends Controller
             $file->move($pathFile, $fileName);
             $product->attachment = $fileName;
         }
-        $product->categories()->sync(\request()->input('categories', []));
-        $product->save();
-        return redirect()->route('products.index', app()->getLocale()
-        )->with([
-            'product' => $product
-        ])->with('success', 'Prodotto modificato con successo!');
+        try {
+            $product->categories()->sync(\request()->input('categories', []));
+            $product->save();
+            return redirect()->route('products.index', app()->getLocale()
+            )->with([
+                'product' => $product
+            ])->with('success', 'Prodotto modificato con successo!');
+        } catch (\Throwable $e) {
+
+            return back()->withErrors('Errore! ' . $e->getMessage());
+        }
+
+
     }
 
     /**

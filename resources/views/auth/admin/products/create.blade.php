@@ -24,8 +24,7 @@
                                         Articolo</label>
                                     <input type="text" name="item_code" id="item_code"
                                            autocomplete="item_code"
-                                           class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                    ">
+                                           class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                 </div>
 
                                 <div class="col-span-2 sm:col-span-1">
