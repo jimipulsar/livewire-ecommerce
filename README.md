@@ -11,6 +11,10 @@ Using laravel 8 as an admin panel for the site.
 You can simulate purchase product with Stripe PAYMENT integration
     
 Javascript, Jquery, Tailwind CSS, Bootstrap and css for the front-end.
+
+Excel Import/Export on Products.
+
+LOG Monitoring Access on Admin & Customers.
     
 Intelligent searching mechanism for products.
     
