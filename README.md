@@ -6,11 +6,9 @@
 
 Fully functional E-commerce website front-end and back-end.
 
-Using laravel 8 as an admin panel for the site.
+Using Tailwind CSS, Alpine JS and Livewire as an Admin panel for the website management and product search.
 
 You can simulate purchase product with Stripe PAYMENT integration
-    
-Javascript, Jquery, Tailwind CSS, Bootstrap and css for the front-end.
 
 Excel Import/Export on Products.
 
@@ -20,9 +18,11 @@ Intelligent searching mechanism for products.
     
 Awesome Cart package that uses session with Coupon Discount application.
     
-An artisan command to seed the database with all neccessary dummy data.
+An artisan command to seed the database with all necessary dummy data.
     
-Different user roles and privileges.
+Different user roles and privileges with multiple authentication guard 
+
+Multi-Language Integration with Laravel Localization.
     
 Categories, tags and price filtering for easier search for products.
     
