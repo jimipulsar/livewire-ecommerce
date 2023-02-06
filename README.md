@@ -1,4 +1,4 @@
-<p align="center"><a href="#" target="_blank"><img src="public/uploads/logo/laravel-livewire.jpg" width="860"><br><img src="public/uploads/logo/stripe.webp" width="860"></a></p>
+<p align="center"><img src="public/uploads/logo/laravel-livewire.jpg" width="860"><br></p>
 
 ## E-commerce Laravel Full-Stack - Ecommerce + Stripe payment integration
 
@@ -27,7 +27,7 @@ Different user roles and privileges.
 Categories, tags and price filtering for easier search for products.
     
 And much more features.
-
+<p align="center"><img src="public/uploads/logo/stripe.webp" width="860"><br></p>
 
 ### START (LARAVEL WEB SITE) LOCAL DEV [LIVEWIRE E-COMMERCE PLATFORM]
 
