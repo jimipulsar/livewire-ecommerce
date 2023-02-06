@@ -6,7 +6,7 @@ return [
     ],
 
     'title' => [
-        '1' => 'Mabro S.r.l. since 2002 has been a member of the',
+        '1' => 'Livewire Ecommerce  since 2002 has been a member of the',
         '2' => 'CDU THE TOOL DISTRIBUTORS CONSORTIUM',
     ],
     'container' => [

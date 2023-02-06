@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Admin Dashboard | {{ config('app.name', 'Mabro') }}</title>
+    <title>Admin Dashboard | {{ config('app.name', 'Livewire ') }}</title>
     <script src="{{ asset('js/app.js') }}"></script>
     <meta name="robots" content="noindex, nofollow">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
