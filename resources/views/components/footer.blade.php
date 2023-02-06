@@ -125,7 +125,7 @@
                                      alt=""/><strong>Telefono:</strong><span><a href="tel:0152 254 212 22"> 0152 254 212 22</a> </span>
                             </li>
                             <li><img src="/assets/imgs/theme/icons/icon-email-2.svg"
-                                     alt=""/><strong>Email:</strong><span> admin@admin.com</span></li>
+                                     alt=""/><strong>Email:</strong><span> jimipulsar@github.com</span></li>
                             {{--                            <li><img src="/assets/imgs/theme/icons/icon-clock.svg" alt=""/><strong>Hours:</strong><span>10:00 - 18:00, Mon - Sat</span>--}}
                             {{--                            </li>--}}
                         </ul>

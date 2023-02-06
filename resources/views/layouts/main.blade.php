@@ -53,7 +53,7 @@
 {{--    </div>--}}
 {{--</div>--}}
 
-@yield('extraJs')
+
 <!-- Vendor JS-->
 <script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script>
 <script src="/assets/js/vendor/jquery-3.6.0.min.js"></script>
@@ -61,12 +61,11 @@
 <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script>
 <script src="/assets/js/plugins/slick.js"></script>
 <script src="/assets/js/plugins/jquery.syotimer.min.js"></script>
+<script src="/assets/js/plugins/waypoints.js"></script>
 <script src="/assets/js/plugins/wow.js"></script>
-<script src="/assets/js/plugins/slider-range.js"></script>
 <script src="/assets/js/plugins/perfect-scrollbar.js"></script>
 <script src="/assets/js/plugins/magnific-popup.js"></script>
 <script src="/assets/js/plugins/select2.min.js"></script>
-<script src="/assets/js/plugins/waypoints.js"></script>
 <script src="/assets/js/plugins/counterup.js"></script>
 <script src="/assets/js/plugins/jquery.countdown.min.js"></script>
 <script src="/assets/js/plugins/images-loaded.js"></script>
@@ -83,6 +82,7 @@
 <script src="/assets/js/switchCheckout.js"></script>
 <script src="//unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
 <script src="//unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@yield('extraJs')
 {{--@if ($errors->any())--}}
 {{--    @foreach ($errors->all() as $error)--}}
 {{--        <script type="text/javascript">--}}
