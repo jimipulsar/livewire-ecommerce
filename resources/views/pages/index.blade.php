@@ -22,9 +22,9 @@
                          style="background-image: url('/uploads/slider/slider2.jpg')">
                         <div class="slider-content">
                             <h2 class="display-2 mb-40">
-                                Attrezzature
+                                Deal of the Day
                             </h2>
-                            <p class="mb-65">Attrezzature per pasticceria e panificazione </p>
+                            <p class="mb-65">Organic fruit for your family's health </p>
                             <a href="{{route('shop.index', app()->getLocale())}}" class="btn btn-lg">Purchase now<i
                                         class="fi-rs-arrow-small-right"></i></a>
 
@@ -34,11 +34,11 @@
                          style="background-image: url('/uploads/slider/slider3.jpg')">
                         <div class="slider-content">
                             <h2 class="display-2 mb-40">
-                                Materie prime<br/>
-                                selezionate
+                                Dont' miss amazing<br/>
+                                grocery deals
                             </h2>
-                            <p class="mb-65">Tante soluzioni per Panifici, Pasticcerie, le Pizzerie, Gelaterie e
-                                Ristoranti</p>
+                            <p class="mb-65">Many solutions for bakeries, pastry shops, pizzerias, ice cream parlors and
+                                Restaurants</p>
                             <a href="{{route('shop.index', app()->getLocale())}}" class="btn btn-lg">Purchase now<i
                                         class="fi-rs-arrow-small-right"></i></a>
                         </div>

@@ -26,7 +26,9 @@ body {
 .goog-te-gadget {
     color: transparent !important;
 }
-
+.goog-te-combo {
+    display: none !important;
+}
 .goog-te-gadget .goog-te-combo {
     color: blue !important;
 }
@@ -36,7 +38,7 @@ body {
 }
 
 #google_translate_element a {
-    display: none;
+    display: none !important;
 }
 
 #goog-gt-tt {
@@ -235,7 +237,7 @@ h5 {
 
     li.page-item {
 
-        display: none;
+        display: none !important;
     }
 
     .page-item:first-child,
@@ -260,7 +262,7 @@ h5 {
 {
     background: rgba( 255, 255, 255, 0.8 );
     background-size:cover;
-    display: none;
+    display: none !important;
     position: fixed;
     left: 0;
     top: 0;
