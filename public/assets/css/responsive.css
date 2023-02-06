@@ -1,11 +1,16 @@
 #google_translate_element {
     display: none !important;
 }
-
+.text-body {
+    font-size: 20px !important;
+}
 .goog-te-banner-frame.skiptranslate {
     display: none !important;
 }
-
+i[class^="fi-rs-"], span[class^="fi-rs-"] {
+    line-height: 0 !important;
+    font-size: 22px !important;
+}
 body {
     top: 0 !important;
 }
