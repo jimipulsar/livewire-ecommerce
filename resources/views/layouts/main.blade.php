@@ -19,6 +19,9 @@
     <!-- WebFont.js -->
     <!-- Template CSS -->
     <style>
+        .header-info > ul > li a i {
+            font-size: 12px !important;
+        }
         .VIpgJd-ZVi9od-ORHb-OEVmcd {
             display:none !important;
         }
