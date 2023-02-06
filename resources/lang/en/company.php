@@ -2,7 +2,7 @@
 return [
     'seo' => [
         'title' => 'Company | Accessories and devices ',
-        'description' => 'Grifo Ferramenta offers a wide range of equipment for machine tools. Visit our E-shop',
+        'description' => 'Livewire Ecommerce offers a wide range of equipment for machine tools. Visit our E-shop',
     ],
 
     'title' => [
