@@ -1,7 +1,7 @@
 <?php
 return [
     'seo' => [
-        'title' => 'Carrello | Accessori e dispositivi | Perugia',
+        'title' => 'Carrello | Accessori e dispositivi ',
         'description' => 'Marche prestigiose, prodotti diversi e innovativi. Le soluzioni più appropriate in base ai vostri desideri.',
     ],
     'subTot' => 'Subtotale',

@@ -1,8 +1,8 @@
 <?php
 return [
     'seo' => [
-        'title' => 'Cart | Accessories and devices | Perugia',
-        'description' => 'MABRO S.r.l. offers a wide range of equipment for machine tools.  Visit our E-shop',
+        'title' => 'Cart | Accessories and devices ',
+        'description' => 'Livewire Ecommerce offers a wide range of equipment for machine tools.  Visit our E-shop',
     ],
     'subTot' => 'Subtotal',
     'vat' => 'VAT',

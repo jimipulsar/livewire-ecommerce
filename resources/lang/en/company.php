@@ -1,7 +1,7 @@
 <?php
 return [
     'seo' => [
-        'title' => 'Company | Accessories and devices | Perugia',
+        'title' => 'Company | Accessories and devices ',
         'description' => 'Grifo Ferramenta offers a wide range of equipment for machine tools. Visit our E-shop',
     ],
 
@@ -11,7 +11,7 @@ return [
     ],
     'container' => [
         '1' => 'Machine tools equipment',
-        '2' => 'MABRO S.r.l. offers a wide range of equipment for machine tools. Vices,spindles, adapters, pliers, magnetic tables and lifters, tailstocks, systems for thermal shrinking of tools, micro-point markers, presetting, rotary tables',
+        '2' => 'Livewire Ecommerce offers a wide range of equipment for machine tools. Vices,spindles, adapters, pliers, magnetic tables and lifters, tailstocks, systems for thermal shrinking of tools, micro-point markers, presetting, rotary tables',
         '3' => 'Bronzes from mechanical working',
         '4' => 'MABRO srl sells bronzes from mechanical processing such as bronze B10, B14, bronze-aluminum of any shape and size. We also realize bronze castings on your models and supply electrolytic copper for EDM and brass.',
         '5' => 'Marking technology',

@@ -1,7 +1,7 @@
 <?php
 return [
     'seo' => [
-        'title' => 'Accessories and devices | Perugia',
+        'title' => 'Accessories and devices ',
         'description' => 'We offer different and innovative products, and always keeping in mind your wishes we are able to recommend the most appropriate solutions.',
     ],
     'code' => 'Item Code',

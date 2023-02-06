@@ -2,7 +2,7 @@
 return [
     'seo' => [
         'title' => 'News',
-        'description' => 'La famiglia Livewire opera nel settore dell’arte bianca da generazioni.',
+        'description' => 'Servizi utili nel settore della ristorazione',
     ],
     'latest' => 'Ultimi articoli',
 ];

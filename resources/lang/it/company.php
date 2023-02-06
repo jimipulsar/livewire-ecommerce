@@ -1,19 +1,19 @@
 <?php
 return [
     'seo' => [
-        'title' => 'L\'azienda | Accessori e dispositivi | Perugia',
+        'title' => 'L\'azienda | Accessori e dispositivi ',
         'description' => 'Livewire Ecommerce, proprietaria di un panificio-pasticceria fino al 1987 e anche di un pastificio artigianale riconvertitosi nel dopoguerra in ingrosso di lievito di birra e macchinari per panifici.',
     ],
 
     'title' => [
-        '1' => 'La Mabro S.r.l. dal 2002 è membro del CDU',
+        '1' => 'membro del CDU',
         '2' => 'IL CONSORZIO DISTRIBUTORI UTENSILI',
     ],
     'container' => [
         '1' => 'Attrezzature macchine utensili',
-        '2' => 'MABRO S.r.l. offre una vasta gamma di attrezzature per macchine utensili. Morse, mandrini, adattatori, pinze, piani e sollevatori magnetici, contropunte, sistemi per il calettamento termico degli utensili, marcatrici a micropunti, presetting, tavole girevoli.',
+        '2' => 'Livewire Ecommerce offre una vasta gamma di attrezzature per macchine utensili. Morse, mandrini, adattatori, pinze, piani e sollevatori magnetici, contropunte, sistemi per il calettamento termico degli utensili, marcatrici a micropunti, presetting, tavole girevoli.',
         '3' => 'BRONZI DA LAVORAZIONE MECCANICA',
-        '4' => 'MABRO S.r.l. commercializza bronzi da lavorazioni meccanica come bronzo B10, B14, bronzo-alluminio di qualsiasi forma e dimensione. Realizziamo anche fusioni in bronzo su vostri modelli. Si fornisce inoltre rame elettrolitico per elettroerosione e ottone.',
+        '4' => 'Livewire Ecommerce commercializza bronzi da lavorazioni meccanica come bronzo B10, B14, bronzo-alluminio di qualsiasi forma e dimensione. Realizziamo anche fusioni in bronzo su vostri modelli. Si fornisce inoltre rame elettrolitico per elettroerosione e ottone.',
         '5' => 'TECNOLOGIA DELLA MARCATURA',
         '6' => 'Le incisioni vengono eseguite per deformazione del materiale da parte del rullo marcatore. Dopo che il rullo viene premuto contro il pezzo questo ruota fino a completare il testo da marcare.',
     ],

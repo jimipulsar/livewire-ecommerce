@@ -1,7 +1,7 @@
 <?php
 return [
     'seo' => [
-        'title' => 'Checkout | Accessories and devices | Perugia',
+        'title' => 'Checkout | Accessories and devices ',
         'description' => 'Make your home smarter, choose from the best devices and accessories. Visit our online shop.',
     ],
 

@@ -1,7 +1,7 @@
 <?php
 return [
     'seo' => [
-        'title' => 'Accessori e dispositivi | Perugia',
+        'title' => 'Accessori e dispositivi ',
         'description' => 'Rendi la tua casa più smart, scegli tra i migliori dispositivi e accessori. Visita il nostro negozio on-line.',
     ],
     'code' => 'Codice Articolo',
