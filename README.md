@@ -43,7 +43,7 @@ And much more features.
 
 ## ADMIN LOGIN PANEL
 
-    ADMIN PANEL URL: http://localhost:8000/en/TyRLsvMqw
+    ADMIN PANEL URL: http://localhost:8000/it/TyRLsvMqw
 
     username: jimipulsar@github.com
     password: 123pie456
