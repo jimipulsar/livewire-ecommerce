@@ -16,8 +16,7 @@
                                     <label for="item_name"
                                            class="block my-2 text-sm font-medium text-gray-700">Nome Articolo</label>
                                     <input type="text" name="item_name" id="item_name"
-                                           class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                    >
+                                           class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                                 </div>
 
                                 <div class="col-span-2 sm:col-span-2">
@@ -33,7 +32,7 @@
                                     <label for="shippable" class="block my-2 text-sm font-medium text-gray-700">Acquistabile</label>
                                     <div class="mt-4">
                                         <input type="radio" class="form-radio" name="shippable" id="shippable"
-                                               value="1" {{\request()->input('shippable') == '1' ? 'checked' : ''}}>
+                                               value="1" {{\request()->input('shippable') == '1' ? 'checked' : ''}} checked>
                                         <span class="ml-2" style="margin-left:6px;margin-right:10px;">Si</span>
                                         <input type="radio" class="form-radio" name="shippable" id="shippable"
                                                value="0" {{\request()->input('shippable') == '0' ? 'checked' : ''}}>
@@ -47,7 +46,7 @@
                                     <div class="mt-4">
 
                                         <input type="radio" class="form-radio" name="published" id="published"
-                                               value="1" {{\request()->input('published') == '1' ? 'checked' : ''}}>
+                                               value="1" {{\request()->input('published') == '1' ? 'checked' : ''}} checked>
                                         <span class="ml-2" style="margin-left:6px;margin-right:10px;">Si</span>
                                         <input type="radio" class="form-radio" name="published" id="published"
                                                value="0" {{\request()->input('published') == '0' ? 'checked' : ''}}>
@@ -168,8 +167,7 @@
                                         in
                                         €</label>
                                     <input type="text" name="price" id="price"
-                                           class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                    >
+                                           class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                                 </div>
                             </div>
                             <div class="col-span-6 sm:col-span-6">
