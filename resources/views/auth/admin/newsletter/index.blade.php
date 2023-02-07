@@ -38,7 +38,7 @@
                                     x-data="{ 'showModal': false }"
                                     @keydown.escape="showModal = false" id="btRight">
                                     <button type="button" @click="showModal = true" title="Elimina"
-                                            class="ml-3 inline-flex justify-center py-2 px-4 mr-5 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-900 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                            class="px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lgfocus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0active:bg-red-800 active:shadow-lgtransition duration-150 ease-in-out mr-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                         <i class="fas fa-trash-alt"></i></button>
                                 <!-- Modal -->
                                 <div

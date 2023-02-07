@@ -84,8 +84,8 @@
                                   d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3"/>
                         </svg>
                     </th>
-                    <th style="width:350px"
-                        class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                    <th style="width:300px"
+                        class="pr-20 px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                         Azioni
                     </th>
                 </tr>
@@ -149,20 +149,20 @@
                                 € {{ priceView($item->price) }}
                             </td>
 
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-center">
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-end justify-content-end right">
                                 <a data-toggle="tooltip" data-placement="bottom"
-                                   class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-700 hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                                   class="px-4 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                                    title="Visualizza"
                                    href="{{ route('shop.show',[ 'lang'=>app()->getLocale(),$item->id, $item->slug]) }}"
                                    target="_blank" id="btLeft"><i
                                             class="fas fa-eye" title="Visualizza"></i></a>
-                                <a class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-700 hover:bg-green-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                                <a class="px-4 py-2.5 ml-2 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out"
                                    href="{{ route('products.duplicate',[ 'lang'=>app()->getLocale(),$item->id]) }}"
                                    data-toggle="tooltip" data-placement="bottom" title="Duplica" id="btLeft"><i
                                             class="far fa-copy"></i></a>
 
                                 <a data-toggle="tooltip" data-placement="bottom"
-                                   class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-yellow-500 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                                   class="px-4 py-2.5 ml-2 bg-yellow-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-700 hover:shadow-lg focus:bg-yellow-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-800 active:shadow-lg transition duration-150 ease-in-out"
                                    title="Modifica"
                                    href="{{ route('products.edit',['lang' => app()->getLocale(), $item->id]) }}"
                                    id="btLeft"><i
@@ -171,7 +171,7 @@
                                         x-data="{ 'showModal': false }"
                                         @keydown.escape="showModal = false" id="btLeft">
                                     <button type="button" @click="showModal = true" title="Elimina"
-                                            class="ml-3 inline-flex justify-center py-2 px-4 mr-5 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-900 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                            class="px-4 py-2.5 ml-2 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lgfocus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0active:bg-red-800 active:shadow-lgtransition duration-150 ease-in-out mr-4">
                                         <i class="fas fa-trash-alt"></i></button>
                                     <!-- Trigger for Modal -->
 
