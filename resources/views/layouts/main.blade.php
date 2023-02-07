@@ -60,9 +60,18 @@
 </main>
 <x-footer></x-footer>
 <!-- Preloader Start -->
-
-@yield('extraJs')
+{{--<div id="preloader-active">--}}
+{{--    <div class="preloader d-flex align-items-center justify-content-center">--}}
+{{--        <div class="preloader-inner position-relative">--}}
+{{--            <div class="text-center">--}}
+{{--                <img src="/uploads/logo/loader.gif" alt="Italiani"/>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 <!-- Vendor JS-->
+<script src="/assets/js/loader.js"></script>
+@yield('extraJs')
 <script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script>
 <script src="/assets/js/vendor/jquery-3.6.0.min.js"></script>
 <script src="/assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
@@ -87,13 +96,12 @@
 <script src="/assets/js/main.js?v=5.3"></script>
 <script src="/assets/js/shop.js?v=5.3"></script>
 <script src="/assets/js/hide.js"></script>
-<script src="/assets/js/loader.js"></script>
 <script src="/assets/js/switchCheckout.js"></script>
 <script src="//unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
 <script src="//unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <livewire:scripts/>
 <script>
-    window.livewire_app_url = '{{route('index', app()->getLocale())}}';
+    window.livewire_app_url = '{{route('index', ['lang' => app()->getLocale()])}}';
 </script>
 </body>
 
