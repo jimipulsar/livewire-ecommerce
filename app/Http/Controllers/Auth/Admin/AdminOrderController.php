@@ -140,6 +140,7 @@ class AdminOrderController extends Controller
         $orderId = Order::where('id', $id)->first();
 
         $orderId->status = "decline";
+        $orderId->is_shipped = "0";
         $orderId->update();
         return redirect()->route('dashboard', app()->getLocale())->with('success', 'Hai annullato correttamente un ordine!');
     }

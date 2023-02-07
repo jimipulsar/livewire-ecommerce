@@ -103,7 +103,7 @@
                                 </div>
                                 <div class="product-action-1">
                                     <a aria-label="Aggiungi alla Wishlist" class="action-btn"
-                                       href="{{route('addwishlist', [app()->getLocale(), $p->id])}}"><i
+                                       href="{{route('addwishlist', ['lang' => app()->getLocale(), $p->id])}}"><i
                                                 class="fi-rs-heart"></i></a>
                                     <a aria-label="Confronta" class="action-btn"
                                        href="{{route('addToCompare', ['lang'=>app()->getLocale(), $p->id,$p->slug])}}"><i

@@ -33,15 +33,15 @@
                                   d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3"/>
                         </svg>
                     </th>
-                    <th wire:click.prevent="sortBy('status')" class="px-6 py-3 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th wire:click.prevent="sortBy('is_shipped')" class="px-6 py-3 bg-gray-50 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Stato
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                             stroke="{{ $sortColumnName === 'status' && $sortDirection === 'asc' ? 'black' : 'currentColor' }}" class="w-3 h-3 inline-block">
+                             stroke="{{ $sortColumnName === 'is_shipped' && $sortDirection === 'asc' ? 'black' : 'currentColor' }}" class="w-3 h-3 inline-block">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                   d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18"/>
                         </svg>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                             stroke="{{ $sortColumnName === 'status' && $sortDirection === 'desc' ? 'black' : 'currentColor' }}" class="w-3 h-3 inline-block">
+                             stroke="{{ $sortColumnName === 'is_shipped' && $sortDirection === 'desc' ? 'black' : 'currentColor' }}" class="w-3 h-3 inline-block">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                   d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3"/>
                         </svg>
@@ -66,14 +66,14 @@
                     <tr class="bg-white">
                         <td class="px-6 py-4 text-left whitespace-nowrap text-sm text-gray-500">
                             <div class="flex items-center">
-                                <a href="{{ route('adminOrders.show',[app()->getLocale(), $order->id]) }}"
+                                <a href="{{ route('adminOrders.show',['lang' => app()->getLocale(), $order->id]) }}"
                                    class="group inline-flex space-x-2 truncate text-sm">
                                     <div class="flex-shrink-0 h-10 w-10">
                                         <img class="h-10 w-10" src="/uploads/icon/order.svg"
                                              alt=""/>
                                     </div>
                                 </a>
-                                <a href="{{ route('adminOrders.show',[app()->getLocale(), $order->id]) }}"
+                                <a href="{{ route('adminOrders.show',['lang' => app()->getLocale(), $order->id]) }}"
                                    class="ml-3">
 
 
