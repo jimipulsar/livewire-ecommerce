@@ -24,7 +24,7 @@
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                             Relazioni
                         </th>
-                        <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                        <th style="width: 180px"class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                             Azioni
                         </th>
 
@@ -49,21 +49,20 @@
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ $category->name }}</td>
                             @endif
 
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 right text-right justify-content-end">
                                 <a data-toggle="tooltip" data-placement="bottom"
-                                   class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-yellow-500 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                                   class="px-4 py-2.5 ml-2 bg-yellow-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-700 hover:shadow-lg focus:bg-yellow-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-800 active:shadow-lg transition duration-150 ease-in-out"
                                    title="Modifica"
                                    href="{{ route('categories.edit',['lang' => app()->getLocale(), $category->id]) }}"
                                    id="btLeft"><i
                                             class="fas fa-edit" title="Modifica"></i></a>
-
                                 <div
                                         x-data="{ 'showModal': false }"
-                                        @keydown.escape="showModal = false">
+                                        @keydown.escape="showModal = false" id="btLeft">
                                     <button type="button" @click="showModal = true" title="Elimina"
-                                            class="ml-3 inline-flex justify-center py-2 px-4 mr-5 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-700 hover:bg-red-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                            class="px-4 py-2.5 ml-2 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lgfocus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0active:bg-red-800 active:shadow-lgtransition duration-150 ease-in-out mr-4">
                                         <i class="fas fa-trash-alt"></i></button>
+
                                     <!-- Trigger for Modal -->
 
                                     <!-- Modal -->
