@@ -104,5 +104,4 @@
     window.livewire_app_url = '{{route('index', ['lang' => app()->getLocale()])}}';
 </script>
 </body>
-
 </html>
