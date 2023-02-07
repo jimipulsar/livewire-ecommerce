@@ -23,7 +23,7 @@
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                             Percentuale %
                         </th>
-                        <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                        <th style="width: 100px" class="pl-4 px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                             Azioni
                         </th>
                     </tr>
@@ -59,11 +59,11 @@
                                 <form
                                     action="{{ route('coupon.destroy' ,[ 'lang'=>app()->getLocale(), $coupon->id]) }}"
                                     id="myform" method="post">
-                                        <a data-toggle="tooltip" data-placement="bottom"
-                                           class="ml-3 inline-flex text-right justify-content-end py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                                           title="Modifica"
-                                           href="{{ route('coupon.edit',['lang' => app()->getLocale(), $coupon->id]) }}"
-                                           id="btLeft"><i
+                                    <a data-toggle="tooltip" data-placement="bottom"
+                                       class="px-4 py-2.5 ml-2 bg-yellow-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-700 hover:shadow-lg focus:bg-yellow-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-800 active:shadow-lg transition duration-150 ease-in-out"
+                                       title="Modifica"
+                                       href="{{ route('coupon.edit',['lang' => app()->getLocale(), $coupon->id]) }}"
+                                       id="btLeft"><i
                                                 class="fas fa-edit" title="Modifica"></i></a>
                                     @csrf
 {{--                                    @method('DELETE')--}}
