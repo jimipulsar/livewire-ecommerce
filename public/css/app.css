@@ -833,10 +833,14 @@ video {
   margin-top: 0px;
 }.ml-2 {
   margin-left: 0.5rem;
-}.ml-5 {
-  margin-left: 1.25rem;
+}.mb-6 {
+  margin-bottom: 1.5rem;
 }.mb-0 {
   margin-bottom: 0px;
+}.ml-5 {
+  margin-left: 1.25rem;
+}.mb-7 {
+  margin-bottom: 1.75rem;
 }.mb-80 {
   margin-bottom: 20rem;
 }.ml-0 {
@@ -847,8 +851,6 @@ video {
   margin-right: 0.25rem;
 }.mt-60 {
   margin-top: 15rem;
-}.mb-7 {
-  margin-bottom: 1.75rem;
 }.ml-1 {
   margin-left: 0.25rem;
 }.ml-12 {
@@ -857,8 +859,6 @@ video {
   margin-top: -1px;
 }.mb-1 {
   margin-bottom: 0.25rem;
-}.mb-6 {
-  margin-bottom: 1.5rem;
 }.mr-auto {
   margin-right: auto;
 }.block {
@@ -1359,12 +1359,12 @@ video {
   padding-right: 1rem;
 }.pl-1 {
   padding-left: 0.25rem;
+}.pt-40 {
+  padding-top: 10rem;
 }.pt-0\.5 {
   padding-top: 0.125rem;
 }.pt-0 {
   padding-top: 0px;
-}.pt-40 {
-  padding-top: 10rem;
 }.pb-0 {
   padding-bottom: 0px;
 }.pb-20 {

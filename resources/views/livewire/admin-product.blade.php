@@ -97,7 +97,6 @@
                 <tbody class="bg-white">
 
                     @foreach ($items as $item)
-
                         <tr>
                             @if(file_exists(public_path('storage/images/' .$item->img_01 )) && $item->img_01 != null)
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
@@ -131,20 +130,8 @@
 
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm">
-                                {{ $item->Categoria }}
-                                @if($item->SottoCategoria)
-                                    / {{ $item->SottoCategoria }}
-                                @endif
-                                @foreach($item->categories as $key => $category)
+                                {{ucFirst(productDetails($item->id)['name'])}}
 
-                                    @if($category->parent_id == null)
-                                        {{ ucfirst($category->name) }}
-                                        /
-                                    @endif      @if($category->parent_id != null)
-                                        {{ ucfirst($category->name)  }}
-                                    @endif
-
-                                @endforeach
                             </td>
 
                             @if($item->stock_qty >= 1)
