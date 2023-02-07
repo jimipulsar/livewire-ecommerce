@@ -14,9 +14,6 @@
 {{--                        <button type="submit" class="btn px-6  py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg focus:bg-blue-900  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out  absolute right-2.5 bottom-2.5">Cerca</button>--}}
                     </div>
                 </form>
-{{--                <form>--}}
-{{--                    <input wire:model="searchTerm" type="text" placeholder="Cerca prodotto">--}}
-{{--                </form>--}}
             </div>
         </div>
         <div class="my-4">
