@@ -127,7 +127,12 @@
 
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm">
-                                {{ucFirst(productDetails($item->id)['name'])}}
+                                @foreach($item->categories as $key => $category)
+
+                                    @if($category->parent_id == null){{ ucfirst($category->name) }}
+                                    / @endif      @if($category->parent_id != null){{ ucfirst($category->name)  }}@endif
+
+                                @endforeach
 
                             </td>
 

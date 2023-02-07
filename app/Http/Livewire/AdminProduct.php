@@ -50,7 +50,14 @@ class AdminProduct extends Component
         $items = Product::with('categories')->withCount('categories');
 
         $uniqueCategories = $this->getCategories();
-
+//        Product::query()
+//            ->leftJoin('category_product', 'category_product.product_id', '=', 'products.id')
+//            ->leftJoin('categories', 'categories.id', '=', 'category_product.category_id')
+//            ->select('products.*', 'categories.*', 'category_product.*')
+//            ->where([
+//                ['category_product.product_id', '=', $id],
+//            ])
+//            ->first()->toArray();
         $this->applySearchFilter($items->orderBy($this->sortColumnName, $this->sortDirection));
 
         $this->applyCategoryFilter($items);
