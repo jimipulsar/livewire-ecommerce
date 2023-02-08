@@ -94,7 +94,9 @@ body {
 .main-menu > nav > ul > li.active > a:not(.main-menu) {
     color: #DFA56B !important;
 }
-
+#headerLogo {
+    height: 180px !important;
+}
 .header-style-1 .search-style-2 form input {
     max-width: 667px !important;
 }

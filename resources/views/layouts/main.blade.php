@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -37,10 +36,9 @@
     <link rel="stylesheet" href="/assets/css/plugins/slider-range.css"/>
     <link rel="stylesheet" href="/assets/css/main.css?v=5.3"/>
     <link rel="stylesheet" href="/assets/vendor/animate/animate.min.css">
-    <livewire:styles/>
     <script src='https://www.google.com/recaptcha/api.js'></script>
+    <livewire:styles/>
 </head>
-
 <body>
 <!-- Quick view -->
 <x-auto-translate></x-auto-translate>
@@ -49,7 +47,6 @@
 <!-- Modal -->
 <!-- Quick view -->
 <x-header></x-header>
-
 <!--End header-->
 <main class="main">
     @yield('content')
