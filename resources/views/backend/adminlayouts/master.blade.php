@@ -18,24 +18,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
     <!-- Google Fonts -->
     @yield('extraCss')
-    <style>
-        .header-info > ul > li a i {
-            font-size: 12px !important;
-        }
-        .VIpgJd-ZVi9od-ORHb-OEVmcd {
-            display:none !important;
-        }
-        .VIpgJd-ZVi9od-aZ2wEe {
-            display:none !important;
-        }
-        .skiptranslate {
-            display:none !important;
-        }
-        .VIpgJd-ZVi9od-aZ2wEe-OiiCO {
-            display:none !important;
-
-        }
-    </style>
     <link rel="stylesheet" href="/assets/css/backendCustom.css">
     <link rel="stylesheet" href="/assets/css/customX.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
@@ -126,7 +108,9 @@
         transform: translateX(100%);
         background-color: #48bb78;
     }
-
+    .tox .tox-promotion-link {
+        display: none !important;
+    }
     /* Toggle B */
     input:checked ~ .dot {
         transform: translateX(100%);

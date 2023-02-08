@@ -13,24 +13,6 @@
     <link rel="icon" type="image/png" href="/favicon.ico">
     <!-- WebFont.js -->
     <!-- Template CSS -->
-    <style>
-        .header-info > ul > li a i {
-            font-size: 12px !important;
-        }
-        .VIpgJd-ZVi9od-ORHb-OEVmcd {
-            display:none !important;
-        }
-        .VIpgJd-ZVi9od-aZ2wEe {
-            display:none !important;
-        }
-        .skiptranslate {
-            display:none !important;
-        }
-        .VIpgJd-ZVi9od-aZ2wEe-OiiCO {
-            display:none !important;
-
-        }
-    </style>
     @yield('extraCss')
     <link rel="stylesheet" href="/assets/css/responsive.css"/>
     <link rel="stylesheet" href="/assets/css/plugins/slider-range.css"/>
