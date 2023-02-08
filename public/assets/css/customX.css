@@ -79,7 +79,7 @@
 .fa-stack[data-count]:after {
     position: absolute;
     right: 23%;
-    top: -10%;
+    top: -8%;
     content: attr(data-count);
     font-size: 60%;
     padding: 5px;

@@ -10,10 +10,6 @@
     <meta name="description" content="@yield('description')">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="canonical" href="{{url()->current()}}"/>
-    <meta property="og:title" content=""/>
-    <meta property="og:type" content=""/>
-    <meta property="og:url" content=""/>
-    <meta property="og:image" content=""/>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.ico">
     <!-- WebFont.js -->
@@ -60,17 +56,7 @@
 </main>
 <x-footer></x-footer>
 <!-- Preloader Start -->
-{{--<div id="preloader-active">--}}
-{{--    <div class="preloader d-flex align-items-center justify-content-center">--}}
-{{--        <div class="preloader-inner position-relative">--}}
-{{--            <div class="text-center">--}}
-{{--                <img src="/uploads/logo/loader.gif" alt="Italiani"/>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
 <!-- Vendor JS-->
-<script src="/assets/js/loader.js"></script>
 @yield('extraJs')
 <script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script>
 <script src="/assets/js/vendor/jquery-3.6.0.min.js"></script>
@@ -99,6 +85,7 @@
 <script src="/assets/js/switchCheckout.js"></script>
 <script src="//unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
 <script src="//unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="{{ asset('assets/js/loader.js') }}"></script>
 <livewire:scripts/>
 <script>
     window.livewire_app_url = '{{route('index', ['lang' => app()->getLocale()])}}';

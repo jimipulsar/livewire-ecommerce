@@ -45,10 +45,7 @@
                     <div class="d-flex justify-content-between">
                         <h6 class="text-body">Ci sono <span
                                     class="text-brand">{{getCartCounter()}}</span> @if(getCartCounter() > 1)
-                                prodotti
-                            @endif @if(getCartCounter() <= 1)
-                                prodotto
-                            @endif nel
+                                prodotti @endif @if(getCartCounter() <= 1) prodotto @endif nel
                             tuo
                             ordine</h6>
                     </div>
@@ -2326,20 +2323,6 @@
 
                         </div>
                         <div class="divider-2 mb-30"></div>
-                        @if(session()->has('coupon'))
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <h6>Coupon</h6>
-                                </div>
-                                <div class="col-lg-6 text-right">
-
-                                    <h5>- € {{ priceView($discount) }}</h5>
-
-                                </div>
-
-                            </div>
-                            <div class="divider-2 mb-30 mt-30"></div>
-                        @endif
                         <div class="row">
                             <div class="col-lg-6">
                                 <h4>Totale</h4>
@@ -2531,6 +2514,15 @@
     <!-- ========== END MAIN CONTENT ========== -->
 @endsection
 @section('extraJs')
+{{--    <script type="text/javascript">--}}
+{{--        $(document).ready(function(){--}}
+{{--            $("#payment-form").on("submit", function(){--}}
+{{--                --}}
+{{--                $("#pageloader").fadeIn();--}}
+{{--            });//submit--}}
+{{--        });//do--}}
+
+{{--    </script>--}}
     <script type="text/javascript">
 
         (function () {
@@ -2634,6 +2626,7 @@
             });
         })();
     </script>
+
 
 @endsection
 
