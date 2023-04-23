@@ -23,7 +23,7 @@ class ProductsTableSeeder extends Seeder
     {
         $faker = Faker::create();
         $this->users = User::all();
-        for ($i = 1; $i <= 500; $i++) {
+        for ($i = 1; $i <= 50; $i++) {
             $title = $faker->sentence(1);
             $slug = Str::slug($title);
             $categories = Category::whereHas('childCategories')->pluck('id');
@@ -36,7 +36,7 @@ class ProductsTableSeeder extends Seeder
                 'user_id' => $this->users[rand(0, count($this->users) - 1)]->id,
                 'price' => mt_rand(99, 4999) / 100,
                 'item_code' => $faker->numberBetween($min = 1, $max = 4523523),
-                'img_01' => $faker->image('public/storage/images', 640, 480, null, false),
+                'img_01' => $faker->image('public/storage/', 640, 480, null, false),
 //                'cover' => $faker->image('public/storage/images',640,480, null, false),
                 'published' => (bool)rand(0, 1),
                 'shippable' => (bool)rand(0, 1),

@@ -82,7 +82,7 @@
 
                                     <div
                                             class="flex-shrink-0 w-full aspect-w-1 aspect-h-1 rounded-lg sm:aspect-none sm:w-40 ">
-                                        <img src="{{'/storage/images/' . $item->product->img_01}}"
+                                        <img src="{{'/storage/' . $item->product->img_01}}"
                                              class="img-slider">
                                     </div>
 

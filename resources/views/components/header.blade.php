@@ -118,11 +118,11 @@
                                                 @foreach(session('cart') as $id => $details)
                                                     <li>
 
-                                                        @if(file_exists(public_path('storage/images/' .$details['img_01'])))
+                                                        @if(file_exists(public_path('storage/' .$details['img_01'])))
                                                             <div class="shopping-cart-img">
                                                                 <a href="{{ route('shop.show',['lang'=>app()->getLocale(),$id,$details['slug']]) }}"><img
                                                                         alt="Livewire"
-                                                                        src="{{'/storage/images/' . $details['img_01'] }}"/></a>
+                                                                        src="{{'/storage/' . $details['img_01'] }}"/></a>
                                                             </div>
                                                         @else
                                                             <div class="shopping-cart-img">
@@ -300,7 +300,7 @@
                                                 <div class="shopping-cart-img">
                                                     <a href="{{ route('shop.show',['lang'=>app()->getLocale(),$id,$details['slug']]) }}"><img
                                                             alt="Livewire"
-                                                            src="{{'/storage/images/' . $details['img_01'] }}"/></a>
+                                                            src="{{'/storage/' . $details['img_01'] }}"/></a>
                                                 </div>
                                                 <div class="shopping-cart-title">
                                                     <h4>

@@ -98,7 +98,7 @@ class ProductsController extends Controller
         if (\request()->hasFile('img_01')) {
             $image = \request()->file('img_01');
             $name = $image->getClientOriginalName();
-            $destinationPath = public_path('storage/images/');
+            $destinationPath = public_path('storage/');
             $image->move($destinationPath, $name);
             $product->img_01 = $name;
         } else {
@@ -107,14 +107,14 @@ class ProductsController extends Controller
         if (\request()->hasFile('img_02')) {
             $image2 = \request()->file('img_02');
             $name2 = $image2->getClientOriginalName();
-            $destinationPath2 = public_path('storage/images/');
+            $destinationPath2 = public_path('storage/');
             $image2->move($destinationPath2, $name2);
             $product->img_02 = $name2;
         }
         if (\request()->hasFile('img_03')) {
             $image3 = \request()->file('img_03');
             $name3 = $image3->getClientOriginalName();
-            $destinationPath3 = public_path('storage/images/');
+            $destinationPath3 = public_path('storage/');
             $image3->move($destinationPath3, $name3);
             $product->img_03 = $name3;
         }
@@ -233,21 +233,21 @@ class ProductsController extends Controller
         if (\request()->hasFile('img_01')) {
             $image = \request()->file('img_01');
             $name = $image->getClientOriginalName();
-            $destinationPath = public_path('storage/images/');
+            $destinationPath = public_path('storage/');
             $image->move($destinationPath, $name);
             $product->img_01 = $name;
         }
         if (\request()->hasFile('img_02')) {
             $image2 = \request()->file('img_02');
             $name2 = $image2->getClientOriginalName();
-            $destinationPath2 = public_path('storage/images/');
+            $destinationPath2 = public_path('storage/');
             $image2->move($destinationPath2, $name2);
             $product->img_02 = $name2;
         }
         if (\request()->hasFile('img_03')) {
             $image3 = \request()->file('img_03');
             $name3 = $image3->getClientOriginalName();
-            $destinationPath3 = public_path('storage/images/');
+            $destinationPath3 = public_path('storage/');
             $image3->move($destinationPath3, $name3);
             $product->img_03 = $name3;
         }

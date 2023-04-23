@@ -24,8 +24,8 @@
                             <tr class="pr_image">
                                 <td class=" font-sm fw-600 font-heading mw-200">Immagine</td>
                                 @foreach(session('compare') as $id => $details)
-                                    @if(file_exists(public_path('storage/images/' .$details['img_01'])))
-                                        <td class="row_img"><img src="{{'/storage/images/' . $details['img_01'] }}"
+                                    @if(file_exists(public_path('storage/' .$details['img_01'])))
+                                        <td class="row_img"><img src="{{'/storage/' . $details['img_01'] }}"
                                                                  alt="compare-img" id="img-compare"/>
                                         </td>
                                     @else

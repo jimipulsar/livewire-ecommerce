@@ -72,11 +72,11 @@
                     <tbody class="bg-white">
                     @foreach ($brands as $brand)
                         <tr>
-                            @if(file_exists(public_path('storage/images/' .$brand->cover )) && $brand->cover != null)
+                            @if(file_exists(public_path('storage/' .$brand->cover )) && $brand->cover != null)
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                     <div class="flex items-center">
 
-                                        <img src="{{ '/storage/images/' . $brand->cover }}"
+                                        <img src="{{ '/storage/' . $brand->cover }}"
                                              class="img-backend-products">
 
                                     </div>

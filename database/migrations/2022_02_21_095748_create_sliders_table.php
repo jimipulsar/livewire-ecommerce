@@ -19,7 +19,6 @@ class CreateSlidersTable extends Migration
             $table->string('title2')->nullable();
             $table->string('title3')->nullable();
             $table->string('cover', 500);
-            $table->biginteger('user_id')->default(1);
             $table->timestamps();
         });
     }

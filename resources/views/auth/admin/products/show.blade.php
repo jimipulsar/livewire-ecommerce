@@ -34,8 +34,8 @@
                         <!-- Single-pro-slider Big-photo start -->
                         <div class="single-pro-slider single-big-photo view-lightbox slider-for">
                             <div>
-                                <img src="/storage/images/{{$product->img_01}}" alt=""/>
-                                <a class="view-full-screen" href="/storage/images/{{$product->img_01}}"
+                                <img src="/storage/{{$product->img_01}}" alt=""/>
+                                <a class="view-full-screen" href="/storage/{{$product->img_01}}"
                                    data-lightbox="roadtrip" data-title="My caption">
                                     <i class="zmdi zmdi-zoom-in"></i>
                                 </a>
@@ -105,7 +105,7 @@
                             <!-- Single-pro-slider Small-photo start -->
                             <div class="single-pro-slider single-sml-photo slider-nav">
                                 <div>
-                                    <img src="/storage/images/{{$product->img_01}}" alt=""/>
+                                    <img src="/storage/{{$product->img_01}}" alt=""/>
                                 </div>
 
                             </div>
@@ -145,7 +145,7 @@
                                         <ul class="product-comments clearfix">
                                             <li class="mb-30">
                                                 <div class="pro-reviewer">
-                                                    <img src="/storage/images/{{$product->img_01}}" alt=""/>
+                                                    <img src="/storage/{{$product->img_01}}" alt=""/>
                                                 </div>
                                                 <div class="pro-reviewer-comment">
                                                     <div class="fix">
@@ -274,7 +274,7 @@
                         <div class="modal-product">
                             <div class="product-images">
                                 <div class="main-image images">
-                                    <img alt="#" src="/storage/images/{{$product->img_01}}"/>
+                                    <img alt="#" src="/storage/{{$product->img_01}}"/>
                                 </div>
                             </div><!-- .product-images -->
 
@@ -361,7 +361,7 @@
     {{--                    <div class="col-sm-9">--}}
     {{--                        <div class="blog-content pr-4">--}}
     {{--                            <div class="blog-detail-img">--}}
-    {{--                                <img src="/storage/images/{{$product->img_01}}"--}}
+    {{--                                <img src="/storage/{{$product->img_01}}"--}}
     {{--                                     class="img-fluid img-thumbnail" alt="Responsive image">--}}
     {{--                            </div>--}}
     {{--                            <div class="section-title with-p">--}}

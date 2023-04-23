@@ -74,7 +74,7 @@ class BrandController extends Controller
         if (\request()->hasFile('cover')) {
             $image = \request()->file('cover');
             $name = $image->getClientOriginalName();
-            $destinationPath = public_path('storage/images/');
+            $destinationPath = public_path('storage/');
             $image->move($destinationPath, $name);
             $brand->cover = $name;
         } else {
@@ -153,7 +153,7 @@ class BrandController extends Controller
         if (\request()->hasFile('cover')) {
             $image = \request()->file('cover');
             $name = $image->getClientOriginalName();
-            $destinationPath = public_path('storage/images/');
+            $destinationPath = public_path('storage/');
             $image->move($destinationPath, $name);
             $brand->cover = $name;
         }

@@ -82,11 +82,11 @@
                             </label>
                             <div class="mt-1 flex items-center">
                                   <span class="inline-block h-120 w-120 rounded-medium overflow-hidden bg-gray-100">
-                                  <img src="/storage/images/{{$item->cover}}" class="img-fluid img-thumbnail"
+                                  <img src="/storage/{{$item->cover}}" class="img-fluid img-thumbnail"
                                        style="height:200px;">
                                   </span>
                                 <input type="file" name="cover" class="form-control"
-                                       value="/storage/images/{{$item->cover}}">
+                                       value="/storage/{{$item->cover}}">
 
                             </div>
                         </div>

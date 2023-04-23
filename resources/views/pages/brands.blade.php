@@ -91,7 +91,7 @@
                         <div class="vendor-img-action-wrap">
                             <div class="vendor-img">
                                 <a href="vendor-details-1.html">
-                                    <img class="default-img" src="{{'/storage/images/' . $brand->cover }}" alt="" />
+                                    <img class="default-img" src="{{'/storage/' . $brand->cover }}" alt="" />
                                 </a>
                             </div>
                             <div class="mt-10">

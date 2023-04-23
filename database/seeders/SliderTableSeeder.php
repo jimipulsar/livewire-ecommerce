@@ -16,7 +16,6 @@ class SliderTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->users = User::all();
         $new = [
 
             [
@@ -27,7 +26,7 @@ class SliderTableSeeder extends Seeder
 
                 'title3' => '49',
 
-                'cover' => 'trapano.png',
+                'cover' => 'uploads/slider/slider1.jpg',
 
             ],
 
@@ -39,7 +38,7 @@ class SliderTableSeeder extends Seeder
 
                 'title3' => '32',
 
-                'cover' => 'scarpe.png',
+                'cover' => 'uploads/slider/slider2.jpg',
 
             ],
             [
@@ -50,7 +49,7 @@ class SliderTableSeeder extends Seeder
 
                 'title3' => '135',
 
-                'cover' => 'apparecchiature.png',
+                'cover' => 'uploads/slider/slider3.jpg',
 
             ],
 
@@ -62,15 +61,7 @@ class SliderTableSeeder extends Seeder
             Slider::create($value);
 
         }
-//        for ($i=0; $i < 3; $i++) {
-//            $new = new Slider;
-//            $imageNames = ['trapano.png', 'scarpe.png', 'apparecchiature.png'];
-//
-//            $new->cover = $imageNames[rand(0, count($imageNames) - 1)];
-//            $new->user_id = $this->users[rand(0, count($this->users) - 1)]->id;
-//
-//            $new->save();
-//        }
+
 
     }
 }

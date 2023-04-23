@@ -44,10 +44,10 @@
                         @if(session('cart'))
                             @foreach(session('cart') as $id => $details)
                                 <tr class="pt-30">
-                                    @if(file_exists(public_path('storage/images/' .$details['img_01'])))
+                                    @if(file_exists(public_path('storage/' .$details['img_01'])))
                                         <td class="image product-thumbnail pt-40"><img
-                                                src="{{'/storage/images/' . $details['img_01'] }}"
-                                                alt="{{\Str::of('/storage/images/' . $details['img_01'])->basename('.jpg')}}">
+                                                src="{{'/storage/' . $details['img_01'] }}"
+                                                alt="{{\Str::of('/storage/' . $details['img_01'])->basename('.jpg')}}">
                                         </td>
                                     @else
                                         <td class="image product-thumbnail pt-40"><img
@@ -272,8 +272,8 @@
     {{--                                                <a href="{{ route('shop.show',['lang'=>app()->getLocale(),$id,$details['slug']]) }}">--}}
     {{--                                                    <figure>--}}
     {{--                                                        <img--}}
-    {{--                                                                src="{{'/storage/images/' . $details['img_01'] }}"--}}
-    {{--                                                                alt="{{\Str::of('/storage/images/' . $details['img_01'])->basename('.jpg')}}"--}}
+    {{--                                                                src="{{'/storage/' . $details['img_01'] }}"--}}
+    {{--                                                                alt="{{\Str::of('/storage/' . $details['img_01'])->basename('.jpg')}}"--}}
     {{--                                                                id="img-cart">--}}
     {{--                                                    </figure>--}}
     {{--                                                </a>--}}

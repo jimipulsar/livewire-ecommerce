@@ -17,11 +17,11 @@ max-width: 750px !important;box-shadow: 4px 9px 12px #00000024;padding:22px !imp
             <div class="row">
                 @foreach ($products as $product)
                     <div class="col-lg-4 py-2">
-                        @if(file_exists(public_path('storage/images/' .$product->img_01 )) && $product->img_01 != null)
+                        @if(file_exists(public_path('storage/' .$product->img_01 )) && $product->img_01 != null)
                             <div class="shopping-cart-img">
                                 <a href="{{ route('shop.show',['lang'=>app()->getLocale(),$product->id,$product->slug]) }}"><img
                                         alt="Livewire" class="img-fluid" style="height:100px !important"
-                                        src="{{'/storage/images/' . $product->img_01 ?? 'default.jpg' }}"/></a>
+                                        src="{{'/storage/' . $product->img_01 ?? 'default.jpg' }}"/></a>
                             </div>
 
                         @else

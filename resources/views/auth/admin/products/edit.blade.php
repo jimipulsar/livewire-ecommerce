@@ -306,8 +306,8 @@
                             <div
                                     class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                 <div class="space-y-1 text-center">
-                                    @if(file_exists(public_path('storage/images/' .$product->img_01 )) && $product->img_01 != null)
-                                        <img src="{{'/storage/images/' . $product->img_01}}" id="img-resize">
+                                    @if(file_exists(public_path('storage/' .$product->img_01 )) && $product->img_01 != null)
+                                        <img src="{{'/storage/' . $product->img_01}}" id="img-resize">
                                     @else
                                         <img src="{{'/uploads/default/default.jpg' }}" id="img-resize">
                                     @endif
@@ -324,7 +324,7 @@
                                 </div>
                             </div>
                             <div class="text-center mx-auto mt-2">
-                                @if(file_exists(public_path('storage/images/' .$product->img_01 )) && $product->img_01 != null)
+                                @if(file_exists(public_path('storage/' .$product->img_01 )) && $product->img_01 != null)
                                     <div
                                             x-data="{ 'showModal': false }"
                                             @keydown.escape="showModal = false"
@@ -441,8 +441,8 @@
                             <div
                                     class="mt-1 mb-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                 <div class="space-y-1 text-center">
-                                    @if(file_exists(public_path('storage/images/' .$product->img_02 )) && $product->img_02 != null)
-                                        <img src="{{'/storage/images/' . $product->img_02}}" id="img-resize">
+                                    @if(file_exists(public_path('storage/' .$product->img_02 )) && $product->img_02 != null)
+                                        <img src="{{'/storage/' . $product->img_02}}" id="img-resize">
                                     @else
                                         <img src="{{'/uploads/default/default.jpg' }}" id="img-resize">
                                     @endif
@@ -458,7 +458,7 @@
                                     </p>
                                 </div>
                             </div>
-                            @if(file_exists(public_path('storage/images/' .$product->img_02 )) && $product->img_02 != null)
+                            @if(file_exists(public_path('storage/' .$product->img_02 )) && $product->img_02 != null)
                                 <div
                                         x-data="{ 'showModal': false }"
                                         @keydown.escape="showModal = false"
@@ -569,8 +569,8 @@
                             <div
                                     class="mt-1 mb-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                 <div class="space-y-1 text-center">
-                                    @if(file_exists(public_path('storage/images/' .$product->img_03 )) && $product->img_02 != null)
-                                        <img src="{{'/storage/images/' . $product->img_02}}" id="img-resize">
+                                    @if(file_exists(public_path('storage/' .$product->img_03 )) && $product->img_02 != null)
+                                        <img src="{{'/storage/' . $product->img_02}}" id="img-resize">
                                     @else
                                         <img src="{{'/uploads/default/default.jpg' }}" id="img-resize">
                                     @endif
@@ -586,7 +586,7 @@
                                     </p>
                                 </div>
                             </div>
-                            @if(file_exists(public_path('storage/images/' .$product->img_03 )) && $product->img_03 != null)
+                            @if(file_exists(public_path('storage/' .$product->img_03 )) && $product->img_03 != null)
                                 <div
                                         x-data="{ 'showModal': false }"
                                         @keydown.escape="showModal = false"

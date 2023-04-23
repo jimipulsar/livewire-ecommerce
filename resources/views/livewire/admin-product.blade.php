@@ -95,11 +95,11 @@
 
                     @foreach ($items as $item)
                         <tr>
-                            @if(file_exists(public_path('storage/images/' .$item->img_01 )) && $item->img_01 != null)
+                            @if(file_exists(public_path('storage/' .$item->img_01 )) && $item->img_01 != null)
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                     <div class="flex items-center">
 
-                                        <img src="{{ '/storage/images/' . $item->img_01 }}"
+                                        <img src="{{ '/storage/' . $item->img_01 }}"
                                              class="img-backend-products">
 
                                     </div>

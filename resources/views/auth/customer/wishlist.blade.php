@@ -62,7 +62,7 @@
                                                         <td class="image product-thumbnail pt-40">
                                                             <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $details->product->id,$details->product->slug]) }}">
                                                                 <img
-                                                                    src="{{'/storage/images/' . $details->product->img_01 }}"
+                                                                    src="{{'/storage/' . $details->product->img_01 }}"
                                                                     alt="product" id="img-cart">
                                                             </a>
                                                         </td>

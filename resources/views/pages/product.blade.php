@@ -34,10 +34,10 @@
                                     <span class="zoom-icon"><i class="fi-rs-search"></i></span>
                                     <!-- MAIN SLIDES -->
                                     <div class="product-image-slider">
-                                        @if(file_exists(public_path('storage/images/' .$product->img_01 )) && $product->img_01 != null)
+                                        @if(file_exists(public_path('storage/' .$product->img_01 )) && $product->img_01 != null)
                                             <figure class="border-radius-10">
-                                                <img src="{{'/storage/images/' . $product->img_01}}"
-                                                     data-zoom-image="{{'/storage/images/' . $product->img_01 }}"
+                                                <img src="{{'/storage/' . $product->img_01}}"
+                                                     data-zoom-image="{{'/storage/' . $product->img_01 }}"
                                                      alt="{{$product->item_name}}" id="img-product">
                                             </figure>
                                         @else
@@ -49,16 +49,16 @@
                                         @endif
                                         @if($product->img_02 != null)
                                             <figure class="border-radius-10">
-                                                <img src="{{'/storage/images/' . $product->img_02 }}"
-                                                     data-zoom-image="{{'/storage/images/' . $product->img_02 }}"
+                                                <img src="{{'/storage/' . $product->img_02 }}"
+                                                     data-zoom-image="{{'/storage/' . $product->img_02 }}"
                                                      alt="{{$product->item_name}}" id="img-product">
                                             </figure>
 
                                         @endif
                                         @if($product->img_03 != null)
                                             <figure class="border-radius-10">
-                                                <img src="{{'/storage/images/' . $product->img_03 }}"
-                                                     data-zoom-image="{{'/storage/images/' . $product->img_03  }}"
+                                                <img src="{{'/storage/' . $product->img_03 }}"
+                                                     data-zoom-image="{{'/storage/' . $product->img_03  }}"
                                                      alt="{{$product->item_name}}" id="img-product">
                                             </figure>
 
@@ -66,9 +66,9 @@
                                     </div>
                                     <!-- THUMBNAILS -->
                                     <div class="slider-nav-thumbnails">
-                                        @if(file_exists(public_path('storage/images/' .$product->img_01 )) && $product->img_01 != null)
+                                        @if(file_exists(public_path('storage/' .$product->img_01 )) && $product->img_01 != null)
 
-                                            <div><img src="{{'/storage/images/' . $product->img_01 }}"
+                                            <div><img src="{{'/storage/' . $product->img_01 }}"
                                                       alt="{{$product->item_name}}"/></div>
                                         @else
                                             <div>
@@ -78,13 +78,13 @@
                                         @endif
                                         @if($product->img_02 != null)
 
-                                            <div><img src="{{'/storage/images/' . $product->img_02 }}"
+                                            <div><img src="{{'/storage/' . $product->img_02 }}"
                                                       alt="{{$product->item_name}}"/></div>
 
                                         @endif
                                         @if($product->img_03 != null)
 
-                                            <div><img src="{{'/storage/images/' . $product->img_03 }}"
+                                            <div><img src="{{'/storage/' . $product->img_03 }}"
                                                       alt="{{$product->item_name}}"/></div>
 
                                         @endif
@@ -419,14 +419,14 @@
                                                     <div class="product-img product-img-zoom">
                                                         <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(),$c->id,$c->slug]) }}"
                                                            tabindex="0">
-                                                            @if(file_exists(public_path('storage/images/' .$c->img_01)))
+                                                            @if(file_exists(public_path('storage/' .$c->img_01)))
                                                                 <img class="default-img"
-                                                                     src="{{'/storage/images/' . $c->img_01 }}"
-                                                                     alt="{{Str::of('/storage/images/'. $c->img_01)->basename('.jpg')}}"
+                                                                     src="{{'/storage/' . $c->img_01 }}"
+                                                                     alt="{{Str::of('/storage/'. $c->img_01)->basename('.jpg')}}"
                                                                 >
                                                                 <img class="hover-img"
-                                                                     src="{{'/storage/images/' . $c->img_01 }}"
-                                                                     alt="{{Str::of('/storage/images/'. $c->img_01)->basename('.jpg')}}"
+                                                                     src="{{'/storage/' . $c->img_01 }}"
+                                                                     alt="{{Str::of('/storage/'. $c->img_01)->basename('.jpg')}}"
                                                                 >
                                                             @else
                                                                 <img class="default-img"
