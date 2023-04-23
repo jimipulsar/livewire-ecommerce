@@ -7,7 +7,6 @@
     "require": {
         "php": "^7.3|^8.2",
         "ext-curl": "*",
-        "ext-gd": "*",
         "ext-json": "*",
         "ext-pdo": "*",
         "cartalyst/stripe-laravel": "*",
@@ -20,7 +19,7 @@
         "laravel/ui": "^3.4",
         "laravelcollective/html": "^6.2",
         "livewire/livewire": "*",
-        "maatwebsite/excel": "^3.1",
+        "maatwebsite/excel": "*",
         "rappasoft/laravel-livewire-tables": "^2.10",
         "renatomarinho/laravel-page-speed": "^2.1",
         "stripe/stripe-php": "^7.100",
