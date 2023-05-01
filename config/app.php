@@ -169,7 +169,7 @@ return [
         /*
          * Package Service Providers...
          */
-        App\Providers\LanguageServiceProvider::class,
+//        App\Providers\LanguageServiceProvider::class,
         App\Providers\NotificationProvider::class,
         App\Providers\SliderProvider::class,
         /*

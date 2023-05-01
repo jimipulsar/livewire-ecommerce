@@ -59,7 +59,7 @@ class Search extends Component
             ->where('published', '=', '1')
             ->whereBetween('price', [$this->min, $this->max])
             ->paginate($this->perPage);
-
+//        dd($uniqueCategories);
         return view('livewire.search', [
             'products' => $products,
             'uniqueCategories' => $uniqueCategories,

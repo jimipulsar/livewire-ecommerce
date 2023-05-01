@@ -6,7 +6,6 @@ use App\Http\Controllers\Auth\Admin\ProductsController;
 use App\Http\Controllers\Auth\Customer\WishlistController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\FrontEnd\BrandController;
 use App\Http\Controllers\FrontEnd\CartController;
 use App\Http\Controllers\FrontEnd\CheckOutController;
 use App\Http\Controllers\FrontEnd\CompareController;

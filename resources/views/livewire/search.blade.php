@@ -256,6 +256,7 @@
     </div>
 </div>
 @section('extraJs')
+
     <script>
         $(document).ready(function () {
             if ($("#slider").length) {

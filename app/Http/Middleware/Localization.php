@@ -13,15 +13,13 @@ class Localization
 
     public function handle(Request $request, Closure $next)
     {
+        $url = \Illuminate\Support\Facades\Request::segment(1);
 
-        if (!$request->lang) {
-            return redirect()->to(app()->getLocale());
-        }
-
-        if (!in_array($request->lang, $this->languages)) {
+        if (!in_array($url, $this->languages)) {
             abort(404);
         }
 
         return $next($request);
+
     }
 }

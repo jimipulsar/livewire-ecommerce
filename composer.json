@@ -5,7 +5,7 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^7.3|^8.2",
+        "php": "^7.2|^8.2",
         "cartalyst/stripe-laravel": "*",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -15,7 +15,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "laravelcollective/html": "^6.2",
-        "livewire/livewire": "*",
+        "livewire/livewire": "^2.12",
         "maatwebsite/excel": "^3.0",
         "phpoffice/phpspreadsheet": "^1.28",
         "rappasoft/laravel-livewire-tables": "^2.10",
@@ -51,7 +51,9 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan vendor:publish --force --tag=livewire:assets --ansi"
+
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"

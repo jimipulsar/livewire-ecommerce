@@ -7,6 +7,7 @@
     <meta name="referrer" content="always">
     <link rel="canonical" href="">
     <title> Admin Dashboard | {{ config('app.name') }}</title>
+    <script src="{{ asset('js/app.js') }}"></script>
     <meta name="description" content="">
     <!-- NO INDEX -->
     <meta name="robots" content="noindex, nofollow">
@@ -25,11 +26,11 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/assets/vendor/animate.css/animate.min.css">
     <x-head.tinymce-config/>
+
     <livewire:styles/>
 </head>
 <body>
 <x-auto-translate></x-auto-translate>
-<script src="{{ asset('js/app.js') }}"></script>
 <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200 font-roboto">
 
     @include('backend.adminlayouts.sidebar')
@@ -117,10 +118,6 @@
         background-color: #48bb78;
     }
 </style>
-{{--<script src="/assets/vendor/jquery/dist/jquery.min.js"></script>--}}
-{{--<script src="/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>--}}
-{{--<script src="/assets/vendor/popper.js/dist/umd/popper.min.js"></script>--}}
-{{--<script src="/assets/vendor/bootstrap/bootstrap.min.js"></script>--}}
 <script>
     $(document).ready(function () {
         $(window).load(function () {
@@ -133,7 +130,7 @@
 @yield('javascript')
 <livewire:scripts/>
 <script>
-    window.livewire_app_url = '{{route('index', ['lang' => app()->getLocale()])}}';
+    window.livewire_app_url = '{{route('index')}}';
 </script>
 <script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v0.x.x/dist/livewire-sortable.js"></script>
 </body>
