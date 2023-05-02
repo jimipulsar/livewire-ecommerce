@@ -13,6 +13,7 @@ use App\Http\Controllers\FrontEnd\FrontEndController;
 use App\Http\Controllers\FrontEnd\NewsController;
 use App\Http\Controllers\FrontEnd\SendMailController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use Livewire\Controllers\HttpConnectionHandler;
 
@@ -26,7 +27,6 @@ use Livewire\Controllers\HttpConnectionHandler;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::view('/', 'pages.index')->name('index');
 Route::get(__('routes.category'), [FrontEndController::class, 'mainCategory'])->name('mainCategory');
 Route::get(__('routes.categoryID'), [FrontEndController::class, 'categoryPage'])->name('categoryPage');

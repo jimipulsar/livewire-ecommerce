@@ -142,7 +142,6 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
-        RenatoMarinho\LaravelPageSpeed\ServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -169,7 +168,7 @@ return [
         /*
          * Package Service Providers...
          */
-//        App\Providers\LanguageServiceProvider::class,
+        App\Providers\LanguageServiceProvider::class,
         App\Providers\NotificationProvider::class,
         App\Providers\SliderProvider::class,
         /*
