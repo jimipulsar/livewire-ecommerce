@@ -18,7 +18,7 @@ class NotificationComposer
 
     protected $notifications;
     protected $orders;
-//    protected $customers;
+    protected $customers;
 
     public function __construct()
     {
