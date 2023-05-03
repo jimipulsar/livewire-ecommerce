@@ -32,8 +32,8 @@ And much more features.
 
 ### START (LARAVEL WEB SITE) LOCAL DEV [LIVEWIRE E-COMMERCE PLATFORM]
 
-    composer install && composer dump-autoload
-    npm install && npn run dev
+    composer update && composer dump-autoload
+    npm install --force && npn run dev
     php artisan storage:link
     php artisan key:generate && php artisan serve
 
