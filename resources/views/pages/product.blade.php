@@ -2,12 +2,12 @@
 @section('title', $product->item_name . ' | ' .__('product.seo.title'))
 @section('description', __('product.seo.description'))
 @section('extraCss')
-{{--    <style>--}}
-{{--        .action-btn, .hover-up {--}}
-{{--            font-size: 20px !important;--}}
-{{--            margin: 10px !important;--}}
-{{--        }--}}
-{{--    </style>--}}
+    {{--    <style>--}}
+    {{--        .action-btn, .hover-up {--}}
+    {{--            font-size: 20px !important;--}}
+    {{--            margin: 10px !important;--}}
+    {{--        }--}}
+    {{--    </style>--}}
 
 @endsection
 @section('content')
@@ -18,7 +18,7 @@
                     <a href="{{route('index', app()->getLocale())}}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
                     <span></span> <a href="{{route('shop.index', app()->getLocale())}}">Categorie</a>
                     <span></span> <a
-                            href="{{ route('categoryPage',['lang'=>app()->getLocale(),productDetails($product->id)['category_id'],  productDetails($product->id)['category_slug']]) }}"> {{ucFirst(productDetails($product->id)['name'])}}</a>
+                        href="{{ route('categoryPage',['lang'=>app()->getLocale(),productDetails($product->id)['category_id'],  productDetails($product->id)['category_slug']]) }}"> {{ucFirst(productDetails($product->id)['name'])}}</a>
                 </div>
             </div>
         </div>
@@ -100,7 +100,7 @@
                                             <div class="product-price primary-color float-left">
                                                 @if($product->price > 0)
                                                     <span
-                                                            class="current-price text-brand">€ {{priceView($product->price)}}</span>
+                                                        class="current-price text-brand">€ {{priceView($product->price)}}</span>
                                                 @endif
                                             </div>
                                         </div>
@@ -109,7 +109,7 @@
                                             <div class="product-price primary-color float-left">
                                                 @if($product->price > 0)
                                                     <span
-                                                            class="current-price text-brand">€ {{priceView($product->price)}}</span>
+                                                        class="current-price text-brand">€ {{priceView($product->price)}}</span>
                                                 @endif
                                                 {{--                                            <span class="save-price font-md color3 ml-15">26% Off</span>--}}
                                                 {{--                                            <span class="old-price font-md ml-15">€ {{priceView($product->price - 30)}}</span>--}}
@@ -118,9 +118,9 @@
                                         </div>
                                     @endif
                                     @if(isset($product->short_description))
-                                    <div class="short-desc mb-30">
-                                        <p class="font-lg">{!! $product->short_description!!}</p>
-                                    </div>
+                                        <div class="short-desc mb-30">
+                                            <p class="font-lg">{!! $product->short_description!!}</p>
+                                        </div>
                                     @endif
                                     <div class="attr-detail attr-size mb-10">
                                         @if($product->shippable == true)
@@ -130,7 +130,7 @@
                                             @else
                                                 <strong class="mr-10">
                                                     {!!__('home.status')!!}: <span
-                                                            class="in-stock text-brand ml-5"> {!!__('home.notStatus')!!}</span>
+                                                        class="in-stock text-brand ml-5"> {!!__('home.notStatus')!!}</span>
                                                 </strong>
                                             @endif
                                         @endif
@@ -154,25 +154,25 @@
 
                                     </div>
                                     @if(isset($product->link))
-                                    <div class="attr-detail attr-size mb-20">
-                                        <ul class="float-start py-3">
-                                            @if($product->link != null)
-                                                <li class="mt-2">
-                                                    <strong class="mr-10 mt-3">Link 1: </strong> <a
+                                        <div class="attr-detail attr-size mb-20">
+                                            <ul class="float-start py-3">
+                                                @if($product->link != null)
+                                                    <li class="mt-2">
+                                                        <strong class="mr-10 mt-3">Link 1: </strong> <a
                                                             href="{!! $product->link !!}"
                                                             target="_blank"> {!! $product->link !!}</a>
-                                                </li>
-                                            @endif
-                                            @if($product->link_2 != null)
-                                                <li class="mt-2">
-                                                    <strong class="mr-10 mt-3">Link 2: </strong> <a
+                                                    </li>
+                                                @endif
+                                                @if($product->link_2 != null)
+                                                    <li class="mt-2">
+                                                        <strong class="mr-10 mt-3">Link 2: </strong> <a
                                                             href="{!! $product->link_2 !!}"
                                                             target="_blank"> {!! $product->link_2 !!}</a>
 
-                                                </li>
-                                            @endif
-                                        </ul>
-                                    </div>
+                                                    </li>
+                                                @endif
+                                            </ul>
+                                        </div>
                                     @endif
                                     @if($product->attachment != null)
                                         <div class="attr-detail attr-size mb-30">
@@ -188,7 +188,7 @@
                                         </div>
                                     @endif
                                     <div class="detail-extralink mb-20">
-                                        @if($product->stock_qty <= 0 )
+                                        @if($product->shippable == false)
 
                                             <div class="product-extra-link2">
                                                 <button type="button" class="btn btn-primary" data-toggle="modal"
@@ -272,13 +272,100 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
                                                 <!-- Modal -->
                                                 @else
-                                                    <button type="button"
-                                                            onclick="location.href='{{route('addcart', ['lang'=>app()->getLocale(), $product->id])}}';"
-                                                            class="button button-add-to-cart"><i
+                                                    @if($product->stock_qty > 0)
+                                                        <button type="button"
+                                                                onclick="location.href='{{route('addcart', ['lang'=>app()->getLocale(), $product->id])}}';"
+                                                                class="button button-add-to-cart"><i
                                                                 class="fi-rs-shopping-cart"></i>Aggiungi al carrello
+                                                        </button>
+                                                    @else
+                                                <div class="product-extra-link2">
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                            data-target="#quickViewModal">
+                                                        <i class="w-icon-cart mr-1"></i>Richiedi maggiori informazioni
                                                     </button>
+                                                    <div class="modal fade custom-modal" id="quickViewModal" tabindex="-1"
+                                                         aria-labelledby="quickViewModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                <div class="modal-body">
+                                                                    <div class="deal"
+                                                                         style="background-image: url('assets/imgs/banner/popup-1.png')">
+                                                                        <div class="deal-top mb-5">
+                                                                            <h6 class="mb-10 text-brand-2">Richiedi
+                                                                                maggiori
+                                                                                informazioni
+                                                                                per <br>{!! $product->item_name !!}</h6>
+                                                                        </div>
+                                                                        <div class="deal-content detail-info">
+                                                                            <form class="custom-form"
+                                                                                  action="{{route('sendProduct', app()->getLocale())}}"
+                                                                                  name="contactform" id=""
+                                                                                  method="post">
+                                                                                @csrf
+                                                                                <div class="form-group">
+                                                                                    <label for="name">Nome</label>
+                                                                                    <input type="text" id="name" name="name"
+                                                                                           class="form-control" required>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label for="email">E-mail</label>
+                                                                                    <input type="email" id="email"
+                                                                                           name="email"
+                                                                                           class="form-control" required>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <input type="text" id="item_name"
+                                                                                           name="item_name"
+                                                                                           class="form-control"
+                                                                                           value="{{$product->item_name}}"
+                                                                                           hidden>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <input type="text" id="item_code"
+                                                                                           name="item_code"
+                                                                                           class="form-control"
+                                                                                           value="{{$product->item_code}}"
+                                                                                           hidden>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label for="message">La tua
+                                                                                        richiesta</label>
+                                                                                    <textarea id="message" name="message"
+                                                                                              cols="30"
+                                                                                              rows="5"
+                                                                                              class="form-control"
+                                                                                              style="height:auto !important"></textarea>
+                                                                                </div>
+                                                                                <div class="form-group pt-4 mb-4">
+                                                                                    <div class="g-recaptcha"
+                                                                                         data-sitekey="{{env('INVISIBLE_RECAPTCHA_SITEKEY')}}">
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <br>
+                                                                                <div class="deal-bottom">
+                                                                                    <button type="submit"
+                                                                                            class="btn btn-primary">
+                                                                                        INVIA
+                                                                                        RICHIESTA
+                                                                                    </button>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    @endif
                                                 @endif
 
                                                 @if(isset($customerFavourites))
@@ -288,22 +375,22 @@
     color: #fff;
     border: 1px solid transparent;
     background-color: #DFA56B;"><i
-                                                                class="fi-rs-heart"></i></a>
+                                                            class="fi-rs-heart"></i></a>
                                                 @else
                                                     <a aria-label="Aggiungi alla wishlist" class="action-btn hover-up"
                                                        href="{{route('addwishlist', [app()->getLocale(), $product->id])}}"><i
-                                                                class="fi-rs-heart"></i></a>
+                                                            class="fi-rs-heart"></i></a>
                                                 @endif
                                                 <a aria-label="Confronta" class="action-btn hover-up"
                                                    href="{{route('addToCompare', ['lang'=>app()->getLocale(), $product->id,$product->slug])}}"><i
-                                                            class="fi-rs-shuffle"></i></a>
+                                                        class="fi-rs-shuffle"></i></a>
                                             </div>
                                             <div class="font-xs mt-2">
                                                 <ul class="mr-50 float-start">
 
                                                     <li class="mb-5">Categoria: <span
-                                                                class="text-brand">        <a
-                                                                    href="{{ route('categoryPage',['lang'=>app()->getLocale(),$productDetails['category_id'],  $productDetails['category_slug']]) }}">{{ucFirst($productDetails['name'])}}</a></span>
+                                                            class="text-brand">        <a
+                                                                href="{{ route('categoryPage',['lang'=>app()->getLocale(),$productDetails['category_id'],  $productDetails['category_slug']]) }}">{{ucFirst($productDetails['name'])}}</a></span>
                                                     </li>
                                                 </ul>
                                                 <ul class="float-start">
@@ -346,13 +433,13 @@
                                     <div class="">
                                         <p>{!! __($product->short_description)!!}</p>
                                         <p>{!! __($product->long_description)!!}</p>
-                                                                                    <ul class="product-more-infor mt-30">
-                                                                                        <li><span>Type Of Packing</span> Bottle</li>
-                                                                                        <li><span>Color</span> Green, Pink, Powder Blue, Purple</li>
-                                                                                        <li><span>Quantity Per Case</span> 100ml</li>
-                                                                                        <li><span>Ethyl Alcohol</span> 70%</li>
-                                                                                        <li><span>Piece In One</span> Carton</li>
-                                                                                    </ul>
+                                        <ul class="product-more-infor mt-30">
+                                            <li><span>Type Of Packing</span> Bottle</li>
+                                            <li><span>Color</span> Green, Pink, Powder Blue, Purple</li>
+                                            <li><span>Quantity Per Case</span> 100ml</li>
+                                            <li><span>Ethyl Alcohol</span> 70%</li>
+                                            <li><span>Piece In One</span> Carton</li>
+                                        </ul>
                                         <hr class="wp-block-separator is-style-dots"/>
                                         <h4 class="mt-30">Spedizione e Consegna</h4>
                                         <br class="wp-block-separator is-style-wide"/>
@@ -445,14 +532,14 @@
                                                            class="action-btn small hover-up"
                                                            href="{{route('addwishlist', [app()->getLocale(), $c->id])}}"
                                                            tabindex="0"><i
-                                                                    class="fi-rs-heart"></i></a>
+                                                                class="fi-rs-heart"></i></a>
                                                         <a aria-label="Confronta" class="action-btn small hover-up"
                                                            href="{{route('addToCompare', ['lang'=>app()->getLocale(), $c->id,$c->slug])}}"
                                                            tabindex="0"><i
-                                                                    class="fi-rs-shuffle"></i></a>
+                                                                class="fi-rs-shuffle"></i></a>
                                                     </div>
                                                     <div
-                                                            class="product-badges product-badges-position product-badges-mrg">
+                                                        class="product-badges product-badges-position product-badges-mrg">
                                                         <span class="sale">-12%</span>
                                                     </div>
                                                 </div>
