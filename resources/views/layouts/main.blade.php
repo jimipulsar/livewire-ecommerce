@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/assets/css/plugins/slider-range.css"/>
     <link rel="stylesheet" href="/assets/css/main.css?v=5.3"/>
     <link rel="stylesheet" href="/assets/vendor/animate/animate.min.css">
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
     <livewire:styles/>
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
@@ -71,6 +71,5 @@
 <script>
     window.livewire_app_url = '{{route('index')}}';
 </script>
-
 </body>
 </html>

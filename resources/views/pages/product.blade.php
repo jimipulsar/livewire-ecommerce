@@ -250,12 +250,12 @@
                                                                                           class="form-control"
                                                                                           style="height:auto !important"></textarea>
                                                                             </div>
-                                                                            <div class="form-group pt-4 mb-4">
-                                                                                <div class="g-recaptcha"
-                                                                                     data-sitekey="{{env('INVISIBLE_RECAPTCHA_SITEKEY')}}">
+{{--                                                                            <div class="form-group pt-4 mb-4">--}}
+{{--                                                                                <div class="g-recaptcha"--}}
+{{--                                                                                     data-sitekey="{{env('INVISIBLE_RECAPTCHA_SITEKEY')}}">--}}
 
-                                                                                </div>
-                                                                            </div>
+{{--                                                                                </div>--}}
+{{--                                                                            </div>--}}
                                                                             <br>
                                                                             <div class="deal-bottom">
                                                                                 <button type="submit"
@@ -342,12 +342,12 @@
                                                                                               class="form-control"
                                                                                               style="height:auto !important"></textarea>
                                                                                 </div>
-                                                                                <div class="form-group pt-4 mb-4">
-                                                                                    <div class="g-recaptcha"
-                                                                                         data-sitekey="{{env('INVISIBLE_RECAPTCHA_SITEKEY')}}">
+{{--                                                                                <div class="form-group pt-4 mb-4">--}}
+{{--                                                                                    <div class="g-recaptcha"--}}
+{{--                                                                                         data-sitekey="{{env('INVISIBLE_RECAPTCHA_SITEKEY')}}">--}}
 
-                                                                                    </div>
-                                                                                </div>
+{{--                                                                                    </div>--}}
+{{--                                                                                </div>--}}
                                                                                 <br>
                                                                                 <div class="deal-bottom">
                                                                                     <button type="submit"

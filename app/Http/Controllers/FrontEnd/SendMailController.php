@@ -32,7 +32,7 @@ class SendMailController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255',
             'message' => 'required|max:900',
-            'g-recaptcha-response' => 'required'
+//            'g-recaptcha-response' => 'required'
         ]);
         Mail::to('magazzino@livewire-ecommerce.com')
             ->cc('acquisti@livewire-ecommerce.com')
@@ -47,7 +47,7 @@ class SendMailController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255',
             'message' => 'required|max:900',
-            'g-recaptcha-response' => 'required'
+//            'g-recaptcha-response' => 'required'
         ]);
         Mail::to('magazzino@livewire-ecommerce.com')
             ->cc('acquisti@livewire-ecommerce.com')

@@ -1,9 +1,7 @@
 @extends('layouts.main')
 @section('title', __('home.seo.title'))
 @section('description', __('home.seo.description'))
-@section('extraCss')
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.min.css">
-@endsection
+
 @section('content')
     <div class="page-header breadcrumb-wrap">
         <div class="container">
@@ -92,13 +90,8 @@
                                                                     class="stock-status in-stock mb-0">{!! __('customer.favourites.7') !!}</span>
                                                             @endif
                                                         </td>
-                                                        @if($details->product->shippable == 0 )
-                                                            <div class="add-cart">
-                                                                <a href="{{route('addcart', ['lang'=>app()->getLocale(), $details->product->id])}}"
-                                                                   class="add"
-                                                                   title="Richiedi info"><i
-                                                                        class="fi-rs-envelope mr-5"></i>Richiedi info</a>
-                                                            </div>
+
+                                                        @if($details->product->stock_qty >= 0)
                                                             <td class="text-right">
                                                                 <div class="d-lg-flex">
                                                                     <a href="{{route('addcart', ['lang'=>app()->getLocale(), $details->product->id])}}"
@@ -107,29 +100,11 @@
                                                                     </a>
                                                                 </div>
                                                             </td>
-                                                            <!-- Modal -->
-                                                        @else
-                                                            <div class="add-cart">
-                                                                <a href="{{route('addcart', ['lang'=>app()->getLocale(), $p->id, $p->slug])}}"
-                                                                   class="add"
-                                                                   title="Aggiungi al carrello"><i
-                                                                        class="fi-rs-shopping-cart mr-5"></i>Acquista</a>
-                                                            </div>
-                                                        @endif
-                                                        @if($details->product->stock_qty > 0)
+                                                            @else
                                                             <td class="text-right">
                                                                 <div class="d-lg-flex">
                                                                     <a href="{{route('addcart', ['lang'=>app()->getLocale(), $details->product->id])}}"
-                                                                       class="btn btn-sm">Aggiungi
-                                                                        al carrello
-                                                                    </a>
-                                                                </div>
-                                                            </td>
-                                                        @else
-                                                            <td class="text-right">
-                                                                <div class="d-lg-flex">
-                                                                    <a href="#"
-                                                                       class="btn btn-dark btn-rounded btn-sm ml-lg-2 disabled">Aggiungi
+                                                                       class="btn btn-sm disabled">Aggiungi
                                                                         al carrello
                                                                     </a>
                                                                 </div>
