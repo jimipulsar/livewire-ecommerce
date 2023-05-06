@@ -25,8 +25,8 @@
                                 <td class=" font-sm fw-600 font-heading mw-200">Immagine</td>
                                 @foreach(session('compare') as $id => $details)
                                     @if(file_exists(public_path('storage/' .$details['img_01'])))
-                                        <td class="row_img"><img src="{{'/storage/' . $details['img_01'] }}"
-                                                                 alt="compare-img" id="img-compare"/>
+                                        <td class="row_img"><a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $details['id'],$details['slug']]) }}"><img src="{{'/storage/' . $details['img_01'] }}"
+                                                                 alt="compare-img" id="img-compare"/></a>
                                         </td>
                                     @else
                                         <td class="row_img"><img src="{{'/uploads/default/default.jpg'}}"
@@ -103,30 +103,7 @@
                                     <td class="row_weight">{{$details['depth']}}</td>
                                 @endforeach
                             </tr>
-                            {{--                            <tr class="pr_dimensions">--}}
-                            {{--                                <td class=" font-sm fw-600 font-heading">Dimensions</td>--}}
-                            {{--                                @foreach(session('compare') as $id => $details)--}}
 
-                            {{--                                    <td class="row_dimensions">N/A</td>--}}
-                            {{--                                @endforeach--}}
-                            {{--                            </tr>--}}
-                            @if($details['stock_qty'] >= 1 && $details['published'] == 1)
-                                <tr class="pr_add_to_cart">
-                                    <td class=" font-sm fw-600 font-heading">Acquista</td>
-                                    @foreach(session('compare') as $id => $details)
-                                        @if($details['stock_qty'] >= 1 )
-                                            <td class="row_btn">
-                                                <a href="{{route('addcart',['lang'=>app()->getLocale(),$id,$details['slug']])}}"
-                                                   class="btn btn-sm"> <i class="fi-rs-shopping-bag mr-5"></i>Acquista
-                                                    ora</a>
-                                            </td>
-                                        @endif
-
-
-                                    @endforeach
-
-                                </tr>
-                            @endif
                             <tr class="pr_remove ">
                                 <td class=" font-md fw-600"></td>
                                 @foreach(session('compare') as $id => $details)
