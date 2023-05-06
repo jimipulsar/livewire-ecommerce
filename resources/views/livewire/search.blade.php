@@ -5,14 +5,14 @@
                 <div class="search-form">
                     <form>
                         <input
-                                wire:model.debounce.200ms="search"
-                                wire:ref="search-box"
-                                type="text"
-                                name="search"
-                                value=""
-                                placeholder="{!!__('app.search')!!}"
-                                aria-describedby="searchProduct1" id="searchProduct" class="pl-10"
-                                style="background-color:#fff !important;"/>
+                            wire:model.debounce.200ms="search"
+                            wire:ref="search-box"
+                            type="text"
+                            name="search"
+                            value=""
+                            placeholder="{!!__('app.search')!!}"
+                            aria-describedby="searchProduct1" id="searchProduct" class="pl-10"
+                            style="background-color:#fff !important;"/>
                         <button disabled><i class="fi-rs-search"></i></button>
                     </form>
                 </div>
@@ -37,9 +37,9 @@
                                 data-id="{{ $parentCategory->id }}">
 
                                 <a
-                                        class="flex items-center rounded-full  text-[{{$parentCategory->name}}] hover:bg-amber-600 hover:text-white {{ in_array($parentCategory->id, $filters) ? 'text-white' : '' }}"><img
-                                            src="/assets/imgs/theme/icons/category-1.svg"
-                                            alt=""/><strong>{{ ucfirst($parentCategory->name) }}
+                                    class="flex items-center rounded-full  text-[{{$parentCategory->name}}] hover:bg-amber-600 hover:text-white {{ in_array($parentCategory->id, $filters) ? 'text-white' : '' }}"><img
+                                        src="/assets/imgs/theme/icons/category-1.svg"
+                                        alt=""/><strong>{{ ucfirst($parentCategory->name) }}
                                         ({{ $parentCategory->products_count }})</strong></a>
                                 <i class="fi-rs-angle-small-right"></i>
                             </li>
@@ -178,15 +178,16 @@
                                 <div class="product-action-1">
                                     <a aria-label="Aggiungi alla Wishlist" class="action-btn"
                                        href="{{route('addwishlist', ['lang' => app()->getLocale(), $p->id])}}"><i
-                                                class="fi-rs-heart"></i></a>
+                                            class="fi-rs-heart"></i></a>
                                     <a aria-label="Confronta" class="action-btn"
                                        href="{{route('addToCompare', ['lang'=>app()->getLocale(), $p->id,$p->slug])}}"><i
-                                                class="fi-rs-shuffle"></i></a>
+                                            class="fi-rs-shuffle"></i></a>
                                 </div>
                             </div>
                             <div class="product-content-wrap">
                                 <div class="product-category">
-                                    Categoria: <a href="{{ route('categoryPage',['lang'=>app()->getLocale(),productDetails($p->id)['category_id'],  productDetails($p->id)['category_slug']]) }}">
+                                    Categoria: <a
+                                        href="{{ route('categoryPage',['lang'=>app()->getLocale(),productDetails($p->id)['category_id'],  productDetails($p->id)['category_slug']]) }}">
 
                                         <span style="color: #BF8346;">{{ucFirst(productDetails($p->id)['name'])}}</span>
                                     </a><br>
@@ -196,18 +197,7 @@
                                     <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $p->id,$p->slug]) }}">{{__($p->item_name)}}</a>
                                 </h2>
                                 <div class="product-card-bottom">
-                                    @if($p->shippable == false)
-                                        <div class="product-price" hidden>
-                                            <span>€ {{ priceView($p->price) }}</span>
-                                            {{--                                            <span class="old-price">$32.8</span>--}}
-                                        </div>
-                                        <div class="add-cart">
-                                            <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $p->id,$p->slug]) }}"
-                                               class="add"
-                                               title="Richiedi info"><i
-                                                        class="fi-rs-envelope mr-5"></i>Richiedi info</a>
-                                        </div>
-                                    @else
+                                    @if($p->stock_qty >= 0)
                                         <div class="product-price">
                                             <span>€ {{ priceView($p->price) }}</span>
                                             {{--                                            <span class="old-price">$32.8</span>--}}
@@ -216,10 +206,20 @@
                                             <a href="{{route('addcart', ['lang'=>app()->getLocale(), $p->id, $p->slug])}}"
                                                class="add"
                                                title="Aggiungi al carrello"><i
-                                                        class="fi-rs-shopping-cart mr-5"></i>Acquista</a>
+                                                    class="fi-rs-shopping-cart mr-5"></i>Acquista</a>
+                                        </div>
+                                    @else
+                                        <div class="product-price" hidden>
+                                            <span>€ {{ priceView($p->price) }}</span>
+                                            {{--                                            <span class="old-price">$32.8</span>--}}
+                                        </div>
+                                        <div class="add-cart">
+                                            <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $p->id,$p->slug]) }}"
+                                               class="add"
+                                               title="Richiedi info"><i
+                                                    class="fi-rs-envelope mr-5"></i>Richiedi info</a>
                                         </div>
                                     @endif
-
                                 </div>
                             </div>
                         </div>
