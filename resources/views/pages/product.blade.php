@@ -94,7 +94,7 @@
                             </div>
                             <div class="col-md-6 col-sm-12 col-xs-12">
                                 <div class="detail-info pr-30 pl-30">
-                                    <h2 class="title-detail">{{$product->item_name}}</h2>
+                                    <h2 class="title-detail mb-20">{{$product->item_name}}</h2>
                                     @if($product->shippable == false)
                                         <div class="clearfix product-price-cover" hidden>
                                             <div class="product-price primary-color float-left">
@@ -187,20 +187,32 @@
                                             </div>
                                         </div>
                                     @endif
-                                    <div class="detail-extralink mb-20">
-                                        @if($product->shippable == false)
 
-                                            <div class="product-extra-link2">
-                                                <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                        data-target="#quickViewModal">
-                                                    <i class="w-icon-cart mr-1"></i>Richiedi maggiori informazioni
+                                    <div class="detail-extralink">
+
+                                        <div class="product-extra-link2">
+                                            @if($product->stock_qty > 0 && $product->shippable == true)
+                                                <button
+                                                    onclick="location.href='{{route('addcart', ['lang'=>app()->getLocale(), $product->id])}}';"
+                                                    type="button" class="button button-add-to-cart"><i
+                                                        class="fi-rs-shopping-cart"></i>Aggiungi al carrello
                                                 </button>
-                                                <div class="modal fade custom-modal" id="quickViewModal" tabindex="-1"
+
+                                            @else
+                                                <button type="button" class="btn btn-primary"
+                                                        data-toggle="modal"
+                                                        data-target="#quickViewModal">
+                                                    <i class="w-icon-cart mr-1"></i>Richiedi maggiori
+                                                    informazioni
+                                                </button>
+                                                <div class="modal fade custom-modal" id="quickViewModal"
+                                                     tabindex="-1"
                                                      aria-labelledby="quickViewModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    data-bs-dismiss="modal"
+                                                                    aria-label="Close"></button>
                                                             <div class="modal-body">
                                                                 <div class="deal"
                                                                      style="background-image: url('assets/imgs/banner/popup-1.png')">
@@ -208,7 +220,8 @@
                                                                         <h6 class="mb-10 text-brand-2">Richiedi
                                                                             maggiori
                                                                             informazioni
-                                                                            per <br>{!! $product->item_name !!}</h6>
+                                                                            per <br>{!! $product->item_name !!}
+                                                                        </h6>
                                                                     </div>
                                                                     <div class="deal-content detail-info">
                                                                         <form class="custom-form"
@@ -218,24 +231,30 @@
                                                                             @csrf
                                                                             <div class="form-group">
                                                                                 <label for="name">Nome</label>
-                                                                                <input type="text" id="name" name="name"
-                                                                                       class="form-control" required>
+                                                                                <input type="text" id="name"
+                                                                                       name="name"
+                                                                                       class="form-control"
+                                                                                       required>
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <label for="email">E-mail</label>
+                                                                                <label
+                                                                                    for="email">E-mail</label>
                                                                                 <input type="email" id="email"
                                                                                        name="email"
-                                                                                       class="form-control" required>
+                                                                                       class="form-control"
+                                                                                       required>
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <input type="text" id="item_name"
+                                                                                <input type="text"
+                                                                                       id="item_name"
                                                                                        name="item_name"
                                                                                        class="form-control"
                                                                                        value="{{$product->item_name}}"
                                                                                        hidden>
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <input type="text" id="item_code"
+                                                                                <input type="text"
+                                                                                       id="item_code"
                                                                                        name="item_code"
                                                                                        class="form-control"
                                                                                        value="{{$product->item_code}}"
@@ -244,18 +263,19 @@
                                                                             <div class="form-group">
                                                                                 <label for="message">La tua
                                                                                     richiesta</label>
-                                                                                <textarea id="message" name="message"
+                                                                                <textarea id="message"
+                                                                                          name="message"
                                                                                           cols="30"
                                                                                           rows="5"
                                                                                           class="form-control"
                                                                                           style="height:auto !important"></textarea>
                                                                             </div>
-                                                                            {{--                                                                            <div class="form-group pt-4 mb-4">--}}
-                                                                            {{--                                                                                <div class="g-recaptcha"--}}
-                                                                            {{--                                                                                     data-sitekey="{{env('INVISIBLE_RECAPTCHA_SITEKEY')}}">--}}
+                                                                            {{--                                                                                <div class="form-group pt-4 mb-4">--}}
+                                                                            {{--                                                                                    <div class="g-recaptcha"--}}
+                                                                            {{--                                                                                         data-sitekey="{{env('INVISIBLE_RECAPTCHA_SITEKEY')}}">--}}
 
+                                                                            {{--                                                                                    </div>--}}
                                                                             {{--                                                                                </div>--}}
-                                                                            {{--                                                                            </div>--}}
                                                                             <br>
                                                                             <div class="deal-bottom">
                                                                                 <button type="submit"
@@ -272,115 +292,15 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <!-- Modal -->
-                                        @else
-
-
-                                        <div class="product-extra-link2">
-                                            @if($product->stock_qty > 0)
-                                                <button
-                                                    onclick="location.href='{{route('addcart', ['lang'=>app()->getLocale(), $product->id])}}';"
-                                                    type="button" class="button button-add-to-cart"><i
-                                                        class="fi-rs-shopping-cart"></i>Aggiungi al carrello
-                                                </button>
-                                            @else
-                                                <div class="product-extra-link2">
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                            data-target="#quickViewModal">
-                                                        <i class="w-icon-cart mr-1"></i>Richiedi maggiori informazioni
-                                                    </button>
-                                                    <div class="modal fade custom-modal" id="quickViewModal"
-                                                         tabindex="-1"
-                                                         aria-labelledby="quickViewModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content">
-                                                                <button type="button" class="btn-close"
-                                                                        data-bs-dismiss="modal"
-                                                                        aria-label="Close"></button>
-                                                                <div class="modal-body">
-                                                                    <div class="deal"
-                                                                         style="background-image: url('assets/imgs/banner/popup-1.png')">
-                                                                        <div class="deal-top mb-5">
-                                                                            <h6 class="mb-10 text-brand-2">Richiedi
-                                                                                maggiori
-                                                                                informazioni
-                                                                                per <br>{!! $product->item_name !!}</h6>
-                                                                        </div>
-                                                                        <div class="deal-content detail-info">
-                                                                            <form class="custom-form"
-                                                                                  action="{{route('sendProduct', app()->getLocale())}}"
-                                                                                  name="contactform" id=""
-                                                                                  method="post">
-                                                                                @csrf
-                                                                                <div class="form-group">
-                                                                                    <label for="name">Nome</label>
-                                                                                    <input type="text" id="name"
-                                                                                           name="name"
-                                                                                           class="form-control"
-                                                                                           required>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <label for="email">E-mail</label>
-                                                                                    <input type="email" id="email"
-                                                                                           name="email"
-                                                                                           class="form-control"
-                                                                                           required>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <input type="text" id="item_name"
-                                                                                           name="item_name"
-                                                                                           class="form-control"
-                                                                                           value="{{$product->item_name}}"
-                                                                                           hidden>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <input type="text" id="item_code"
-                                                                                           name="item_code"
-                                                                                           class="form-control"
-                                                                                           value="{{$product->item_code}}"
-                                                                                           hidden>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <label for="message">La tua
-                                                                                        richiesta</label>
-                                                                                    <textarea id="message"
-                                                                                              name="message"
-                                                                                              cols="30"
-                                                                                              rows="5"
-                                                                                              class="form-control"
-                                                                                              style="height:auto !important"></textarea>
-                                                                                </div>
-                                                                                {{--                                                                                <div class="form-group pt-4 mb-4">--}}
-                                                                                {{--                                                                                    <div class="g-recaptcha"--}}
-                                                                                {{--                                                                                         data-sitekey="{{env('INVISIBLE_RECAPTCHA_SITEKEY')}}">--}}
-
-                                                                                {{--                                                                                    </div>--}}
-                                                                                {{--                                                                                </div>--}}
-                                                                                <br>
-                                                                                <div class="deal-bottom">
-                                                                                    <button type="submit"
-                                                                                            class="btn btn-primary">
-                                                                                        INVIA
-                                                                                        RICHIESTA
-                                                                                    </button>
-                                                                                </div>
-                                                                            </form>
-                                                                        </div>
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             @endif
                                             @if(isset($customerFavourites))
-                                                <a aria-label="Aggiungi alla wishlist" class="action-btn hover-up"
+                                                <a aria-label="Aggiungi alla wishlist"
+                                                   class="action-btn hover-up"
                                                    href="{{route('removewish', ['lang'=>app()->getLocale(),$product->id])}}"><i
                                                         class="fi-rs-heart"></i></a>
                                             @else
-                                                <a aria-label="Aggiungi alla wishlist" class="action-btn hover-up"
+                                                <a aria-label="Aggiungi alla wishlist"
+                                                   class="action-btn hover-up"
                                                    href="{{route('addwishlist', [app()->getLocale(), $product->id])}}"><i
                                                         class="fi-rs-heart"></i></a>
 
@@ -389,8 +309,8 @@
                                                href="{{route('addToCompare', ['lang'=>app()->getLocale(), $product->id,$product->slug])}}"><i
                                                     class="fi-rs-shuffle"></i></a>
                                         </div>
-                                        @endif
                                     </div>
+
                                     <div class="font-xs mt-2">
                                         <ul class="mr-50 float-start">
                                             <li class="mb-5">Categoria: <span

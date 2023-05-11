@@ -152,7 +152,6 @@ class ProductsController extends Controller
     public function show($lang, $slug)
     {
         $product = Product::where('slug', $slug)->first();
-//        dd($product);
         $correlated = DB::table('products')->orderBy('created_at', 'DESC');
 
         return view('pages.product', [
@@ -205,14 +204,7 @@ class ProductsController extends Controller
 
         ]);
 
-//        'name' => 'required',
-//        'image' => 'image|size:2048|dimensions:min_width=200,min_height=200,max_width=600,max_height=600',
-//        'file' => 'required|file',
-//        'video' => 'mimes:m4v,avi,flv,mp4,mov',
-
         $product->user_id = auth()->guard('admin')->id();
-        $mainCategory = DB::table('categories')->where('id', '=', \request()->input('categories.0'))->first();
-        $subCategory = DB::table('categories')->where('id', '=', \request()->input('categories.1'))->first();
 
         $product->update([
             'item_name' => \request()->input('item_name'),
@@ -226,10 +218,8 @@ class ProductsController extends Controller
             'price' => str_replace(',', '.', \request()->input('price')),
             'shippable' => \request()->input('shippable'),
             'published' => \request()->input('published'),
-
-//            'color' => \request()->input('color', [])
-
         ]);
+
         if (\request()->hasFile('img_01')) {
             $image = \request()->file('img_01');
             $name = $image->getClientOriginalName();
@@ -237,6 +227,7 @@ class ProductsController extends Controller
             $image->move($destinationPath, $name);
             $product->img_01 = $name;
         }
+
         if (\request()->hasFile('img_02')) {
             $image2 = \request()->file('img_02');
             $name2 = $image2->getClientOriginalName();
@@ -244,6 +235,7 @@ class ProductsController extends Controller
             $image2->move($destinationPath2, $name2);
             $product->img_02 = $name2;
         }
+
         if (\request()->hasFile('img_03')) {
             $image3 = \request()->file('img_03');
             $name3 = $image3->getClientOriginalName();
@@ -251,6 +243,7 @@ class ProductsController extends Controller
             $image3->move($destinationPath3, $name3);
             $product->img_03 = $name3;
         }
+
         if (\request()->hasFile('attachment')) {
             $file = \request()->file('attachment');
             $fileName = $file->getClientOriginalName();
@@ -258,6 +251,7 @@ class ProductsController extends Controller
             $file->move($pathFile, $fileName);
             $product->attachment = $fileName;
         }
+
         try {
             $product->categories()->sync(\request()->input('categories', []));
             $product->save();
