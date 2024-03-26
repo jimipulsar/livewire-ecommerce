@@ -39,15 +39,15 @@
                                 <div class="flex items-center">
 
                                     <div
-                                        class="text-sm leading-5 font-medium text-gray-900">   {{ $category->name }}</div>
+                                        class="leading-5 font-medium text-gray-900">   {{ $category->name }}</div>
 
                                 </div>
                             </td>
                             @if($category->parentCategory)
-                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ $category->name }}
+                                <td class="text-sm px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ $category->name }}
                                     <strong>-></strong> {{ $category->parentCategory->name }}</td>
                             @else
-                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ $category->name }}</td>
+                                <td class="text-sm px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ $category->name }}</td>
                             @endif
 
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 right text-right justify-content-end">

@@ -172,7 +172,7 @@ class CategorySearch extends Component
     private function getCategories()
     {
         return Category::withCount('products')
-            ->having('products_count', '>=', 0)
+            ->having('products_count', '>', 0)
             ->where('name', '=', \request()['categoryName'])
             ->orderBy('products_count', 'DESC')
             ->get();

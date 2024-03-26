@@ -29,41 +29,43 @@
                         </div>
                     </div>
                 </div>
-                <h5 class="section-title style-1 mb-30 mt-10" style="margin-top:70px !important">Categorie</h5>
-                <ul class="list-group" id="categories">
-                    @foreach($uniqueCategories as $parentCategory)
-                        @if($parentCategory->parent_id == null)
-                            <li class="{{ in_array($parentCategory->id, $filters) ? 'bg-main' : '' }}"
-                                data-id="{{ $parentCategory->id }}">
+                @if($uniqueCategories->count())
+                    <h5 class="section-title style-1 mb-30 mt-10" style="margin-top:70px !important">Categorie</h5>
+                    <ul class="list-group" id="categories">
+                        @foreach($uniqueCategories as $parentCategory)
+                            @if($parentCategory->parent_id == null)
+                                <li class="{{ in_array($parentCategory->id, $filters) ? 'bg-main' : '' }}"
+                                    data-id="{{ $parentCategory->id }}">
 
-                                <a
-                                    class="flex items-center rounded-full  text-[{{$parentCategory->name}}] hover:bg-amber-600 hover:text-white {{ in_array($parentCategory->id, $filters) ? 'text-white' : '' }}"><img
-                                        src="/assets/imgs/theme/icons/category-1.svg"
-                                        alt=""/><strong>{{ ucfirst($parentCategory->name) }}
-                                        ({{ $parentCategory->products_count }})</strong></a>
-                                <i class="fi-rs-angle-small-right"></i>
-                            </li>
-                        @endif
-                        @if($parentCategory->childCategories->count())
-                            <div class="list-second-level" data-id="{{ $parentCategory->id }}" style="display:none"
-                                 wire:ignore.self>
-                                @foreach($parentCategory->childCategories as $category)
-                                    <li class="{{ in_array($category->id, $filters) ? 'bg-main' : '' }} justify-content-start"
-                                        style="margin-left:20px !important"
-                                        data-id="{{ $category->id }}">
+                                    <a
+                                        class="flex items-center rounded-full  text-[{{$parentCategory->name}}] hover:bg-amber-600 hover:text-white {{ in_array($parentCategory->id, $filters) ? 'text-white' : '' }}"><img
+                                            src="/assets/imgs/theme/icons/category-1.svg"
+                                            alt=""/><strong>{{ ucfirst($parentCategory->name) }}
+                                            ({{ $parentCategory->products_count }})</strong></a>
+                                    <i class="fi-rs-angle-small-right"></i>
+                                </li>
+                            @endif
+                            @if($parentCategory->childCategories->count())
+                                <div class="list-second-level" data-id="{{ $parentCategory->id }}" style="display:none"
+                                     wire:ignore.self>
+                                    @foreach($parentCategory->childCategories as $category)
+                                        <li class="{{ in_array($category->id, $filters) ? 'bg-main' : '' }} justify-content-start"
+                                            style="margin-left:20px !important"
+                                            data-id="{{ $category->id }}">
 
-                                        <a wire:click="$emit('filterByCategory', {{ $category->id }})"
-                                           wire:ref="search-box"
-                                           class="flex items-center rounded-full  hover:bg-amber-600 hover:text-white {{ in_array($category->id, $filters) ? 'text-white' : '' }}">
-                                            <img src="/assets/imgs/theme/icons/category-2.svg"
-                                                 alt=""/> {{ ucfirst($category->name) }}
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </div>
-                        @endif
-                    @endforeach
-                </ul>
+                                            <a wire:click="$emit('filterByCategory', {{ $category->id }})"
+                                               wire:ref="search-box"
+                                               class="flex items-center rounded-full  hover:bg-amber-600 hover:text-white {{ in_array($category->id, $filters) ? 'text-white' : '' }}">
+                                                <img src="/assets/imgs/theme/icons/category-2.svg"
+                                                     alt=""/> {{ ucfirst($category->name) }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </div>
+                            @endif
+                        @endforeach
+                    </ul>
+                @endif
             </div>
             <!-- Fillter By Price -->
         </div>
@@ -185,42 +187,45 @@
                                 </div>
                             </div>
                             <div class="product-content-wrap">
-                                <div class="product-category">
-                                    Categoria: <a
-                                        href="{{ route('categoryPage',['lang'=>app()->getLocale(),productDetails($p->id)['category_id'],  productDetails($p->id)['category_slug']]) }}">
+                                @if($uniqueCategories->count())
+                                    <div class="product-category">
+                                        Categoria: <a
+                                            href="{{ route('categoryPage',['lang'=>app()->getLocale(),productDetails($p->id)['category_id'],  productDetails($p->id)['category_slug']]) }}">
 
-                                        <span style="color: #BF8346;">{{ucFirst(productDetails($p->id)['name'])}}</span>
-                                    </a><br>
-                                    Codice articolo: {{__($p->item_code)}}
-                                </div>
-                                <h2>
-                                    <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $p->id,$p->slug]) }}">{{__($p->item_name)}}</a>
-                                </h2>
-                                <div class="product-card-bottom">
-                                    @if($p->stock_qty >= 0)
-                                        <div class="product-price">
-                                            <span>€ {{ priceView($p->price) }}</span>
-                                            {{--                                            <span class="old-price">$32.8</span>--}}
-                                        </div>
-                                        <div class="add-cart">
-                                            <a href="{{route('addcart', ['lang'=>app()->getLocale(), $p->id, $p->slug])}}"
-                                               class="add"
-                                               title="Aggiungi al carrello"><i
-                                                    class="fi-rs-shopping-cart mr-5"></i>Acquista</a>
-                                        </div>
-                                    @else
-                                        <div class="product-price" hidden>
-                                            <span>€ {{ priceView($p->price) }}</span>
-                                            {{--                                            <span class="old-price">$32.8</span>--}}
-                                        </div>
-                                        <div class="add-cart">
-                                            <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $p->id,$p->slug]) }}"
-                                               class="add"
-                                               title="Richiedi info"><i
-                                                    class="fi-rs-envelope mr-5"></i>Richiedi info</a>
-                                        </div>
-                                    @endif
-                                </div>
+                                            <span
+                                                style="color: #BF8346;">{{ucFirst(productDetails($p->id)['name'])}}</span>
+                                        </a><br>
+                                        Codice articolo: {{__($p->item_code)}}
+                                    </div>
+                                    <h2>
+                                        <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $p->id,$p->slug]) }}">{{__($p->item_name)}}</a>
+                                    </h2>
+                                    <div class="product-card-bottom">
+                                        @if($p->stock_qty >= 0)
+                                            <div class="product-price">
+                                                <span>€ {{ priceView($p->price) }}</span>
+                                                {{--                                            <span class="old-price">$32.8</span>--}}
+                                            </div>
+                                            <div class="add-cart">
+                                                <a href="{{route('addcart', ['lang'=>app()->getLocale(), $p->id, $p->slug])}}"
+                                                   class="add"
+                                                   title="Aggiungi al carrello"><i
+                                                        class="fi-rs-shopping-cart mr-5"></i>Acquista</a>
+                                            </div>
+                                        @else
+                                            <div class="product-price" hidden>
+                                                <span>€ {{ priceView($p->price) }}</span>
+                                                {{--                                            <span class="old-price">$32.8</span>--}}
+                                            </div>
+                                            <div class="add-cart">
+                                                <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $p->id,$p->slug]) }}"
+                                                   class="add"
+                                                   title="Richiedi info"><i
+                                                        class="fi-rs-envelope mr-5"></i>Richiedi info</a>
+                                            </div>
+                                        @endif
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>

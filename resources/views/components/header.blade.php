@@ -219,6 +219,7 @@
                     <a href="{{url('/')}}"><img src="/uploads/logo/logo.png" alt="logo" style="height: 71px;width: 100%;object-fit: contain;"/></a>
                 </div>
                 <div class="header-nav d-none d-lg-flex">
+                    @if(getCategories()->count())
                     <div class="main-categori-wrap d-none d-lg-block">
                         <a class="categories-button-active" href="#">
                             <span class="fi-rs-apps"></span> <span class="et"></span> Categorie
@@ -230,7 +231,7 @@
                                     @foreach (getCategories() as $cat)
                                         <li>
                                             <a href="{{ route('categoryPage',['lang'=>app()->getLocale(),$cat->id,  $cat->category_slug]) }}"><img
-                                                        src="/assets/imgs/theme/icons/category-6.svg"
+                                                        src='/assets/imgs/theme/icons/category-{{$cat->id ?? 1}}.svg'
                                                         alt=""/>{{ucFirst($cat->name)}}</a>
                                         </li>
                                     @endforeach
@@ -240,6 +241,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                     <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
                         <nav>
                             <ul>

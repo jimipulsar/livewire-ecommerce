@@ -32,9 +32,12 @@ class CategoryController extends Controller
      */
     public function create()
     {
-
+//        $parentcategory = Category::whereNull('parent_id')->get();
         $categories = Category::all();
-        return view('auth.admin.categories.create', ['categories' => $categories]);
+
+        return view('auth.admin.categories.create', [
+            'categories' => $categories
+            ]);
 
     }
 
