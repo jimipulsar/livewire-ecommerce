@@ -55,7 +55,7 @@ class ProductsController extends Controller
             ->where('parent_id', '=', null)
             ->get();
         $product->shippable = \request()->input('shippable');
-//        dd(\request()->input('shippable') );
+
         return view('auth.admin.products.create', [
             'product' => $product,
             'subCategories' => $subCategories,
@@ -72,9 +72,9 @@ class ProductsController extends Controller
     public function store($lang, Request $request)
     {
         $request->validate([
-            'img_01' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048',
-            'img_02' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048',
-            'img_03' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048',
+            'img_01' => 'image|mimes:jpeg,png,webp,jpg,gif,svg|max:3048',
+            'img_02' => 'image|mimes:jpeg,png,webp,jpg,gif,svg|max:3048',
+            'img_03' => 'image|mimes:jpeg,png,webp,jpg,gif,svg|max:3048',
             'attachment' => 'file|mimes:ppt,pptx,doc,docx,pdf,xls,xlsx,txt|max:10048',
         ]);
 
@@ -196,9 +196,9 @@ class ProductsController extends Controller
 
         $product = Product::findOrFail($id);
         \request()->validate([
-            'img_01' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048',
-            'img_02' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048',
-            'img_03' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048',
+            'img_01' => 'image|mimes:jpeg,png,webp,jpg,gif,svg|max:3048',
+            'img_02' => 'image|mimes:jpeg,png,webp,jpg,gif,svg|max:3048',
+            'img_03' => 'image|mimes:jpeg,png,webp,jpg,gif,svg|max:3048',
             'attachment' => 'file|mimes:ppt,pptx,doc,docx,pdf,xls,xlsx,txt|max:10048',
             'shippable' => 'required'
 

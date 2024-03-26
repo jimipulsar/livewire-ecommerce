@@ -55,7 +55,7 @@ class CategoryController extends Controller
         $category = Category::create($request->all());
         $category->name = $request->name;
         $slug = Str::slug($category->name);
-        $category->slug = $slug;
+        $category->category_slug = $slug;
         $category->parent_id = $request->parent_id;
 
         if ($category->save() ) {

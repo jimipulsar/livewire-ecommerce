@@ -20,9 +20,9 @@ class DatabaseSeeder extends Seeder
 
 
 //        Product::factory()->count(100)->create();
-        $this->call(CategoriesTableSeeder::class);
+//        $this->call(CategoriesTableSeeder::class);
         $this->call(BrandsTableSeeder::class);
-        $this->call(ProductsTableSeeder::class);
+//        $this->call(ProductsTableSeeder::class);
 
 //        Tag::factory()->count(50)->create();
 

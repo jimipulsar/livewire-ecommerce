@@ -1,7 +1,6 @@
 <div class="container mb-30">
     <div class="row flex-row">
         <div class="col-lg-1-5 primary-sidebar sticky-sidebar">
-
             <div class="sidebar-widget widget-category-2 mb-30">
                 <h5 class="section-title style-1 mb-30 mt-10">Categorie</h5>
                 <ul class="list-group" id="categories">
@@ -52,7 +51,7 @@
                     @endforeach
                 </ul>
             </div>
-            <!-- Fillter By Price -->
+
         </div>
         <div class="col-lg-4-5">
             <div class="shop-product-fillter ">

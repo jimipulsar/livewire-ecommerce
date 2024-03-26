@@ -13,7 +13,7 @@
     <div class="flex flex-col mt-8">
         <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
             <div
-                    class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+                class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
                 <table class="min-w-full">
                     <thead>
                     <tr>
@@ -24,7 +24,8 @@
                         <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                             Relazioni
                         </th>
-                        <th style="width: 180px"class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                        <th style="width: 180px"
+                            class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                             Azioni
                         </th>
 
@@ -38,7 +39,7 @@
                                 <div class="flex items-center">
 
                                     <div
-                                            class="text-sm leading-5 font-medium text-gray-900">   {{ $category->name }}</div>
+                                        class="text-sm leading-5 font-medium text-gray-900">   {{ $category->name }}</div>
 
                                 </div>
                             </td>
@@ -55,10 +56,10 @@
                                    title="Modifica"
                                    href="{{ route('categories.edit',['lang' => app()->getLocale(), $category->id]) }}"
                                    id="btLeft"><i
-                                            class="fas fa-edit" title="Modifica"></i></a>
+                                        class="fas fa-edit" title="Modifica"></i></a>
                                 <div
-                                        x-data="{ 'showModal': false }"
-                                        @keydown.escape="showModal = false" id="btLeft">
+                                    x-data="{ 'showModal': false }"
+                                    @keydown.escape="showModal = false" id="btLeft">
                                     <button type="button" @click="showModal = true" title="Elimina"
                                             class="px-4 py-2.5 ml-2 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lgfocus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0active:bg-red-800 active:shadow-lgtransition duration-150 ease-in-out mr-4">
                                         <i class="fas fa-trash-alt"></i></button>
@@ -67,16 +68,16 @@
 
                                     <!-- Modal -->
                                     <div
-                                            class="fixed inset-0 z-30 flex items-center justify-center overflow-auto bg-black bg-opacity-50"
-                                            x-show="showModal"
+                                        class="fixed inset-0 z-30 flex items-center justify-center overflow-auto bg-black bg-opacity-50"
+                                        x-show="showModal"
                                     >
                                         <!-- Modal inner -->
                                         <div
-                                                class="max-w-6xl px-6 py-6 mx-auto text-left rounded"
-                                                @click.away="showModal = false"
-                                                x-transition:enter="motion-safe:ease-out duration-300"
-                                                x-transition:enter-start="opacity-0 scale-90"
-                                                x-transition:enter-end="opacity-100 scale-100"
+                                            class="max-w-6xl px-6 py-6 mx-auto text-left rounded"
+                                            @click.away="showModal = false"
+                                            x-transition:enter="motion-safe:ease-out duration-300"
+                                            x-transition:enter-start="opacity-0 scale-90"
+                                            x-transition:enter-end="opacity-100 scale-100"
                                         >
                                             <!-- Title / Close-->
                                             <div class="flex items-center justify-between">
@@ -96,11 +97,11 @@
                                             <!-- content -->
 
                                             <div
-                                                    class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                                                class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
                                                 <div class="bg-white px-4 pt-5 pb-4 py-5 sm:p-6 sm:pb-4">
                                                     <div class="md:flex sm:items-start py-3">
                                                         <div
-                                                                class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                                                            class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
                                                             <svg @click="toggleModal" class="h-6 w-6 text-red-600"
                                                                  xmlns="http://www.w3.org/2000/svg" fill="none"
                                                                  viewBox="0 0 24 24"
@@ -126,8 +127,8 @@
                                                 </div>
                                                 <div class="bg-gray-50 px-4 pb-7 sm:px-6 sm:flex sm:flex-row-reverse">
                                                     <form
-                                                            action="{{ route('categories.destroy' ,['lang' => app()->getLocale(), $category->id]) }}"
-                                                            method="POST" enctype="multipart/form-data">
+                                                        action="{{ route('categories.destroy' ,['lang' => app()->getLocale(), $category->id]) }}"
+                                                        method="POST" enctype="multipart/form-data">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" data-toggle="modal"
@@ -161,9 +162,10 @@
                 </table>
 
             </div>
+            <div class="d-flex justify-content-center mt-5 mb-5">
+                {{ $categories->links('vendor.pagination.tailwind') }}
+
+            </div>
         </div>
-
-
-
 
 @endsection

@@ -11,12 +11,7 @@
                 <div class="shadow overflow-hidden sm:rounded-md">
                     <div class="px-4 py-5 bg-white sm:p-6">
                         <div class="grid grid-cols-6 gap-6">
-                            <div class="col-span-9 sm:col-span-4">
-                                <label for="SottoCategoria"
-                                       class="block text-sm font-medium text-gray-700">Sottocategoria</label>
-                                <input type="text" name="name" id="name"
-                                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                            </div>
+
 
                             <div class="col-span-3 sm:col-span-2">
                                 <label for="parent_id"
@@ -37,13 +32,18 @@
                                     </div>
                                 @endif
                             </div>
-
+                            <div class="col-span-9 sm:col-span-4">
+                                <label for="name"
+                                       class="block text-sm font-medium text-gray-700">Sottocategoria</label>
+                                <input type="text" name="name" id="name"
+                                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            </div>
                         </div>
 
                         <div class="px-4 py-3 text-right sm:px-6 pb-10 mt-8">
-                            <a href="{{url()->previous()}}"
+                            <a href="{{route('categories.index', app()->getLocale())}}"
                                class="btn px-6 py-2.5 bg-green-600 hover:bg-green-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg focus:bg-green-900  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out items-center">
-                                Torna indietro
+                                Torna alle categorie
                             </a>
                             <button type="submit"
                                     class="ml-7 btn px-6 py-2.5 bg-blue-700 hover:bg-blue-900 text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg focus:bg-blue-900  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out items-center">
