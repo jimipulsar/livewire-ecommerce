@@ -73,9 +73,7 @@
                                             {{ $errors->first('categories') }}
                                         </div>
                                     @endif
-
                                 </div>
-
                                 <div class="col-span-2 sm:col-span-2">
                                     <label for="categories[]"
                                            class="block my-2 text-sm font-medium text-gray-700">Sottocategoria</label>
