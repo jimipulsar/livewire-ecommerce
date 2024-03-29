@@ -50,6 +50,7 @@ class ProductsController extends Controller
 
         $subCategories = Category::with('parentCategory')
             ->whereHas('parentCategory')
+            ->where('parent_id', '!=', null)
             ->get();
         $mainCategory = Category::with('parentCategory')
             ->where('parent_id', '=', null)

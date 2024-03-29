@@ -85,7 +85,7 @@
                                             name="categories[]" id="categories" autocomplete="categories">
                                         <option disabled value> -- Seleziona --</option>
 
-                                        @foreach ($subCategories as $category)
+                                        @foreach ($subCategories->unique('category_slug') as $category)
                                             <option value="{{$category->id }}">  {{ $category->name }}</option>
 
                                         @endforeach

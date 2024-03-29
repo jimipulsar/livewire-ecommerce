@@ -3,24 +3,26 @@
 @section('body')
 
     <h3 class="text-gray-700 text-3xl font-medium">Crea Categoria</h3>
-    <div class="md:grid md:grid-cols-3 md:gap-6 mt-10 mb-10">
+    <div class="md:grid md:grid-cols-5 md:gap-6 mt-10 mb-10">
         <div class="mt-5 md:mt-0 md:col-span-2">
             <form action="{{ route('categories.store', app()->getLocale()) }}" method="POST">
                 @csrf
                 <div class="shadow overflow-hidden sm:rounded-md">
                     <div class="px-4 py-5 bg-white sm:p-6">
-                        <div class="grid grid-cols-6 gap-6">
-                            <div class="col-span-3 sm:col-span-2">
+                        <div class="grid grid-cols-4 gap-4">
+                            <div class="col-span-6 sm:col-span-6">
                                 <label for="parent_id"
-                                       class="block text-sm font-medium text-gray-700">Categoria</label>
+                                       class="block text-sm font-medium text-gray-700">Categoria (lasciare vuoto per creare categoria principale)</label>
 
                                 <select
                                     class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                     name="parent_id" id="parent_id" autocomplete="categories">
                                     <option disabled selected value> -- Seleziona</option>
                                     @foreach ($categories as $cat)
+                                        @if($cat->parent_id == null)
                                         <option
                                             value="{{ $cat->id }}">{{ $cat->name }}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                                 @if($errors->has('categories'))
@@ -29,7 +31,7 @@
                                     </div>
                                 @endif
                             </div>
-                            <div class="col-span-9 sm:col-span-4">
+                            <div class="col-span-6 sm:col-span-6">
                                 <label for="name"
                                        class="block text-sm font-medium text-gray-700">Sottocategoria</label>
                                 <input type="text" name="name" id="name"

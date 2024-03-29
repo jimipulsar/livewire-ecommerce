@@ -119,6 +119,7 @@ class Search extends Component
             foreach ($this->filters as $filter) {
                 $products->whereHas('categories', function ($query) use ($filter) {
                     $query->where('categories.id', $filter);
+
                 });
             }
         }
