@@ -170,21 +170,30 @@ class ProductsController extends Controller
     public function edit($lang, $id)
     {
         $product = Product::find($id);
+//        dd($product->categories->first()->pivot->category_id);
         $subCategories = Category::with('parentCategory')
             ->whereHas('parentCategory')
             ->get();
-
+        $uniqueCategories = $this->getCategories();
         $mainCategory = Category::with('parentCategory')
+            ->whereHas('childCategories')
             ->where('parent_id', '=', null)
             ->get();
-
+//dd(\request()->input('categories', []));
         return view('auth.admin.products.edit', [
             'product' => $product,
             'subCategories' => $subCategories,
-            'mainCategory' => $mainCategory
+            'mainCategory' => $mainCategory,
+            'uniqueCategories' => $uniqueCategories
         ]);
     }
-
+    private function getCategories()
+    {
+        return Category::withCount('products')
+            ->having('products_count', '>', 0)
+            ->orderBy('products_count', 'DESC')
+            ->get();
+    }
     /**
      * Update the specified resource in storage.
      *

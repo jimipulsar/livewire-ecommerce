@@ -85,10 +85,14 @@
                                         class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                         name="categories[]" id="categories" autocomplete="categories">
                                         <option disabled value> -- Seleziona --</option>
+                                        @foreach ($subCategories as $category)
+                                            {{--                                        @if ($loop->first) @continue @endif--}}
+                                            @if($category->parentCategory)
 
-                                        @foreach ($subCategories->unique('category_slug') as $category)
-                                            <option value="{{$category->id }}">  {{ $category->name }}</option>
-
+                                                <option value="{{$category->id }}">{{ $category->name }} /  {{ $category->parentCategory->name }}</option>
+                                            @else
+                                                <td class="text-sm px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ $category->name }}</td>
+                                            @endif
                                         @endforeach
                                     </select>
                                     @if($errors->has('categories'))

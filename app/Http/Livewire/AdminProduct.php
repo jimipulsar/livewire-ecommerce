@@ -47,7 +47,8 @@ class AdminProduct extends Component
     {
         $min_price = Product::min('price');
         $max_price = Product::max('price');
-        $items = Product::with('categories')->withCount('categories');
+        $items = Product::with('categories')->withCount('categories')
+            ->orderBy('updated_at', 'DESC');
 
         $uniqueCategories = $this->getCategories();
 //        Product::query()

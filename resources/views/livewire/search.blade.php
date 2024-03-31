@@ -55,7 +55,7 @@
 
                                             <a wire:click="$emit('filterByCategory', {{ $category->id }})"
                                                wire:ref="search-box"
-                                               class="flex items-center rounded-full  hover:bg-amber-600 hover:text-white {{ in_array($category->parent_id, $filters) ? 'text-white' : '' }}">
+                                               class="flex items-center text-gray-400 rounded-full  hover:bg-amber-600 hover:text-white {{ in_array($category->parent_id, $filters) ? 'text-white' : '' }}">
                                                 <img src="/assets/imgs/theme/icons/category-2.svg"
                                                      alt=""/> {{ ucfirst($category->name) }}
                                             </a>
