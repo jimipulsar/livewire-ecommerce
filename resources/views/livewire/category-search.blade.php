@@ -21,12 +21,12 @@
                             <div data-id="{{ $parentCategory->id }}"
                                 >
                                 @foreach($parentCategory->childCategories as $category)
-                                    <li class="{{ in_array($category->id, $filters) ? '' : 'bg-main' }} justify-content-start"
+                                    <li class="{{ in_array($category->id, $filters) ? 'bg-main' : '' }} justify-content-start"
                                         style="margin-left:20px !important"
                                         data-id="{{ $category->id }}">
 
                                         <a
-                                           class="flex items-center rounded-full  hover:bg-amber-600 hover:text-white {{ in_array($category->id, $filters) ? '' : 'text-white' }}">
+                                           class="flex items-center rounded-full  hover:bg-amber-600 hover:text-white {{ in_array($category->id, $filters) ? 'text-white' : '' }}">
                                             <img src="/assets/imgs/theme/icons/category-2.svg"
                                                  alt=""/> {{ ucfirst($category->name) }}
                                         </a>
