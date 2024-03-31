@@ -16,7 +16,8 @@
                                     <label for="item_name"
                                            class="block my-2 text-sm font-medium text-gray-700">Nome Articolo</label>
                                     <input type="text" name="item_name" id="item_name"
-                                           class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
+                                           class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                           required>
                                 </div>
 
                                 <div class="col-span-2 sm:col-span-2">
@@ -31,7 +32,8 @@
                                     <label for="shippable" class="block my-2 text-sm font-medium text-gray-700">Acquistabile</label>
                                     <div class="mt-4">
                                         <input type="radio" class="form-radio" name="shippable" id="shippable"
-                                               value="1" {{\request()->input('shippable') == '1' ? 'checked' : ''}} checked>
+                                               value="1"
+                                               {{\request()->input('shippable') == '1' ? 'checked' : ''}} checked>
                                         <span class="ml-2" style="margin-left:6px;margin-right:10px;">Si</span>
                                         <input type="radio" class="form-radio" name="shippable" id="shippable"
                                                value="0" {{\request()->input('shippable') == '0' ? 'checked' : ''}}>
@@ -45,7 +47,8 @@
                                     <div class="mt-4">
 
                                         <input type="radio" class="form-radio" name="published" id="published"
-                                               value="1" {{\request()->input('published') == '1' ? 'checked' : ''}} checked>
+                                               value="1"
+                                               {{\request()->input('published') == '1' ? 'checked' : ''}} checked>
                                         <span class="ml-2" style="margin-left:6px;margin-right:10px;">Si</span>
                                         <input type="radio" class="form-radio" name="published" id="published"
                                                value="0" {{\request()->input('published') == '0' ? 'checked' : ''}}>
@@ -60,8 +63,8 @@
                                            class="block my-2 text-sm font-medium text-gray-700">Categoria</label>
 
                                     <select
-                                            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                            name="categories[]" id="categories" autocomplete="categories">
+                                        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                        name="categories[]" id="categories" autocomplete="categories">
                                         <option disabled selected value> -- Seleziona</option>
 
                                         @foreach ($mainCategory as $cat)
@@ -79,8 +82,8 @@
                                            class="block my-2 text-sm font-medium text-gray-700">Sottocategoria</label>
 
                                     <select
-                                            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                            name="categories[]" id="categories" autocomplete="categories">
+                                        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                        name="categories[]" id="categories" autocomplete="categories">
                                         <option disabled value> -- Seleziona --</option>
 
                                         @foreach ($subCategories->unique('category_slug') as $category)
@@ -105,33 +108,41 @@
                                 </div>
 
                             </div>
-                            <div class="grid grid-cols-6 gap-6 py-3">
-                                <div class="col-span-6 sm:col-span-6">
-                                    <div class="col-span-6 sm:col-span-6">
-                                        <label for="link"
-                                               class="block my-2 text-sm font-medium text-gray-700">Link</label>
-                                        <input type="text" name="link" id="link"
-                                               class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                        >
-                                    </div>
-                                    <div class="col-span-6 sm:col-span-6">
-                                        <label for="link_2"
-                                               class="block my-2 text-sm font-medium text-gray-700">Link #2</label>
-                                        <input type="text" name="link_2" id="link_2"
-                                               class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                        >
-                                    </div>
 
-                                </div>
-                            </div>
                             <div class="grid grid-cols-6 gap-6 py-3">
-                                <div class="col-span-4 sm:col-span-4">
+                                <div class="col-span-2 sm:col-span-2">
+                                    <label for="price" class="block my-2 text-sm font-medium text-gray-700">Prezzo
+                                        in
+                                        €</label>
+                                    <input type="text" name="price" id="price"
+                                           class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                           required>
+                                </div>
+
+
+                                <div class="col-span-3 sm:col-span-2">
+                                    <label for="link"
+                                           class="block my-2 text-sm font-medium text-gray-700">Link</label>
+                                    <input type="text" name="link" id="link"
+                                           class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                    >
+                                </div>
+                                <div class="col-span-3 sm:col-span-2">
+                                    <label for="link_2"
+                                           class="block my-2 text-sm font-medium text-gray-700">Link #2</label>
+                                    <input type="text" name="link_2" id="link_2"
+                                           class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                    >
+                                </div>
+
+
+                                <div class="col-span-6 sm:col-span-6">
                                     <label class="block my-2 text-md py-2 font-medium text-gray-700">
                                         Allegato
                                     </label>
 
                                     <div
-                                            class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                                        class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                         <div class="space-y-1 text-center">
                                             <div class="flex text-md py-2 pl-3 text-gray-600">
 
@@ -159,13 +170,7 @@
                                     </div>
 
                                 </div>
-                                <div class="col-span-2 sm:col-span-2">
-                                    <label for="price" class="block my-2 text-sm font-medium text-gray-700">Prezzo
-                                        in
-                                        €</label>
-                                    <input type="text" name="price" id="price"
-                                           class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
-                                </div>
+
                             </div>
                             <div class="col-span-6 sm:col-span-6">
                                 <label for="Descrizione"
@@ -194,7 +199,7 @@
                                 </label>
 
                                 <div
-                                        class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                                    class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                     <div class="space-y-1 text-center">
                                         <div class="flex text-md py-2 pl-3 text-gray-600">
                                             <label for="img_01"
@@ -220,7 +225,7 @@
                                 </label>
 
                                 <div
-                                        class="mt-1 mb-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                                    class="mt-1 mb-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                     <div class="space-y-1 text-center">
                                         <div class="flex text-md py-2 pl-3 text-gray-600">
                                             <label for="img_02"
@@ -242,7 +247,7 @@
                                 </label>
 
                                 <div
-                                        class="mt-1 mb-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                                    class="mt-1 mb-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                     <div class="space-y-1 text-center">
                                         <div class="flex text-md py-2 pl-3 text-gray-600">
                                             <label for="img_03"

@@ -23,13 +23,17 @@
                                 <label for="parent_id"
                                        class="block text-sm font-medium text-gray-700">Categoria</label>
 
-                                <select class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                        name="parent_id" id="parent_id" autocomplete="categories">
+                                <select
+                                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                    name="parent_id" id="parent_id" autocomplete="categories">
                                     <option disabled selected value> -- Seleziona</option>
 
-                                @foreach ($categories as $cat)
-                                        <option
-                                                value="{{ $cat->id }}" @if($category->parent_id == $cat->id) selected @endif>{{ $cat->name }}</option>
+                                    @foreach ($categories as $cat)
+                                        @if($cat->parent_id == null)
+                                            <option
+                                                value="{{ $cat->id }}"
+                                                @if($category->parent_id == $cat->id) selected @endif>{{ $cat->name }}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                                 @if($errors->has('categories'))
@@ -56,7 +60,5 @@
             </form>
         </div>
     </div>
-
-
 
 @endsection
