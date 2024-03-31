@@ -55,13 +55,19 @@ class CategorySearch extends Component
 
         if ($categoryId && $categoryName) {
 
-            $products = Product::query()->with('categories')
+//            $products = Product::query()->with('categories')
+//                ->leftJoin('category_product', 'category_product.product_id', '=', 'products.id')
+//                ->leftJoin('categories', 'categories.id', '=', 'category_product.category_id')
+//                ->select('products.*', 'categories.*', 'category_product.*')
+//                ->where([
+//                    ['category_product.category_id', '=', $categoryId],
+//                ]);
+            $products = Product::with('categories')->withCount('categories')
                 ->leftJoin('category_product', 'category_product.product_id', '=', 'products.id')
                 ->leftJoin('categories', 'categories.id', '=', 'category_product.category_id')
-                ->select('products.*', 'categories.*', 'category_product.*')
                 ->where([
                     ['category_product.category_id', '=', $categoryId],
-                ]);
+                ]);;
             $uniqueCategories = $this->getCategories();
 
             $this->applySearchFilterParameters($products);
