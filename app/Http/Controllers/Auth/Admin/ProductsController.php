@@ -179,7 +179,7 @@ class ProductsController extends Controller
             ->whereHas('childCategories')
             ->where('parent_id', '=', null)
             ->get();
-//dd(\request()->input('categories', []));
+
         return view('auth.admin.products.edit', [
             'product' => $product,
             'subCategories' => $subCategories,
@@ -261,7 +261,7 @@ class ProductsController extends Controller
             $file->move($pathFile, $fileName);
             $product->attachment = $fileName;
         }
-
+       //dd(DB::table('categories')->where('id', '=', \request()->input('categories.1'))->first()->parent_id);
         try {
             $product->categories()->sync(\request()->input('categories', []));
             $product->save();
