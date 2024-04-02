@@ -60,7 +60,7 @@
                             <div class="grid grid-cols-6 gap-6 py-3">
                                 <div class="col-span-4 sm:col-span-2">
                                     <label for="categories[]"
-                                           class="block my-2 text-sm font-medium text-gray-700">Categoria</label>
+                                           class="block my-2 text-sm font-medium text-gray-700">Categoria principale</label>
 
                                     <select
                                         class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
@@ -102,7 +102,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-span-2 sm:col-span-2">
+                                <div class="col-span-1 sm:col-span-1">
 
                                     <label for="stock_qty"
                                            class="block my-2 text-sm font-medium text-gray-700">Quantità</label>
@@ -111,10 +111,9 @@
                                            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                 </div>
 
-                            </div>
 
-                            <div class="grid grid-cols-6 gap-6 py-3">
-                                <div class="col-span-2 sm:col-span-2">
+
+                                <div class="col-span-1 sm:col-span-1">
                                     <label for="price" class="block my-2 text-sm font-medium text-gray-700">Prezzo
                                         in
                                         €</label>
@@ -124,14 +123,14 @@
                                 </div>
 
 
-                                <div class="col-span-3 sm:col-span-2">
+                                <div class="col-span-4 sm:col-span-3">
                                     <label for="link"
                                            class="block my-2 text-sm font-medium text-gray-700">Link</label>
                                     <input type="text" name="link" id="link"
                                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                     >
                                 </div>
-                                <div class="col-span-3 sm:col-span-2">
+                                <div class="col-span-4 sm:col-span-3">
                                     <label for="link_2"
                                            class="block my-2 text-sm font-medium text-gray-700">Link #2</label>
                                     <input type="text" name="link_2" id="link_2"
@@ -174,8 +173,8 @@
                                     </div>
 
                                 </div>
-
                             </div>
+
                             <div class="col-span-6 sm:col-span-6">
                                 <label for="Descrizione"
                                        class="block my-2 text-sm font-medium text-gray-700">Descrizione Breve</label>
@@ -195,8 +194,7 @@
 
                             </div>
 
-                        </div>
-                        <div class="grid grid-cols-1 gap-1 pt-3">
+
                             <div class="col-span-1 sm:col-span-1 lg:col-span-2 pt-3">
                                 <label class="block my-2 text-md py-2 font-medium text-gray-700">
                                     Immagine di copertina
@@ -218,10 +216,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                        </div>
-                        <div class="grid grid-cols-6 gap-6 pt-3">
-
 
                             <div class="col-span-6 sm:col-span-3">
                                 <label class="block my-2 text-md py-2 font-medium text-gray-700">
