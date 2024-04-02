@@ -95,7 +95,7 @@
                             <div class="col-md-6 col-sm-12 col-xs-12">
                                 <div class="detail-info pr-30 pl-30">
                                     <h2 class="title-detail mb-20">{{$product->item_name}}</h2>
-                                    @if($product->shippable == false)
+                                    @if($product->purchasable == false)
                                         <div class="clearfix product-price-cover" hidden>
                                             <div class="product-price primary-color float-left">
                                                 @if($product->price > 0)
@@ -123,7 +123,7 @@
                                         </div>
                                     @endif
                                     <div class="attr-detail attr-size mb-10">
-                                        @if($product->shippable == true)
+                                        @if($product->purchasable == true)
                                             @if($product->stock_qty > 0)
                                                 <strong class="mr-10"> {!!__('home.status')!!}
                                                     : {{$product->stock_qty}} {!!__('home.stock')!!}</strong>
@@ -191,7 +191,7 @@
                                     <div class="detail-extralink">
 
                                         <div class="product-extra-link2">
-                                            @if($product->stock_qty > 0 && $product->shippable == true)
+                                            @if($product->stock_qty > 0 && $product->purchasable == true)
                                                 <button
                                                     onclick="location.href='{{route('addcart', ['lang'=>app()->getLocale(), $product->id])}}';"
                                                     type="button" class="button button-add-to-cart"><i

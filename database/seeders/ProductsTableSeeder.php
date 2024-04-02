@@ -36,7 +36,7 @@ class ProductsTableSeeder extends Seeder
                 'item_code' => $faker->numberBetween($min = 1, $max = 4523523),
                 'img_01' => fake()->image('public/storage',640,480, null, false),
                 'published' => (bool)rand(0, 1),
-                'shippable' => (bool)rand(0, 1),
+                'purchasable' => (bool)rand(0, 1),
                 'quantity' => $faker->numberBetween($min = 1, $max = 45),
 
             ]);

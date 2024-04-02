@@ -55,7 +55,7 @@ class ProductsController extends Controller
         $mainCategory = Category::with('parentCategory')
             ->where('parent_id', '=', null)
             ->get();
-        $product->shippable = \request()->input('shippable');
+        $product->purchasable = \request()->input('purchasable');
 
         return view('auth.admin.products.create', [
             'product' => $product,
@@ -93,7 +93,7 @@ class ProductsController extends Controller
         $product->link_2 = \request()->input('link_2');
         $product->stock_qty = \request()->input('stock_qty');
         $product->price = str_replace(',', '.', \request()->input('price'));
-        $product->shippable = \request()->input('shippable');
+        $product->purchasable = \request()->input('purchasable');
         $product->published = \request()->input('published');
 //        $product->color = \request()->input('color', []);
         if (\request()->hasFile('img_01')) {
@@ -210,7 +210,7 @@ class ProductsController extends Controller
             'img_02' => 'image|mimes:jpeg,png,webp,jpg,gif,svg|max:3048',
             'img_03' => 'image|mimes:jpeg,png,webp,jpg,gif,svg|max:3048',
             'attachment' => 'file|mimes:ppt,pptx,doc,docx,pdf,xls,xlsx,txt|max:10048',
-            'shippable' => 'required'
+            'purchasable' => 'required'
 
         ]);
 
@@ -226,7 +226,7 @@ class ProductsController extends Controller
             'slug' => Str::slug(\request()->input('item_name')),
             'stock_qty' => \request()->input('stock_qty'),
             'price' => str_replace(',', '.', \request()->input('price')),
-            'shippable' => \request()->input('shippable'),
+            'purchasable' => \request()->input('purchasable'),
             'published' => \request()->input('published'),
         ]);
 

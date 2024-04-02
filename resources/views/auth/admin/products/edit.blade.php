@@ -29,15 +29,15 @@
                                        value="{{$product->item_code}}">
                             </div>
                             <div class="col-span-2 sm:col-span-1">
-                                <label for="shippable"
+                                <label for="purchasable"
                                        class="block my-2 text-sm font-medium text-gray-700">Acquistabile</label>
                                 <div class="mt-4">
 
-                                    <input type="radio" class="form-radio" name="shippable" id="shippable"
-                                           value="1" {{$product->shippable == '1' ? 'checked' : ''}}>
+                                    <input type="radio" class="form-radio" name="purchasable" id="purchasable"
+                                           value="1" {{$product->purchasable == '1' ? 'checked' : ''}}>
                                     <span class="ml-2" style="margin-left:6px;margin-right:10px;">Si</span>
-                                    <input type="radio" class="form-radio" name="shippable" id="shippable"
-                                           value="0" {{$product->shippable == '0' ? 'checked' : ''}}>
+                                    <input type="radio" class="form-radio" name="purchasable" id="purchasable"
+                                           value="0" {{$product->purchasable == '0' ? 'checked' : ''}}>
                                     <span class="mr-2 ml-2" style="margin-left:6px; ">No</span>
 
                                 </div>

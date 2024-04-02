@@ -124,7 +124,7 @@
                                     <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $p->id,$p->slug]) }}">{{__($p->item_name)}}</a>
                                 </h2>
                                 <div class="product-card-bottom">
-                                    @if($p->stock_qty > 0 && $p->shippable == true)
+                                    @if($p->stock_qty > 0 && $p->purchasable == true)
                                         <div class="product-price">
                                             <span>€ {{ priceView($p->price) }}</span>
                                             {{--                                            <span class="old-price">$32.8</span>--}}
