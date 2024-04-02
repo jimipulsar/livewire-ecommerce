@@ -29,7 +29,7 @@
                                     <h5 class="mb-0">Lista dei desideri</h5>
                                 </div>
                                 <div class="card-body">
-                                    <div class="table-responsive shopping-summery">
+                                    <td class="table-responsive shopping-summery">
                                         @if(count($wishlist) > 0)
                                             <table class="table table-wishlist">
                                                 <thead>
@@ -42,8 +42,8 @@
                                                     </th>
                                                     <th scope="col" colspan="2">Prodotto</th>
                                                     <th scope="col" style="width:200px !important">Prezzo</th>
-                                                    <th scope="col"  style="width:200px !important">Disponibilità</th>
-                                                    <th scope="col"  style="width:200px !important">Azioni</th>
+                                                    <th scope="col" style="width:200px !important">Disponibilità</th>
+                                                    <th scope="col" style="width:200px !important">Azioni</th>
                                                     <th scope="col" class="end">Rimuovi</th>
                                                 </tr>
                                                 </thead>
@@ -82,16 +82,16 @@
                                                         </td>
 
                                                         <td class="text-center detail-info" data-title="Stock">
-                                                            @if($details->product->stock_qty > 0)
+                                                            @if($details->product->stock_qty > 0 && $details->product->purchasable == true)
                                                                 <span class="stock-status in-stock mb-0"
                                                                       style="color:#1c681c">{!! __('customer.favourites.6') !!}</span>
                                                             @else
                                                                 <span
-                                                                    class="stock-status in-stock mb-0">{!! __('customer.favourites.7') !!}</span>
+                                                                    class="stock-status out-stock mb-0">{!! __('customer.favourites.7') !!}</span>
                                                             @endif
                                                         </td>
 
-                                                        @if($details->product->stock_qty >= 0)
+                                                        @if($details->product->stock_qty > 0 && $details->product->purchasable == true)
                                                             <td class="text-right">
                                                                 <div class="d-lg-flex">
                                                                     <a href="{{route('addcart', ['lang'=>app()->getLocale(), $details->product->id])}}"
@@ -100,18 +100,25 @@
                                                                     </a>
                                                                 </div>
                                                             </td>
-                                                            @else
+                                                        @else
+                                                            <div class="product-price" hidden>
+                                                                <span>€ {{ priceView($details->product->price) }}</span>
+                                                                {{--                                            <span class="old-price">$32.8</span>--}}
+                                                            </div>
                                                             <td class="text-right">
-                                                                <div class="d-lg-flex">
-                                                                    <a href="{{route('addcart', ['lang'=>app()->getLocale(), $details->product->id])}}"
-                                                                       class="btn btn-sm disabled">Aggiungi
-                                                                        al carrello
-                                                                    </a>
+                                                                <div class="product-card-bottom">
+                                                                    <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $details->product->id,$details->product->slug]) }}"
+                                                                       class="add"
+                                                                       title="Richiedi info"><i
+                                                                            class="fi-rs-envelope mr-5"></i>Richiedi
+                                                                        info</a>
                                                                 </div>
                                                             </td>
+
                                                         @endif
                                                         <td class="action text-center" data-title="Remove">
-                                                            <a href="{{route('removewish', ['lang'=>app()->getLocale(),$details->product->id])}}" class="text-body"><i class="fi-rs-trash"></i></a>
+                                                            <a href="{{route('removewish', ['lang'=>app()->getLocale(),$details->product->id])}}"
+                                                               class="text-body"><i class="fi-rs-trash"></i></a>
                                                         </td>
 
                                                     </tr>
@@ -120,8 +127,7 @@
                                             </table>
                                         @else
                                             <h4 class="notranslate text-center mb-10 pb-10">{{__('app.notFavorites')}}</h4>
-                                        @endif
-                                    </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -129,6 +135,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <style>
         .shopping-summery table td, .shopping-summery table th, .shopping-summery table thead {
