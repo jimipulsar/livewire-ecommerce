@@ -71,21 +71,20 @@
                                                     <img class="default-img"
                                                          src="{{'/storage/' . $p->img_01 }}"
                                                          alt="{{Str::of('/storage/'. $p->img_01)->basename('.jpg')}}"
-                                                         >
+                                                         id="img-resize">
                                                     <img class="hover-img"
                                                          src="{{'/storage/' . $p->img_01 }}"
                                                          alt="{{Str::of('/storage/' . $p->img_01)->basename('.jpg')}}"
-                                                         >
+                                                         id="img-resize">
                                                 @else
                                                     <img class="default-img"
                                                          src="{{'/uploads/default/default.jpg' }}"
                                                          alt="{{Str::of('/uploads/default/default.jpg')->basename('.jpg')}}"
-                                                         >
+                                                         id="img-resize">
                                                     <img class="hover-img" src="{{'/uploads/default/default.jpg' }}"
                                                          alt="{{Str::of('/uploads/default/default.jpg')->basename('.jpg')}}"
-                                                         >
+                                                         id="img-resize">
                                                 @endif
-
                                             </a>
                                         </div>
                                         <div class="product-action-1">

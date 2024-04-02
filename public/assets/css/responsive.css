@@ -122,7 +122,6 @@ body {
     height: 256px !important;
     object-fit: cover !important;
     display: block !important;
-    position: relative !important;
     width: 271px !important;
 }
 #img-shop {

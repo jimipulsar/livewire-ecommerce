@@ -157,20 +157,20 @@
                                 <div class="product-img product-img-zoom">
                                     <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $p->id,$p->slug]) }}">
                                         @if(file_exists(public_path('storage/' .$p->img_01 )) && $p->img_01 != null)
-                                            <img class="default-img"
+                                            <img class="default-img" id="img-resize"
                                                  src="{{'/storage/' . $p->img_01 }}"
                                                  alt="{{Str::of('/storage/'. $p->img_01)->basename('.jpg')}}"
                                             >
-                                            <img class="hover-img"
+                                            <img class="hover-img" id="img-resize"
                                                  src="{{'/storage/' . $p->img_01 }}"
                                                  alt="{{Str::of('/storage/'. $p->img_01)->basename('.jpg')}}"
                                             >
                                         @else
-                                            <img class="default-img"
+                                            <img class="default-img" id="img-resize"
                                                  src="{{'/uploads/default/default.jpg' }}"
                                                  alt="{{Str::of('/uploads/default/default.jpg')->basename('.jpg')}}"
                                             >
-                                            <img class="hover-img"
+                                            <img class="hover-img" id="img-resize"
                                                  src="{{'/uploads/default/default.jpg' }}"
                                                  alt="{{Str::of('/uploads/default/default.jpg')->basename('.jpg')}}"
                                             >

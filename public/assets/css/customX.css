@@ -39,7 +39,6 @@
     height: 300px !important;
     object-fit: contain !important;
     display: block !important;
-    position: relative !important;
 }
 #img-product {
     width: 100% !important;
