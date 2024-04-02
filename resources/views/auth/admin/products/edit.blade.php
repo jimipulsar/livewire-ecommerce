@@ -60,8 +60,7 @@
                         <div class="grid grid-cols-6 gap-6 py-3">
                             <div class="col-span-4 sm:col-span-2">
                                 <label for="categories[]"
-                                       class="block my-2 text-sm font-medium text-gray-700">Categoria (lasciare vuoto
-                                    per creare categoria principale)</label>
+                                       class="block my-2 text-sm font-medium text-gray-700">Categoria principale</label>
 
                                 <select
                                     class="mt-1 block mainCatSel w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
@@ -83,7 +82,7 @@
 
                             <div class="col-span-2 sm:col-span-2">
                                 <label for="categories[]"
-                                       class="block my-2 text-sm font-medium text-gray-700">Categoria figlio</label>
+                                       class="block my-2 text-sm font-medium text-gray-700">Categoria secondaria</label>
 
                                 <select
                                     class="mt-1 catSel block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
