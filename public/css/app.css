@@ -751,10 +751,10 @@ video {
   grid-column: span 2 / span 2;
 }.col-span-4 {
   grid-column: span 4 / span 4;
-}.col-span-6 {
-  grid-column: span 6 / span 6;
 }.col-span-1 {
   grid-column: span 1 / span 1;
+}.col-span-6 {
+  grid-column: span 6 / span 6;
 }.col-span-9 {
   grid-column: span 9 / span 9;
 }.col-span-3 {
@@ -1112,10 +1112,10 @@ video {
   justify-items: center;
 }.gap-6 {
   gap: 1.5rem;
-}.gap-1 {
-  gap: 0.25rem;
 }.gap-4 {
   gap: 1rem;
+}.gap-1 {
+  gap: 0.25rem;
 }.space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));

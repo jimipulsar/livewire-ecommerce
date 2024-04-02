@@ -19,7 +19,7 @@ class CategoriesTableSeeder extends Seeder
         $faker = Faker::create();
 
         for ($i = 1; $i <= 2; $i++) {
-            $name = $faker->sentence(3);
+            $name = $faker->sentence(1);
             $slug = Str::slug($name);
             $category = Category::create([
                 'name'        => $name,
@@ -27,7 +27,7 @@ class CategoriesTableSeeder extends Seeder
             ]);
 
             for ($j = 1; $j <= 2; $j++) {
-                $name1 = $faker->sentence(2);
+                $name1 = $faker->sentence(1);
                 $slug1 = Str::slug($name1);
                 $childCategory = $category->childCategories()->create([
                     'name'        =>   $name1 ,
@@ -35,7 +35,7 @@ class CategoriesTableSeeder extends Seeder
                 ]);
 
                 for ($k = 1; $k <= 2; $k++) {
-                    $name2 = $faker->sentence(3);
+                    $name2 = $faker->sentence(1);
                     $slug2 = Str::slug($name2);
                     $childCategory->childCategories()->create([
                         'name'        =>  $name2,
