@@ -261,7 +261,8 @@ class ProductsController extends Controller
             $file->move($pathFile, $fileName);
             $product->attachment = $fileName;
         }
-       //dd(DB::table('categories')->where('id', '=', \request()->input('categories.1'))->first()->parent_id);
+//        dd($product->categories()->sync(\request()->input('categories', [])));
+//       dd(DB::table('categories')->where('id', '=', \request()->input('categories.1'))->first()->parent_id);
         try {
             $product->categories()->sync(\request()->input('categories', []));
             $product->save();
