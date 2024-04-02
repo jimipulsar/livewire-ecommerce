@@ -136,11 +136,11 @@
                                         Descrescente
                                         &downarrow;</a></li>
                                 <li><a wire:click.prevent="sortBy('updated_at')"
-                                       class="{{ $sortColumnName === 'updated_at' && $sortDirection === 'desc' ? '' : 'text-muted' }}">Meno
+                                       class="{{ $sortColumnName === 'updated_at' && $sortDirection === 'asc' ? '' : 'text-muted' }}">Meno
                                         recente
                                         &uparrow;</a></li>
                                 <li><a wire:click.prevent="sortBy('updated_at')"
-                                       class="{{ $sortColumnName === 'updated_at' && $sortDirection === 'asc' ? '' : 'text-muted' }}">Più
+                                       class="{{ $sortColumnName === 'updated_at' && $sortDirection === 'desc' ? '' : 'text-muted' }}">Più
                                         recente
                                         &downarrow;</a></li>
                             </ul>

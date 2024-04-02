@@ -84,7 +84,7 @@
                                     <select
                                         class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                         name="categories[]" id="categories" autocomplete="categories">
-                                        <option disabled value> -- Seleziona --</option>
+                                        <option disabled selected value> -- Seleziona</option>
                                         @foreach ($subCategories as $category)
                                             {{--                                        @if ($loop->first) @continue @endif--}}
                                             @if($category->parentCategory)
