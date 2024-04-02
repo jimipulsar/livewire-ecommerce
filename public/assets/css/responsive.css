@@ -116,7 +116,10 @@ body {
 .header-style-1 .search-style-2 form input {
     max-width: 667px !important;
 }
+.in-stock {
+     color: #22821A !important;
 
+}
 #img-resize {
     max-width: 300px !important;
     height: 256px !important;

@@ -49,7 +49,8 @@ return [
         '6' => 'In magazzino',
         '7' => 'Non disponibile',
         '8' => 'Aggiungi al carrello',
-        '9' => 'Azioni'
+        '9' => 'Azioni',
+        '10' => 'Disponibile'
     ],
     'noOrders' => 'Nessun ordine trovato'
 

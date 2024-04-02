@@ -49,7 +49,8 @@ return [
         '5' => 'Status',
         '6' => 'In stock',
         '7' => 'Not available',
-        '8' => 'Add to cart'
+        '8' => 'Add to cart',
+        '10' => 'Available'
     ],
     'noOrders' => 'No orders found'
 

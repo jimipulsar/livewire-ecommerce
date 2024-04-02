@@ -124,18 +124,7 @@
                                     <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $p->id,$p->slug]) }}">{{__($p->item_name)}}</a>
                                 </h2>
                                 <div class="product-card-bottom">
-                                    @if($p->shippable == false)
-                                        <div class="product-price" hidden>
-                                            <span>€ {{ priceView($p->price) }}</span>
-                                            {{--                                            <span class="old-price">$32.8</span>--}}
-                                        </div>
-                                        <div class="add-cart">
-                                            <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $p->id,$p->slug]) }}"
-                                               class="add"
-                                               title="Richiedi info"><i
-                                                        class="fi-rs-envelope mr-5"></i>Richiedi info</a>
-                                        </div>
-                                    @else
+                                    @if($p->stock_qty > 0 && $p->shippable == true)
                                         <div class="product-price">
                                             <span>€ {{ priceView($p->price) }}</span>
                                             {{--                                            <span class="old-price">$32.8</span>--}}
@@ -144,8 +133,20 @@
                                             <a href="{{route('addcart', ['lang'=>app()->getLocale(), $p->id, $p->slug])}}"
                                                class="add"
                                                title="Aggiungi al carrello"><i
-                                                        class="fi-rs-shopping-cart mr-5"></i>Acquista</a>
+                                                    class="fi-rs-shopping-cart mr-5"></i>Acquista</a>
                                         </div>
+                                    @else
+                                        <div class="product-price" hidden>
+                                            <span>€ {{ priceView($p->price) }}</span>
+                                            {{--                                            <span class="old-price">$32.8</span>--}}
+                                        </div>
+                                        <div class="add-cart">
+                                            <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $p->id,$p->slug]) }}"
+                                               class="add"
+                                               title="Richiedi info"><i
+                                                    class="fi-rs-envelope mr-5"></i>Richiedi info</a>
+                                        </div>
+
                                     @endif
 
                                 </div>

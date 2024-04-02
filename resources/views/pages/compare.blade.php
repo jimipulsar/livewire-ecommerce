@@ -57,22 +57,24 @@
                             <tr class="pr_stock">
                                 <td class=" font-sm fw-600 font-heading">Disponibilità</td>
                                 @foreach(session('compare') as $id => $details)
-                                    @if($details['stock_qty'] >= 1 && $details['published'] == 0)
-                                        <td class="row_btn">
-                                            <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $id,$details['slug']]) }}"
-                                               class="btn btn-sm"
-                                               title="Richiedi info"><i
-                                                    class="fi-rs-envelope mr-5"></i>Richiedi info</a>
+                                    @if($details['stock_qty'] > 0)
 
+                                        <td class="row_stock"><span
+                                                class="stock-status in-stock mb-0 text-green-500">    {{__('customer.favourites.10')}}</span>
                                         </td>
-                                        {{--                                        <td class="row_stock"><span--}}
-                                        {{--                                                class="stock-status in-stock mb-0"--}}
-                                        {{--                                                style="color:#579926 !important;">    {{__('customer.favourites.6')}}</span>--}}
-                                        {{--                                        </td>--}}
+
                                     @else
                                         <td class="row_stock"><span
                                                 class="stock-status out-stock mb-0">{{__('customer.favourites.7')}}</span>
                                         </td>
+
+{{--                                        <td class="row_btn">--}}
+{{--                                            <a href="{{ route('shop.show',[ 'lang'=>app()->getLocale(), $id,$details['slug']]) }}"--}}
+{{--                                               class="btn btn-sm"--}}
+{{--                                               title="Richiedi info"><i--}}
+{{--                                                    class="fi-rs-envelope mr-5"></i>Richiedi info</a>--}}
+
+{{--                                        </td>--}}
                                     @endif
 
                                 @endforeach
