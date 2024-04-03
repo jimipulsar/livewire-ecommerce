@@ -21,29 +21,16 @@
 // }
 
     $('.catSel').on('click',function(){
-        selectElement = document.querySelector('.catSel');
-        let valuez = selectElement.options[selectElement.selectedIndex].value;
-        var id = $(this).find('option:selected').val();
+        let selectElement = document.querySelector('.catSel');
+        let values = selectElement.options[selectElement.selectedIndex].value;
+        let text = selectElement.options[selectElement.selectedIndex].text;
+        let id = $(this).find('option:selected').val();
         let sel = document.querySelector('.mainCatSel');
         // $('.mainCatSel').val(valuez);
-        sel.selectedIndex = valuez;
-        console.log(id);
+        // $(".mainCatSel").val(values).change();
+        // $('.mainCatSel').append(values);
+        // sel.selectedIndex = values;
+        console.log(id, text);
     });
 
-// let show = () => {
-//     const sel = document.getElementById("categories"); // or this if only called onchange
-//     let value = sel.options[sel.selectedIndex].value; // or just sel.value
-//     let text = sel.options[sel.selectedIndex].text;
-//     console.log(value, text);
-// }
-//
-// window.addEventListener("load", () => { // on load
-//     document.getElementById("categories").addEventListener("change", show); // show on change
-//     show(); // show onload
-// });
-// const selectEl = $('#categories');
-//
-// selectEl.on('change', () => {
-//
-// });
 
