@@ -133,7 +133,7 @@
     window.livewire_app_url = '{{route('index')}}';
 </script>
 
-<script src="/assets/js/switchCategory.js"></script>
+{{--<script src="/assets/js/switchCategory.js"></script>--}}
 <script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v0.x.x/dist/livewire-sortable.js"></script>
 </body>
 </html>

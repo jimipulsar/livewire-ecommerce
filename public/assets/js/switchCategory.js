@@ -20,17 +20,21 @@
 //
 // }
 
-    $('.catSel').on('click',function(){
-        let selectElement = document.querySelector('.catSel');
-        let values = selectElement.options[selectElement.selectedIndex].value;
-        let text = selectElement.options[selectElement.selectedIndex].text;
-        let id = $(this).find('option:selected').val();
-        let sel = document.querySelector('.mainCatSel');
-        // $('.mainCatSel').val(valuez);
-        // $(".mainCatSel").val(values).change();
-        // $('.mainCatSel').append(values);
-        // sel.selectedIndex = values;
-        console.log(id, text);
-    });
+    // $('.catSel').on('click',function(){
+    //     let selectElement = document.querySelector('.catSel');
+    //     let values = selectElement.options[selectElement.selectedIndex].value;
+    //     let text = selectElement.options[selectElement.selectedIndex].text;
+    //     let id = $(this).find('option:selected').val();
+    //     let sel = document.querySelector('.mainCatSel');
+    //     // $('.mainCatSel').val(valuez);
+    //     // $(".mainCatSel").val(values).change();
+    //     // $('.mainCatSel').append(values);
+    //     // sel.selectedIndex = values;
+    //     console.log(id, text);
+    // });
 
+document.querySelector('.catSel').addEventListener('change', function() {
+    console.log('You selected: ', this.value);
+    document.querySelector('.mainCatSel').selectedIndex = this.selectedIndex;
 
+});
