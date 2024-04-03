@@ -50,10 +50,9 @@ class ProductsController extends Controller
 
         $subCategories = Category::with('parentCategory')
             ->whereHas('parentCategory')
-            ->where('parent_id', '!=', null)
             ->get();
-        $mainCategory = Category::with('parentCategory')
-            ->where('parent_id', '=', null)
+        $mainCategory = Category::with('childCategories')
+            ->whereHas('childCategories')
             ->get();
         $product->purchasable = \request()->input('purchasable');
 
@@ -175,9 +174,8 @@ class ProductsController extends Controller
             ->whereHas('parentCategory')
             ->get();
         $uniqueCategories = $this->getCategories();
-        $mainCategory = Category::with('parentCategory')
+        $mainCategory = Category::with('childCategories')
             ->whereHas('childCategories')
-            ->where('parent_id', '=', null)
             ->get();
 
         return view('auth.admin.products.edit', [

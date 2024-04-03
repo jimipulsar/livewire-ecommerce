@@ -64,11 +64,13 @@
 
                                     <select
                                         class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                        name="categories[]" id="categories" autocomplete="categories">
+                                        name="categories[]" id="categories" autocomplete="categories" required>
                                         <option disabled selected value> -- Seleziona</option>
 
                                         @foreach ($mainCategory as $cat)
-                                            <option value="{{$cat->id }}">  {{ $cat->name }}</option>
+                                            @if($cat->childCategories)
+                                            <option value="{{$cat->id}}">  {{ $cat->name }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                     @if($errors->has('categories'))
@@ -83,7 +85,7 @@
 
                                     <select
                                         class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                        name="categories[]" id="categories" autocomplete="categories">
+                                        name="categories[]" id="categories" autocomplete="categories" required>
                                         <option disabled selected value> -- Seleziona</option>
                                         @foreach ($subCategories as $category)
                                             {{--                                        @if ($loop->first) @continue @endif--}}
