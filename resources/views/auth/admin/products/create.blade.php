@@ -63,7 +63,7 @@
                                            class="block my-2 text-sm font-medium text-gray-700">Categoria principale</label>
 
                                     <select
-                                        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                        class="mainCatSel mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                         name="categories[]" id="categories" autocomplete="categories" required>
                                         <option disabled selected value> -- Seleziona</option>
 
@@ -84,7 +84,7 @@
                                            class="block my-2 text-sm font-medium text-gray-700">Sottocategoria</label>
 
                                     <select
-                                        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                        class="catSel mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                         name="categories[]" id="categories" autocomplete="categories" required>
                                         <option disabled selected value> -- Seleziona</option>
                                         @foreach ($subCategories as $category)
