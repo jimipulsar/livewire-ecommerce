@@ -58,13 +58,13 @@
                                 </div>
                             </div>
                             <div class="grid grid-cols-6 gap-6 py-3">
-                                <div class="col-span-4 sm:col-span-2">
+                                <div class="col-span-4 sm:col-span-2" hidden>
                                     <label for="categories[]"
                                            class="block my-2 text-sm font-medium text-gray-700">Categoria principale</label>
 
                                     <select
                                         class="mainCatSel mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                        name="categories[]" id="categories" autocomplete="categories" required>
+                                        name="categories[]" id="categories" autocomplete="categories" >
                                         <option disabled selected value> -- Seleziona</option>
 
                                         @foreach ($mainCategory as $cat)
@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="col-span-2 sm:col-span-2">
                                     <label for="categories[]"
-                                           class="block my-2 text-sm font-medium text-gray-700">Sottocategoria</label>
+                                           class="block my-2 text-sm font-medium text-gray-700">Categoria</label>
 
                                     <select
                                         class="catSel mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"

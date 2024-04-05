@@ -80,8 +80,8 @@ class ProductsController extends Controller
 
         $product = new Product;
 
-        $mainCategory = DB::table('categories')->where('id', '=', \request()->input('categories.0'))->first();
-        $subCategory = DB::table('categories')->where('id', '=', \request()->input('categories.1'))->first();
+//        $mainCategory = DB::table('categories')->where('id', '=', \request()->input('categories.0'))->first();
+//        $subCategory = DB::table('categories')->where('id', '=', \request()->input('categories.1'))->first();
         $product->user_id = auth()->guard('admin')->id();
         $product->item_name = \request()->input('item_name');
         $product->slug = Str::slug($product->item_name);
@@ -127,8 +127,16 @@ class ProductsController extends Controller
         }
 
         try {
+            $inputParentCategory = DB::table('categories')->where('id', '=', \request()->input('categories.0'))->first()->parent_id;
+            $inputIdCategory = DB::table('categories')->where('id', '=', \request()->input('categories.0'))->first()->id;
+
+            $selectedCategory = Category::orderBy('updated_at')
+                ->where('parent_id', '=', $inputParentCategory)
+                ->where('id', '=', $inputIdCategory)
+                ->get()->toArray();
+
             $product->save();
-            $product->categories()->sync(\request()->input('categories', []));
+            $product->categories()->sync([$selectedCategory[0]['parent_id'], $selectedCategory[0]['id']]);
             $product->attributes()->sync(\request()->input('attributes', []));
 
             return redirect()->route('products.index', app()->getLocale()
@@ -178,13 +186,16 @@ class ProductsController extends Controller
             ->whereHas('childCategories')
             ->get();
 
+
         return view('auth.admin.products.edit', [
             'product' => $product,
             'subCategories' => $subCategories,
             'mainCategory' => $mainCategory,
             'uniqueCategories' => $uniqueCategories
+//            'selectedCategory' => $selectedCategory
         ]);
     }
+
     private function getCategories()
     {
         return Category::withCount('products')
@@ -192,6 +203,7 @@ class ProductsController extends Controller
             ->orderBy('products_count', 'DESC')
             ->get();
     }
+
     /**
      * Update the specified resource in storage.
      *
@@ -259,14 +271,30 @@ class ProductsController extends Controller
             $file->move($pathFile, $fileName);
             $product->attachment = $fileName;
         }
-//        dd($product->categories()->sync(\request()->input('categories', [])));
-//       dd(DB::table('categories')->where('id', '=', \request()->input('categories.1'))->first()->parent_id);
+
         try {
-            $product->categories()->sync(\request()->input('categories', []));
+            $inputParentCategory = DB::table('categories')->where('id', '=', \request()->input('categories.0'))->first()->parent_id;
+            $inputIdCategory = DB::table('categories')->where('id', '=', \request()->input('categories.0'))->first()->id;
+
+            $selectedCategory = Category::orderBy('updated_at')
+                ->where('parent_id', '=', $inputParentCategory)
+                ->where('id', '=', $inputIdCategory)
+                ->get()->toArray();
+
+            if ($selectedCategory[0]['parent_id'] !== null) {
+                $product->categories()->sync([$selectedCategory[0]['parent_id'], $selectedCategory[0]['id']]);
+            } else {
+                $product->categories()->sync($selectedCategory[0]['parent_id'], \request()->input('categories.1'));
+            }
+
             $product->save();
+//            dd($selectedCategory[0]);
+//            dd(\request()->input('categories', []));
+//            $product->categories()->sync(\request()->input('categories', []));
             return redirect()->route('products.index', app()->getLocale()
             )->with([
-                'product' => $product
+                'product' => $product,
+                'selectedCategory' => $selectedCategory
             ])->with('success', 'Prodotto modificato con successo!');
         } catch (\Throwable $e) {
 

@@ -1015,10 +1015,10 @@ video {
   max-width: 24rem;
 }.max-w-2xl {
   max-width: 42rem;
-}.max-w-xl {
-  max-width: 36rem;
 }.max-w-0 {
   max-width: 0rem;
+}.max-w-xl {
+  max-width: 36rem;
 }.max-w-lg {
   max-width: 32rem;
 }.flex-1 {
@@ -1451,6 +1451,8 @@ video {
   padding-top: 0.125rem;
 }.pt-0 {
   padding-top: 0px;
+}.pl-4 {
+  padding-left: 1rem;
 }.pr-20 {
   padding-right: 5rem;
 }.pb-0 {
@@ -1475,8 +1477,6 @@ video {
   padding-top: 20rem;
 }.pb-80 {
   padding-bottom: 20rem;
-}.pl-4 {
-  padding-left: 1rem;
 }.pl-0 {
   padding-left: 0px;
 }.text-left {
