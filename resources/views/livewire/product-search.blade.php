@@ -12,15 +12,14 @@
         </div>
     </div>
     @if($this->search)
-        <div class="container " style="width: 100% !important;
-max-width: 750px !important;box-shadow: 4px 9px 12px #00000024;padding:22px !important;" x-data="{ mode: 'view' }">
+        <div class="container " style="width: 100% !important; max-width: 750px !important;padding:22px !important;" x-data="{ mode: 'view' }">
             <div class="row">
                 @foreach ($products as $product)
-                    <div class="col-lg-4 py-2">
+                    <div class="col-lg-2 py-2">
                         @if(file_exists(public_path('storage/' .$product->img_01 )) && $product->img_01 != null)
                             <div class="shopping-cart-img">
-                                <a href="{{ route('shop.show',['lang'=>app()->getLocale(),$product->id,$product->slug]) }}"><img
-                                        alt="Livewire" class="img-fluid" style="height:100px !important"
+                                <a href="{{ route('shop.show',['lang'=>app()->getLocale(),$product->id,$product->slug]) }}">
+                                    <img id="img-product" alt="Livewire" class="img-fluid" style="border-radius:5px ;box-shadow:5px 4px 5px #0000001f; height:100px !important"
                                         src="{{'/storage/' . $product->img_01 ?? 'default.jpg' }}"/></a>
                             </div>
 
@@ -42,7 +41,7 @@ max-width: 750px !important;box-shadow: 4px 9px 12px #00000024;padding:22px !imp
                 @endforeach
                     <div class="pagination-area mt-5 mb-5 py-5">
                         <ul class="pagination justify-content-start">
-                            {{ $products->onEachSide(2)->links('vendor.livewire.bootstrap') }}
+                            {{ $products->onEachSide(4)->links('vendor.livewire.bootstrap') }}
                         </ul>
                     </div>
             </div>

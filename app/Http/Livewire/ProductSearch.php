@@ -3,7 +3,6 @@
 namespace App\Http\Livewire;
 
 use App\Models\Product;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -12,7 +11,7 @@ class ProductSearch extends Component
     use WithPagination;
     public $product;
     public $search;
-    public $perPage = 3;
+    public $perPage = 6;
     protected $queryString = ['search'];
 
     public function render()
