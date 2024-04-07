@@ -1,7 +1,6 @@
 @extends('backend.adminlayouts.master')
 
 @section('body')
-
     <h3 class="text-gray-700 text-3xl font-medium">Crea Prodotto</h3>
     <div class="md:grid md:grid-cols-3 md:gap-6 mt-10 mb-10">
         <div class="mt-5 md:mt-0 md:col-span-6">
@@ -19,7 +18,6 @@
                                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                            required>
                                 </div>
-
                                 <div class="col-span-2 sm:col-span-2">
                                     <label for="item_code" class="block my-2 text-sm font-medium text-gray-700">Codice
                                         Articolo</label>
@@ -27,7 +25,6 @@
                                            autocomplete="item_code"
                                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                 </div>
-
                                 <div class="col-span-2 sm:col-span-1">
                                     <label for="purchasable" class="block my-2 text-sm font-medium text-gray-700">Acquistabile</label>
                                     <div class="mt-4">
@@ -61,7 +58,6 @@
                                 <div class="col-span-4 sm:col-span-2" hidden>
                                     <label for="categories[]"
                                            class="block my-2 text-sm font-medium text-gray-700">Categoria principale</label>
-
                                     <select
                                         class="mainCatSel mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                         name="categories[]" id="categories" autocomplete="categories" >
@@ -82,7 +78,6 @@
                                 <div class="col-span-2 sm:col-span-2">
                                     <label for="categories[]"
                                            class="block my-2 text-sm font-medium text-gray-700">Categoria</label>
-
                                     <select
                                         class="catSel mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                         name="categories[]" id="categories" autocomplete="categories" required>
@@ -103,18 +98,13 @@
                                         </div>
                                     @endif
                                 </div>
-
                                 <div class="col-span-1 sm:col-span-1">
-
                                     <label for="stock_qty"
                                            class="block my-2 text-sm font-medium text-gray-700">Quantità</label>
                                     <input type="number" name="stock_qty" id="stock_qty"
                                            autocomplete="street-address"
                                            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                 </div>
-
-
-
                                 <div class="col-span-1 sm:col-span-1">
                                     <label for="price" class="block my-2 text-sm font-medium text-gray-700">Prezzo
                                         in
@@ -181,8 +171,6 @@
                                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                                     >
                                 </div>
-
-
                                 <div class="col-span-6 sm:col-span-6">
                                     <label class="block my-2 text-md py-2 font-medium text-gray-700">
                                         Allegato
@@ -192,17 +180,11 @@
                                         class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                         <div class="space-y-1 text-center">
                                             <div class="flex text-md py-2 pl-3 text-gray-600">
-
                                                 <label for="attachment"
                                                        class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
-
                                                     <input type="file" name="attachment"
-                                                           class="@error('attachment') is-invalid @enderror"
-                                                    >
-
-
+                                                           class="@error('attachment') is-invalid @enderror">
                                                 </label>
-
                                             </div>
                                             <p class="text-xs text-gray-500">
                                                 <span> </span>
@@ -215,18 +197,14 @@
                                             @enderror
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-
                             <div class="col-span-6 sm:col-span-6">
                                 <label for="Descrizione"
                                        class="block my-2 text-sm font-medium text-gray-700">Descrizione Breve</label>
-
                                 <textarea id="myeditorinstance" name="short_description" rows="3"
                                           class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
                                           placeholder=""></textarea>
-
                             </div>
                             <div class="col-span-6 sm:col-span-6">
                                 <label for="Descrizione"
@@ -235,15 +213,11 @@
                                 <textarea id="myeditorinstance" name="long_description" rows="3"
                                           class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
                                           placeholder=""></textarea>
-
                             </div>
-
-
                             <div class="col-span-1 sm:col-span-1 lg:col-span-2 pt-3">
                                 <label class="block my-2 text-md py-2 font-medium text-gray-700">
                                     Immagine di copertina
                                 </label>
-
                                 <div
                                     class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                     <div class="space-y-1 text-center">
@@ -260,12 +234,10 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-span-6 sm:col-span-3">
                                 <label class="block my-2 text-md py-2 font-medium text-gray-700">
                                     Immagine #2
                                 </label>
-
                                 <div
                                     class="mt-1 mb-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                     <div class="space-y-1 text-center">
@@ -282,12 +254,10 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-span-6 sm:col-span-3">
                                 <label class="block my-2 text-md py-2 font-medium text-gray-700">
                                     Immagine #3
                                 </label>
-
                                 <div
                                     class="mt-1 mb-2 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                     <div class="space-y-1 text-center">
@@ -304,7 +274,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <div class="px-4 py-3 text-right sm:px-6 pb-10 mt-8">
                             <a href="{{url()->previous()}}"
