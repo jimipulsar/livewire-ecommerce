@@ -923,6 +923,10 @@ video {
   margin-right: -0.25rem;
 }.mr-0 {
   margin-right: 0px;
+}.ml-10 {
+  margin-left: 2.5rem;
+}.ml-20 {
+  margin-left: 5rem;
 }.block {
   display: block;
 }.inline-block {

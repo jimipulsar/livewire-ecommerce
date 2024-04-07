@@ -68,7 +68,9 @@ class FrontEndController extends Controller
         $ucFirst = str_replace('', '', strtolower($segment));
         $products = DB::table('products')->inRandomOrder()->paginate(\request()->get('per_page', 25));
         $attributes = Attribute::all();
-
+        $subAttributes = Product::with('attributes')
+            ->whereHas('attributes')
+            ->get();
         $productDetails = productDetails($id);
         $correlated = Product::query()
             ->leftJoin('category_product', 'category_product.product_id', '=', 'products.id')
@@ -86,6 +88,7 @@ class FrontEndController extends Controller
             return view('pages.product', [
                 'product' => $product,
                 'products' => $products,
+                'subAttributes' => $subAttributes,
                 'customerFavourites' => $customerFavourites,
                 'categories' => $categories,
                 'attributes' => $attributes,

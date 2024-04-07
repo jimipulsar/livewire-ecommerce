@@ -322,6 +322,10 @@
                                             <li class="mb-5">SKU: <a href="#">{!! $product->item_code!!}</a>
                                             </li>
                                         </ul>
+                                        <ul class="float-start">
+                                            <li class="mb-5 ml-20 pl-20">{{$product->attributes[0]['name']}}: <a href="#">{!! $product->attributes[1]['name']!!}</a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -348,9 +352,9 @@
                                     <p>{!! __($product->short_description)!!}</p>
                                     <p>{!! __($product->long_description)!!}</p>
                                     <ul class="product-more-infor mt-30">
-                                        <li><span>Type Of Packing</span> Bottle</li>
-                                        <li><span>Color</span> Green, Pink, Powder Blue, Purple</li>
-                                        <li><span>Quantity Per Case</span> 100ml</li>
+                                        <li><span>{{$product->attributes[0]['name']}}:
+                                            </span> {!! $product->attributes[1]['name']!!}</li>
+                                        <li><span>Categoria</span> {{ucFirst($productDetails['name'])}}</li>
                                         <li><span>Ethyl Alcohol</span> 70%</li>
                                         <li><span>Piece In One</span> Carton</li>
                                     </ul>
