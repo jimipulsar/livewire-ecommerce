@@ -119,7 +119,7 @@
                                     <label for="price" class="block my-2 text-sm font-medium text-gray-700">Prezzo
                                         in
                                         €</label>
-                                    <input type="text" name="price" id="price"
+                                    <input type="number" name="price" id="price"
                                            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                            required>
                                 </div>
