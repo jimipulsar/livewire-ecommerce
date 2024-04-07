@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Brand;
+use App\Models\Attribute;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Wishlist;
@@ -30,6 +31,14 @@ if (!function_exists('getBrands')) {
         $paginate = 8;
         return Brand::orderBy('updated_at', 'DESC')->paginate($paginate);
 //        return Product::distinct()->get('item_name', 'Categoria', 'item_code', 'Descrizione', 'img_01', 'img_02', 'stock_qty', 'quantity ', 'Prezzo');
+
+    }
+}
+if (!function_exists('getAttributes')) {
+    function getAttributes()
+    {
+        $paginate = 8;
+        return Attribute::orderBy('updated_at', 'DESC')->paginate($paginate);
 
     }
 }

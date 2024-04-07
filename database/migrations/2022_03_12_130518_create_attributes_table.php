@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('attributes', function (Blueprint $table) {
             $table->id();
-            $table->string('code')->unique();
+            $table->string('code')->nullable();
             $table->string('name')->nullable();
+            $table->integer('parent_id')->unsigned()->nullable();
             $table->string('slug')->nullable();
             $table->boolean('is_required')->default(0);
             $table->timestamps();

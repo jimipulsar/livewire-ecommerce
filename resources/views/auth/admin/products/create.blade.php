@@ -123,7 +123,49 @@
                                            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                            required>
                                 </div>
+                                <div class="col-span-4 sm:col-span-2" hidden>
+                                    <label for="attributes[]"
+                                           class="block my-2 text-sm font-medium text-gray-700">Attributo principale</label>
 
+                                    <select
+                                        class=" mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                        name="attributes[]" id="attributes" autocomplete="attributes" >
+                                        <option disabled selected value> -- Seleziona</option>
+
+                                        @foreach ($mainAttributes as $mainAttr)
+                                            @if($mainAttr->childAttributes)
+                                                <option value="{{$mainAttr->id}}">  {{ $mainAttr->name }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                    @if($errors->has('attributes'))
+                                        <div class="invalid-feedback">
+                                            {{ $errors->first('attributes') }}
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="col-span-2 sm:col-span-2">
+                                    <label for="attributes[]"
+                                           class="block my-2 text-sm font-medium text-gray-700">Attributi</label>
+
+                                    <select
+                                        class=" mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                        name="attributes[]" id="attributes" autocomplete="attributes" required>
+                                        <option disabled selected value> -- Seleziona</option>
+                                        @foreach ($subAttributes as $subAttr)
+                                            @if($subAttr->parentAttribute)
+                                                <option value="{{$subAttr->id }}">{{ $subAttr->name }} /  {{ $subAttr->parentAttribute->name }}</option>
+                                            @else
+                                                <td class="text-sm px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ $subAttr->name }}</td>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                    @if($errors->has('categories'))
+                                        <div class="invalid-feedback">
+                                            {{ $errors->first('categories') }}
+                                        </div>
+                                    @endif
+                                </div>
 
                                 <div class="col-span-4 sm:col-span-3">
                                     <label for="link"

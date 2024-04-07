@@ -24,8 +24,10 @@ Route::group(['middleware' => 'admin'], function () {
     Route::resource('customers', AdminCustomerController::class);
     Route::resource('coupon', CouponController::class);
     Route::resource('products', ProductsController::class);
+    Route::resource('attributes', AttributeController::class);
     Route::resource('categories', CategoryController::class);
     Route::resource('brands', BrandController::class);
+    Route::get('/attributes/duplicate/{id}',[AttributeController::class, 'duplicate'])->name('attributes.duplicate');
     Route::get('/brands/duplicate/{id}',[BrandController::class, 'duplicate'])->name('brands.duplicate');
     Route::get('/products/duplicate/{id}',[ProductsController::class, 'duplicate'])->name('products.duplicate');
 //    Route::delete('/remove/{product?}',[ProductsController::class, 'remove2'])->name('remove.pro');

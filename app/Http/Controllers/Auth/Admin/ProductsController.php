@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Attribute;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
@@ -54,12 +55,20 @@ class ProductsController extends Controller
         $mainCategory = Category::with('childCategories')
             ->whereHas('childCategories')
             ->get();
+        $subAttributes = Attribute::with('parentAttribute')
+            ->whereHas('parentAttribute')
+            ->get();
+        $mainAttributes = Attribute::with('childAttributes')
+            ->whereHas('childAttributes')
+            ->get();
         $product->purchasable = \request()->input('purchasable');
 
         return view('auth.admin.products.create', [
             'product' => $product,
             'subCategories' => $subCategories,
             'mainCategory' => $mainCategory,
+            'subAttributes' => $subAttributes,
+            'mainAttributes' => $mainAttributes,
         ]);
     }
 
@@ -94,7 +103,7 @@ class ProductsController extends Controller
         $product->price = str_replace(',', '.', \request()->input('price'));
         $product->purchasable = \request()->input('purchasable');
         $product->published = \request()->input('published');
-//        $product->color = \request()->input('color', []);
+
         if (\request()->hasFile('img_01')) {
             $image = \request()->file('img_01');
             $name = $image->getClientOriginalName();
@@ -135,9 +144,17 @@ class ProductsController extends Controller
                 ->where('id', '=', $inputIdCategory)
                 ->get()->toArray();
 
+            $inputParentAttribute = DB::table('attributes')->where('id', '=', \request()->input('attributes.0'))->first()->parent_id;
+            $inputIdAttribute= DB::table('attributes')->where('id', '=', \request()->input('attributes.0'))->first()->id;
+
+            $selectedAttribute = Attribute::orderBy('updated_at')
+                ->where('parent_id', '=', $inputParentAttribute)
+                ->where('id', '=', $inputIdAttribute)
+                ->get()->toArray();
+//dd($selectedAttribute);
             $product->save();
             $product->categories()->sync([$selectedCategory[0]['parent_id'], $selectedCategory[0]['id']]);
-            $product->attributes()->sync(\request()->input('attributes', []));
+            $product->attributes()->sync([$selectedAttribute[0]['parent_id'], $selectedAttribute[0]['id']]);
 
             return redirect()->route('products.index', app()->getLocale()
             )->with([
@@ -181,17 +198,26 @@ class ProductsController extends Controller
         $subCategories = Category::with('parentCategory')
             ->whereHas('parentCategory')
             ->get();
+        $subAttributes = Attribute::with('parentAttribute')
+            ->whereHas('parentAttribute')
+            ->get();
+        $mainAttributes = Attribute::with('childAttributes')
+            ->whereHas('childAttributes')
+            ->get();
         $uniqueCategories = $this->getCategories();
         $mainCategory = Category::with('childCategories')
             ->whereHas('childCategories')
             ->get();
-
+        $attributes = getAttributes();
 
         return view('auth.admin.products.edit', [
             'product' => $product,
             'subCategories' => $subCategories,
             'mainCategory' => $mainCategory,
-            'uniqueCategories' => $uniqueCategories
+            'subAttributes' => $subAttributes,
+            'mainAttributes' => $mainAttributes,
+            'uniqueCategories' => $uniqueCategories,
+            'attributes' => $attributes
 //            'selectedCategory' => $selectedCategory
         ]);
     }
@@ -281,12 +307,24 @@ class ProductsController extends Controller
                 ->where('id', '=', $inputIdCategory)
                 ->get()->toArray();
 
+            $inputParentAttribute = DB::table('attributes')->where('id', '=', \request()->input('attributes.0'))->first()->parent_id;
+            $inputIdAttribute= DB::table('attributes')->where('id', '=', \request()->input('attributes.0'))->first()->id;
+
+            $selectedAttribute = Attribute::orderBy('updated_at')
+                ->where('parent_id', '=', $inputParentAttribute)
+                ->where('id', '=', $inputIdAttribute)
+                ->get()->toArray();
+
             if ($selectedCategory[0]['parent_id'] !== null) {
                 $product->categories()->sync([$selectedCategory[0]['parent_id'], $selectedCategory[0]['id']]);
             } else {
                 $product->categories()->sync($selectedCategory[0]['parent_id'], \request()->input('categories.1'));
             }
-
+            if ($selectedAttribute[0]['parent_id'] !== null) {
+                $product->attributes()->sync([$selectedAttribute[0]['parent_id'], $selectedAttribute[0]['id']]);
+            } else {
+                $product->attributes()->sync($selectedAttribute[0]['parent_id'], \request()->input('attributes.1'));
+            }
             $product->save();
 //            dd($selectedCategory[0]);
 //            dd(\request()->input('categories', []));

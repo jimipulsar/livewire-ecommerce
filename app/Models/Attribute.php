@@ -14,7 +14,7 @@ class Attribute extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'slug','color','frontend_type','is_filterable','is_required'
+        'name', 'slug','code','parent_id','frontend_type','is_filterable','is_required'
     ];
 
     public function products()
@@ -25,9 +25,17 @@ class Attribute extends Model
     {
         return $this->hasMany(AttributesValue::class);
     }
-    public function attributeProduct()
+//    public function attributeProduct()
+//    {
+//        return $this->hasMany(AttributeProduct::class);
+//    }
+    public function parentAttribute()
     {
-        return $this->hasMany(AttributeProduct::class);
+        return $this->belongsTo(self::class, 'parent_id');
     }
 
+    public function childAttributes()
+    {
+        return $this->hasMany(self::class,  'parent_id');
+    }
 }

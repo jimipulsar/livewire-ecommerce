@@ -82,13 +82,10 @@
                                     name="categories[]" id="categories" autocomplete="categories">
                                     <option disabled selected value> -- Seleziona</option>
                                     @foreach ($subCategories as $category)
-                                        {{--                                        @if ($loop->first) @continue @endif--}}
                                         @if($category->parentCategory)
-
                                             <option value="{{$category->id }}"
                                                     @if($product->categories->contains($category->id)) selected @endif>{{ $category->name }}
                                                 / {{ $category->parentCategory->name }}</option>
-
                                         @else
                                             <td class="text-sm px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ $category->name }}</td>
                                         @endif
@@ -116,6 +113,45 @@
                                 <input type="text" name="price" id="price" value="{{price($product->price)}}"
                                        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                 >
+                            </div>
+                            <div class="col-span-4 sm:col-span-2" hidden>
+                                <label for="attributes[]"
+                                       class="block my-2 text-sm font-medium text-gray-700">Attributo principale</label>
+                                <select
+                                    class="mt-1 block mainCatSel w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                    name="attributes[]" id="attributes" autocomplete="attributes">
+                                    <option disabled selected value> -- Seleziona</option>
+                                    <option value="null"></option>
+                                </select>
+                                @if($errors->has('attributes'))
+                                    <div class="invalid-feedback">
+                                        {{ $errors->first('attributes') }}
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="col-span-1 sm:col-span-1">
+                                <label for="attributes[]"
+                                       class="block my-2 text-sm font-medium text-gray-700">Attributo</label>
+
+                                <select
+                                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                    name="attributes[]" id="attributes" autocomplete="attributes">
+                                    <option disabled selected value> -- Seleziona</option>
+                                    @foreach ($subAttributes as $attribute)
+                                        @if($attribute->parentAttribute)
+                                            <option value="{{$attribute->id }}"
+                                                    @if($product->attributes->contains($attribute->id)) selected @endif>{{ $attribute->name }}
+                                                / {{ $attribute->parentAttribute->name }}</option>
+                                        @else
+                                            <td class="text-sm px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ $attribute->name }}</td>
+                                        @endif
+                                    @endforeach
+                                </select>
+                                @if($errors->has('attributes'))
+                                    <div class="invalid-feedback">
+                                        {{ $errors->first('attributes') }}
+                                    </div>
+                                @endif
                             </div>
                         </div>
                         <div class="col-span-6 sm:col-span-6">
