@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Auth\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Attribute;
+use App\Models\AttributeProduct;
 use App\Models\Category;
+use App\Models\CategoryProduct;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -144,7 +146,7 @@ class ProductsController extends Controller
                 ->get()->toArray();
 
             $inputParentAttribute = DB::table('attributes')->where('id', '=', \request()->input('attributes.0'))->first()->parent_id;
-            $inputIdAttribute= DB::table('attributes')->where('id', '=', \request()->input('attributes.0'))->first()->id;
+            $inputIdAttribute = DB::table('attributes')->where('id', '=', \request()->input('attributes.0'))->first()->id;
 
             $selectedAttribute = Attribute::orderBy('updated_at')
                 ->where('parent_id', '=', $inputParentAttribute)
@@ -307,7 +309,7 @@ class ProductsController extends Controller
                 ->get()->toArray();
 
             $inputParentAttribute = DB::table('attributes')->where('id', '=', \request()->input('attributes.0'))->first()->parent_id;
-            $inputIdAttribute= DB::table('attributes')->where('id', '=', \request()->input('attributes.0'))->first()->id;
+            $inputIdAttribute = DB::table('attributes')->where('id', '=', \request()->input('attributes.0'))->first()->id;
 
             $selectedAttribute = Attribute::orderBy('updated_at')
                 ->where('parent_id', '=', $inputParentAttribute)
@@ -423,12 +425,18 @@ class ProductsController extends Controller
     public
     function duplicate($lang, $id)
     {
-
         $existingOpening = Product::find($id);
+        $categoryProducts = CategoryProduct::where('product_id', '=', $id)->get()->toArray();
+        $attributeProducts = AttributeProduct::where('product_id', '=', $id)->get()->toArray();
+
         $product = $existingOpening->replicate();
+
         $product->item_name = htmlspecialchars($product->item_name . Str::random(1));
         $product->slug = Str::slug($product->item_name);
         $product->save();
+        $product->categories()->sync([$categoryProducts[0]['category_id'], $categoryProducts[1]['category_id']]);
+        $product->attributes()->sync([$attributeProducts[0]['attribute_id'], $attributeProducts[1]['attribute_id']]);
+
         return redirect()->route('products.index', app()->getLocale()
         )->with([
             'product' => $product
