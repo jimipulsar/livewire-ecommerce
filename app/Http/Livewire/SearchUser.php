@@ -38,7 +38,6 @@ class SearchUser extends Component
 
         $users = $users->orderBy($this->sortByColumn(), $this->sortDirection())
             ->paginate($this->perPage);
-
         return view('livewire.search-user', [
             'users' => $users
         ]);
