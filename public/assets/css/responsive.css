@@ -14,6 +14,9 @@
     display:none !important;
 
 }
+.bg-main a{
+    color: #fff !important;;
+}
 #google_translate_element {
     display: none !important;
 }
