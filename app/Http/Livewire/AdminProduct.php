@@ -66,13 +66,11 @@ class AdminProduct extends Component
             ->whereBetween('price', [$this->min, $this->max])
             ->paginate($this->perPage);
 
-        return view('livewire.admin-product', [
-//            'products' => Product::orderBy('created_at')->get(),
+        return view('livewire.admin-product', ['lang' => app()->getLocale()])->with(array(
             'items' => $items,
             'uniqueCategories' => $uniqueCategories,
             'min_price' => $min_price,
-            'max_price' => $max_price
-        ]);
+            'max_price' => $max_price));
     }
 
     public function updateOrder($list) {
