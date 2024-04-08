@@ -48,7 +48,7 @@ class AdminController extends Controller
         if (auth()->guard('admin')->user()) {
             return redirect()->route('dashboard', app()->getLocale());
         }
-        return view('auth.admin.login');
+        return view('auth.admin.login', ['lang' => app()->getLocale()]);
     }
 
     /**
@@ -114,19 +114,19 @@ class AdminController extends Controller
     public function logout(Request $request)
     {
         Auth::guard('admin')->logout();
-        return redirect()->route('adminLogin', app()->getLocale());
+        return redirect()->route('adminLogin', ['lang' => app()->getLocale()]);
     }
 
     public function adminLogout()
     {
         auth()->guard('admin')->logout();
-        return redirect()->route('adminLogin', app()->getLocale())->with('success', 'Sei uscito correttamente');
+        return redirect()->route('adminLogin',['lang' => app()->getLocale()])->with('success', 'Sei uscito correttamente');
     }
 
     public function login()
     {
 
-        return view('auth.admin.login');
+        return view('auth.admin.login',['lang' => app()->getLocale()]);
 
 
     }

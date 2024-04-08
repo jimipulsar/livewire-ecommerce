@@ -21,7 +21,7 @@ class CustomerAuth
             if ($request->ajax() || $request->wantsJson()) {
                 return response('Unauthorized.', 403);
             } else {
-                return redirect(route('customerLogin', app()->getLocale()));
+                return redirect(route('customerLogin', ['lang' => app()->getLocale()]));
             }
         }
 

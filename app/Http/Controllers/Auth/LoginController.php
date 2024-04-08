@@ -54,7 +54,7 @@ class LoginController extends Controller
             $customer = Auth::guard('customer')->user();
             return view('auth.customer.home', ['customer' => $customer]);
         } else {
-            return view('auth.customer.login');
+            return view('auth.customer.login',['lang' => app()->getLocale()]);
         }
     }
 //    public function getLogin()
