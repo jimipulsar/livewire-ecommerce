@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Category;
 use App\Models\Product;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -16,11 +15,7 @@ class AdminProduct extends Component
     use WithPagination;
 
     protected $paginationTheme = 'bootstrap';
-    protected $listeners = [
-        'filterByCategory' => 'filterByCategory'
-    ];
 
-    public $category;
     public $searchTerm;
     public $filters = [];
     public $perPage = 20;
@@ -34,8 +29,6 @@ class AdminProduct extends Component
 
     public function mount()
     {
-        $this->min = Product::min('price');
-        $this->max = Product::max('price');
 
     }
 
@@ -49,11 +42,9 @@ class AdminProduct extends Component
 
     public function render()
     {
-        $min_price = Product::min('price');
-        $max_price = Product::max('price');
+
         $items = Product::with('categories')->withCount('categories');
 
-        $uniqueCategories = $this->getCategories();
 //        Product::query()
 //            ->leftJoin('category_product', 'category_product.product_id', '=', 'products.id')
 //            ->leftJoin('categories', 'categories.id', '=', 'category_product.category_id')
@@ -64,17 +55,12 @@ class AdminProduct extends Component
 //            ->first()->toArray();
         $this->applySearchFilter($items->orderBy($this->sortColumnName, $this->sortDirection));
 
-        $this->applyCategoryFilter($items);
-
         $items = $items->orderBy($this->sortByColumn(), $this->sortDirection())
-            ->whereBetween('price', [$this->min, $this->max])
             ->paginate($this->perPage);
 
         return view('livewire.admin-product', ['lang' => app()->getLocale()])->with(array(
-            'items' => $items,
-            'uniqueCategories' => $uniqueCategories,
-            'min_price' => $min_price,
-            'max_price' => $max_price));
+            'items' => $items
+        ));
     }
 
     public function updateOrder($list) {
@@ -87,19 +73,6 @@ class AdminProduct extends Component
 
     }
 
-    public function filterByCategory($category)
-    {
-        if (in_array($category, $this->filters)) {
-            $ix = array_search($category, $this->filters);
-
-            unset($this->filters[$ix]);
-        } else {
-            $this->filters[] = $category;
-
-            //Reset pagination, otherwise filter won't work
-            $this->resetPage();
-        }
-    }
 
     public function sortByColumn()
     {
@@ -130,27 +103,6 @@ class AdminProduct extends Component
         return null;
     }
 
-    private function applyCategoryFilter($items)
-    {
-        if ($this->filters) {
-
-            foreach ($this->filters as $filter) {
-                $items->whereHas('categories', function ($query) use ($filter) {
-                    $query->where('categories.id', $filter);
-                });
-            }
-        }
-
-        return null;
-    }
-
-    private function getCategories()
-    {
-        return Category::withCount('products')
-            ->having('products_count', '>=', 0)
-            ->orderBy('products_count', 'DESC')
-            ->get();
-    }
 
     public function sortBy($columnName)
     {
