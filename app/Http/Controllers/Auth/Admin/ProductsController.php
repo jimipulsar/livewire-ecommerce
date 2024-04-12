@@ -86,6 +86,8 @@ class ProductsController extends Controller
             'img_02' => 'image|mimes:jpeg,png,webp,jpg,gif,svg|max:3048',
             'img_03' => 'image|mimes:jpeg,png,webp,jpg,gif,svg|max:3048',
             'attachment' => 'file|mimes:ppt,pptx,doc,docx,pdf,xls,xlsx,txt|max:10048',
+            'item_code' => 'unique:products',
+
         ]);
 
         $product = new Product;
@@ -247,7 +249,8 @@ class ProductsController extends Controller
             'img_02' => 'image|mimes:jpeg,png,webp,jpg,gif,svg|max:3048',
             'img_03' => 'image|mimes:jpeg,png,webp,jpg,gif,svg|max:3048',
             'attachment' => 'file|mimes:ppt,pptx,doc,docx,pdf,xls,xlsx,txt|max:10048',
-            'purchasable' => 'required'
+            'purchasable' => 'required',
+            'item_code' => 'unique:products'
 
         ]);
 
@@ -430,9 +433,10 @@ class ProductsController extends Controller
         $attributeProducts = AttributeProduct::where('product_id', '=', $id)->get()->toArray();
 
         $product = $existingOpening->replicate();
-
+        $randomId = rand(0,9);
         $product->item_name = htmlspecialchars($product->item_name . Str::random(1));
         $product->slug = Str::slug($product->item_name);
+        $product->item_code = htmlspecialchars($product->item_code . $randomId);
         $product->save();
         $product->categories()->sync([$categoryProducts[0]['category_id'], $categoryProducts[1]['category_id']]);
         $product->attributes()->sync([$attributeProducts[0]['attribute_id'], $attributeProducts[1]['attribute_id']]);

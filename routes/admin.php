@@ -21,6 +21,7 @@ Route::match(['get', 'post'], env('APP_ADMIN_URL'), [AdminController::class, 'lo
 //Route::any('products/destroy/{product?}', [ProductController::class, 'destroy'])->name('products.destroy');
 Route::group(['middleware' => 'admin'], function () {
     // Admin dashboard
+
     Route::resource('customers', AdminCustomerController::class);
     Route::resource('coupon', CouponController::class);
     Route::resource('products', ProductsController::class);

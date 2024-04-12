@@ -81,7 +81,7 @@ return [
     |
     */
 
-    'middleware_group' => 'customer',
+    'middleware_group' => ['customer','admin'],
 
     /*
     |--------------------------------------------------------------------------

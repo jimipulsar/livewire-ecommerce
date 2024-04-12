@@ -9,6 +9,10 @@ use Livewire\WithPagination;
 
 class AdminProduct extends Component
 {
+//    public function __construct()
+//    {
+//        abort_if(auth()->guard('admin')->check(), 401);
+//    }
     use WithPagination;
 
     protected $paginationTheme = 'bootstrap';
