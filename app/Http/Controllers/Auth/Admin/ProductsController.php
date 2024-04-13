@@ -249,9 +249,7 @@ class ProductsController extends Controller
             'img_02' => 'image|mimes:jpeg,png,webp,jpg,gif,svg|max:3048',
             'img_03' => 'image|mimes:jpeg,png,webp,jpg,gif,svg|max:3048',
             'attachment' => 'file|mimes:ppt,pptx,doc,docx,pdf,xls,xlsx,txt|max:10048',
-            'purchasable' => 'required',
-            'item_code' => 'unique:products'
-
+            'purchasable' => 'required'
         ]);
 
         $product->user_id = auth()->guard('admin')->id();
