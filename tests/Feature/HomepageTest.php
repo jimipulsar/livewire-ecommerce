@@ -15,7 +15,7 @@ class HomepageTest extends TestCase
      */
     public function test_example()
     {
-        $response = $this->get('/it');
+        $response = $this->get(app()->getLocale());
 
         $response->assertStatus(200);
     }
