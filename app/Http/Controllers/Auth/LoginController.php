@@ -44,7 +44,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('customer')->except('logout');
     }
 
     public function login()
@@ -56,7 +56,11 @@ class LoginController extends Controller
             return view('auth.customer.login',['lang' => app()->getLocale()]);
         }
     }
-
+//    public function getLogin()
+//    {
+//
+//        return view('pages.popup');
+//    }
 
     public function showLoginForm()
     {
@@ -70,7 +74,7 @@ class LoginController extends Controller
                 'orders' => $orders,
                 'customer' => $customer]);
         } else {
-            return view('auth.customer.home',['lang' => app()->getLocale()]);
+            return view('auth.customer.home');
         }
     }
 
