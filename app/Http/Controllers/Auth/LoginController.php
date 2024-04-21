@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Events\CustomerLoginHistory;
-use App\Events\LoginHistory;
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use App\Models\Wishlist;
@@ -45,7 +44,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('customer')->except('logout');
+        $this->middleware('guest')->except('logout');
     }
 
     public function login()
@@ -57,11 +56,7 @@ class LoginController extends Controller
             return view('auth.customer.login',['lang' => app()->getLocale()]);
         }
     }
-//    public function getLogin()
-//    {
-//
-//        return view('pages.popup');
-//    }
+
 
     public function showLoginForm()
     {
@@ -75,7 +70,7 @@ class LoginController extends Controller
                 'orders' => $orders,
                 'customer' => $customer]);
         } else {
-            return view('auth.customer.home');
+            return view('auth.customer.home',['lang' => app()->getLocale()]);
         }
     }
 

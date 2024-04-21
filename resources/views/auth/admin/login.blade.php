@@ -55,11 +55,19 @@
                                         Accedi
                                     </button>
                                 </div>
-                                <div class="d-block text-center">
+                                <div class="d-flex text-left pb-1">
+                                    <a href="{{route('registerAdmin', app()->getLocale())}}"
+                                       class="d-inline-block  px-6 py-2 border-2 border-red-600 text-white font-medium text-xs leading-tight uppercase rounded hover:bg-white hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                                       data-mdb-ripple="true"
+                                       data-mdb-ripple-color="light"
+                                       style=" background: linear-gradient( to right,#ee7724, #d8363a,  #dd3675,#b44593);">
+                                        Registrati
+                                    </a>
+
                                     <a href="{{route('index', app()->getLocale())}}"
-                                            class="inline-block px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                                            class="ml-10 justify-content-end text-right px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                                             data-mdb-ripple="true"
-                                            data-mdb-ripple-color="light">
+                                            data-mdb-ripple-color="light" style="float:right">
                                         Torna in Home Page
                                     </a>
                                 </div>

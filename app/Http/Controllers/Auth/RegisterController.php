@@ -90,7 +90,7 @@ class RegisterController extends Controller
         ];
         Notification::send($userAdmin, new NewRegistrationNotification($details));
 
-        return redirect()->route('home', app()->getLocale())->with('success', 'Ti sei registrato con successo!');
+        return redirect()->route('orders.index', app()->getLocale())->with('success', 'Ti sei registrato con successo!');
 //
 //        return $request->wantsJson()
 //            ? new JsonResponse([], 201)

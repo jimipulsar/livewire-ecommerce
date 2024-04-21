@@ -10,18 +10,22 @@ use App\Http\Controllers\Auth\Admin\CategoryController;
 use App\Http\Controllers\Auth\Admin\CouponController;
 use App\Http\Controllers\Auth\Admin\ImportExcelController;
 use App\Http\Controllers\Auth\Admin\LogActivityController;
+use App\Http\Controllers\Auth\Admin\LoginAdminController;
 use App\Http\Controllers\Auth\Admin\NewsletterController;
 use App\Http\Controllers\Auth\Admin\ProductsController;
 use App\Http\Controllers\Auth\Admin\ProfileAdminController;
+use App\Http\Controllers\Auth\Admin\RegisterAdminController;
 use App\Http\Controllers\Auth\Admin\SliderController;
-use App\Http\Controllers\Auth\Admin\TagController;
 use Illuminate\Support\Facades\Route;
 
-Route::match(['get', 'post'], env('APP_ADMIN_URL'), [AdminController::class, 'login'])->name('adminlogin');
+Route::match(['get', 'post'], env('APP_ADMIN_URL'), [LoginAdminController::class, 'login'])->name('adminlogin');
+
+
 //Route::any('products/destroy/{product?}', [ProductController::class, 'destroy'])->name('products.destroy');
 Route::group(['middleware' => 'admin'], function () {
     // Admin dashboard
-
+    Route::any( env('APP_ADMIN_URL') . '/register', [RegisterAdminController::class, 'showRegistrationForm'])->name('registerAdmin');
+    Route::post(env('APP_ADMIN_URL') .'/register', [RegisterAdminController::class, 'register'])->name('registerAdminPOST');
     Route::resource('customers', AdminCustomerController::class);
     Route::resource('coupon', CouponController::class);
     Route::resource('products', ProductsController::class);
