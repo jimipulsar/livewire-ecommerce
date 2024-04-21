@@ -88,7 +88,9 @@ class AttributeController extends Controller
     public function edit($lang, $id)
     {
         $attribute = Attribute::find($id);
-        $productAttribute = Product::with('attributes');
+        $productAttribute = Attribute::with('childAttributes')
+            ->whereHas('childAttributes')
+            ->get();
         $attributes = getAttributes();
 
         if (!$attributes) {

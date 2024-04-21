@@ -18,7 +18,7 @@
 
                                 <select
                                     class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                    name="parent_id" id="parent_id" autocomplete="categories">
+                                    name="parent_id" id="parent_id" >
                                     <option disabled selected value> -- Seleziona</option>
                                     @foreach ($attributes as $attr)
                                         @if($attr->parent_id == null)

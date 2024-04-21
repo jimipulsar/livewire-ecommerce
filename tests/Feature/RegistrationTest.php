@@ -18,7 +18,7 @@ class RegistrationTest extends TestCase
 
     public function test_new_users_can_register()
     {
-        $response = $this->post('/it/register', [
+        $response = $this->post(app()->getLocale() . '/register', [
             'email' => 'dsdfsdf@github2.com',
             'shipping_name' => 'Carlo',
             'billing_name' => 'Carlo',
