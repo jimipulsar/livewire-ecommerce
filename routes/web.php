@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\Admin\AdminController;
+use App\Http\Controllers\Auth\Admin\LoginAdminController;
 use App\Http\Controllers\Auth\Admin\NewsletterController;
 use App\Http\Controllers\Auth\Admin\ProductsController;
 use App\Http\Controllers\Auth\Admin\RegisterAdminController;
@@ -66,8 +67,8 @@ Route::get(__('routes.removeToCompare'),[CompareController::class, 'removeToComp
 Route::get(__('routes.removeCompare'),  [CompareController::class, 'removeCompare'])->name('removeCompare');
 Route::get(__('routes.compare'), [CompareController::class, 'compare'])->name('compare');
 
-Route::get(env('APP_ADMIN_URL'),[AdminController::class, 'getLogin'])->name('adminLogin');
-Route::post(env('APP_ADMIN_URL'), [AdminController::class, 'postLogin'])->name('adminLoginPost');
+Route::get(env('APP_ADMIN_URL'),[LoginAdminController::class, 'getLogin'])->name('adminLogin');
+Route::post(env('APP_ADMIN_URL'), [LoginAdminController::class, 'postLogin'])->name('adminLoginPost');
 
 Route::post('send/product-request', [SendMailController::class, 'sendProduct'])->name('sendProduct');
 

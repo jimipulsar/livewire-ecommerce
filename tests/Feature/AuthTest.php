@@ -22,10 +22,10 @@ class AuthTest extends TestCase
 
     public function test_users_can_authenticate_using_the_login_screen()
     {
-        $user = Customer::factory()->create();
+        $customer = Customer::factory()->create();
 
         $response = $this->post(app()->getLocale() . '/login', [
-            'email' => $user->email,
+            'email' => $customer->email,
             'password' => 'password',
         ]);
 
@@ -35,10 +35,10 @@ class AuthTest extends TestCase
 
     public function test_users_can_not_authenticate_with_invalid_password()
     {
-        $user = Customer::factory()->create();
+        $customer = Customer::factory()->create();
 
         $this->post(app()->getLocale() .'/login', [
-            'email' => $user->email,
+            'email' => $customer->email,
             'password' => 'wrong-password',
         ]);
 
