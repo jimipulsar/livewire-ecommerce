@@ -24,8 +24,8 @@ Route::match(['get', 'post'], env('APP_ADMIN_URL'), [LoginAdminController::class
 //Route::any('products/destroy/{product?}', [ProductController::class, 'destroy'])->name('products.destroy');
 Route::group(['middleware' => 'admin'], function () {
     // Admin dashboard
-    Route::any( env('APP_ADMIN_URL') . '/register', [RegisterAdminController::class, 'showRegistrationForm'])->name('registerAdmin');
-    Route::post(env('APP_ADMIN_URL') .'/register', [RegisterAdminController::class, 'register'])->name('registerAdminPOST');
+//    Route::any( env('APP_ADMIN_URL') . '/register', [RegisterAdminController::class, 'showRegistrationForm'])->name('registerAdmin');
+//    Route::post(env('APP_ADMIN_URL') .'/register', [RegisterAdminController::class, 'register'])->name('registerAdminPOST');
     Route::resource('customers', AdminCustomerController::class);
     Route::resource('coupon', CouponController::class);
     Route::resource('products', ProductsController::class);

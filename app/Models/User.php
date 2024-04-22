@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Notifications\MailResetPasswordToken;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -11,14 +12,9 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-//    public $first_name;
-//    public $address;
-//    public $email;
-//    public $password;
-
     protected $guard = 'admin';
     protected $table = 'users';
-
+    protected $guarded = [];
 
     /**
      * The attributes that are mass assignable.
@@ -51,49 +47,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-//    public function setFirstName($firstName)
-//    {
-//        $this->first_name = $firstName;
-//
-//    }
-//
-//    public function getFirstName()
-//    {
-//        return $this->first_name;
-//    }
-//
-//    public function setAddress($addressName)
-//    {
-//        $this->address = $addressName;
-//
-//    }
-//
-//    public function getAddress()
-//    {
-//        return $this->address;
-//    }
-//
-//    public function setEmailAddress($emailAddress)
-//    {
-//        $this->email = $emailAddress;
-//
-//    }
-//
-//    public function getEmailAddress()
-//    {
-//        return $this->email;
-//    }
-//
-//    public function setPassword($passwordName)
-//    {
-//        $this->password = $passwordName;
-//
-//    }
-//
-//    public function getPassword()
-//    {
-//        return $this->password;
-//    }
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new MailResetPasswordToken($token));
+    }
 
     public function sliders()
     {

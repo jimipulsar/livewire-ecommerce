@@ -45,7 +45,7 @@ class RegisterAdminController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('customer')->except('logout');
+        $this->middleware('guest')->except('logout');
     }
 
     public function showRegistrationForm($lang)
@@ -112,7 +112,7 @@ class RegisterAdminController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'address' => ['required', 'string', 'max:255'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'password' => ['required', 'string', 'min:6'],
 //            'g-recaptcha-response' => 'required'
 
         ]);
